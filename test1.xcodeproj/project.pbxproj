@@ -8,11 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		8670878F1ABFE32E00EAAF7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8670878E1ABFE32E00EAAF7B /* AppDelegate.swift */; };
-		867087911ABFE32E00EAAF7B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867087901ABFE32E00EAAF7B /* ViewController.swift */; };
 		867087941ABFE32E00EAAF7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 867087921ABFE32E00EAAF7B /* Main.storyboard */; };
 		867087961ABFE32E00EAAF7B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 867087951ABFE32E00EAAF7B /* Images.xcassets */; };
 		867087991ABFE32E00EAAF7B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 867087971ABFE32E00EAAF7B /* LaunchScreen.xib */; };
 		867087A51ABFE32F00EAAF7B /* test1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867087A41ABFE32F00EAAF7B /* test1Tests.swift */; };
+		867087AF1ABFED3B00EAAF7B /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867087AE1ABFED3B00EAAF7B /* EventsViewController.swift */; };
+		867E46131ACCEC290096E8AC /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 867E460A1ACCEC290096E8AC /* FMDatabase.m */; };
+		867E46141ACCEC290096E8AC /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 867E460C1ACCEC290096E8AC /* FMResultSet.m */; };
+		867E46151ACCEC290096E8AC /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 867E460E1ACCEC290096E8AC /* FMDatabaseQueue.m */; };
+		867E46161ACCEC290096E8AC /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 867E46101ACCEC290096E8AC /* FMDatabaseAdditions.m */; };
+		867E46171ACCEC290096E8AC /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 867E46121ACCEC290096E8AC /* FMDatabasePool.m */; };
+		867E46191ACCECAF0096E8AC /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 867E46181ACCECAF0096E8AC /* libsqlite3.0.dylib */; };
+		867E461B1ACCECB60096E8AC /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 867E461A1ACCECB60096E8AC /* libsqlite3.dylib */; };
+		86C9D8631AC0060700956C8B /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C9D8621AC0060700956C8B /* Event.swift */; };
+		86C9D8671AC009F600956C8B /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C9D8661AC009F600956C8B /* EventTableViewCell.swift */; };
+		86E552A21AC544AE0011CB94 /* EventsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E552A11AC544AE0011CB94 /* EventsDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +39,30 @@
 		867087891ABFE32E00EAAF7B /* test1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8670878D1ABFE32E00EAAF7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8670878E1ABFE32E00EAAF7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		867087901ABFE32E00EAAF7B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		867087931ABFE32E00EAAF7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		867087951ABFE32E00EAAF7B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		867087981ABFE32E00EAAF7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		8670879E1ABFE32F00EAAF7B /* test1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = test1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		867087A31ABFE32F00EAAF7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		867087A41ABFE32F00EAAF7B /* test1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test1Tests.swift; sourceTree = "<group>"; };
+		867087AE1ABFED3B00EAAF7B /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
+		867E46071ACCEC290096E8AC /* test1-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "test1-Bridging-Header.h"; sourceTree = "<group>"; };
+		867E46081ACCEC290096E8AC /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		867E46091ACCEC290096E8AC /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		867E460A1ACCEC290096E8AC /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		867E460B1ACCEC290096E8AC /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		867E460C1ACCEC290096E8AC /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		867E460D1ACCEC290096E8AC /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		867E460E1ACCEC290096E8AC /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		867E460F1ACCEC290096E8AC /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		867E46101ACCEC290096E8AC /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		867E46111ACCEC290096E8AC /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		867E46121ACCEC290096E8AC /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		867E46181ACCECAF0096E8AC /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		867E461A1ACCECB60096E8AC /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		86C9D8621AC0060700956C8B /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		86C9D8661AC009F600956C8B /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
+		86E552A11AC544AE0011CB94 /* EventsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +70,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				867E461B1ACCECB60096E8AC /* libsqlite3.dylib in Frameworks */,
+				867E46191ACCECAF0096E8AC /* libsqlite3.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +88,8 @@
 		867087801ABFE32E00EAAF7B = {
 			isa = PBXGroup;
 			children = (
+				867E461A1ACCECB60096E8AC /* libsqlite3.dylib */,
+				867E46181ACCECAF0096E8AC /* libsqlite3.0.dylib */,
 				8670878B1ABFE32E00EAAF7B /* test1 */,
 				867087A11ABFE32F00EAAF7B /* test1Tests */,
 				8670878A1ABFE32E00EAAF7B /* Products */,
@@ -77,12 +108,15 @@
 		8670878B1ABFE32E00EAAF7B /* test1 */ = {
 			isa = PBXGroup;
 			children = (
+				867087AE1ABFED3B00EAAF7B /* EventsViewController.swift */,
 				8670878E1ABFE32E00EAAF7B /* AppDelegate.swift */,
-				867087901ABFE32E00EAAF7B /* ViewController.swift */,
 				867087921ABFE32E00EAAF7B /* Main.storyboard */,
 				867087951ABFE32E00EAAF7B /* Images.xcassets */,
+				86E552A11AC544AE0011CB94 /* EventsDetailViewController.swift */,
 				867087971ABFE32E00EAAF7B /* LaunchScreen.xib */,
 				8670878C1ABFE32E00EAAF7B /* Supporting Files */,
+				86C9D8621AC0060700956C8B /* Event.swift */,
+				86C9D8661AC009F600956C8B /* EventTableViewCell.swift */,
 			);
 			path = test1;
 			sourceTree = "<group>";
@@ -90,7 +124,19 @@
 		8670878C1ABFE32E00EAAF7B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				867E46081ACCEC290096E8AC /* FMDB.h */,
+				867E46091ACCEC290096E8AC /* FMDatabase.h */,
+				867E460A1ACCEC290096E8AC /* FMDatabase.m */,
+				867E460B1ACCEC290096E8AC /* FMResultSet.h */,
+				867E460C1ACCEC290096E8AC /* FMResultSet.m */,
+				867E460D1ACCEC290096E8AC /* FMDatabaseQueue.h */,
+				867E460E1ACCEC290096E8AC /* FMDatabaseQueue.m */,
+				867E460F1ACCEC290096E8AC /* FMDatabaseAdditions.h */,
+				867E46101ACCEC290096E8AC /* FMDatabaseAdditions.m */,
+				867E46111ACCEC290096E8AC /* FMDatabasePool.h */,
+				867E46121ACCEC290096E8AC /* FMDatabasePool.m */,
 				8670878D1ABFE32E00EAAF7B /* Info.plist */,
+				867E46071ACCEC290096E8AC /* test1-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -212,8 +258,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				867087911ABFE32E00EAAF7B /* ViewController.swift in Sources */,
+				86C9D8671AC009F600956C8B /* EventTableViewCell.swift in Sources */,
+				867E46171ACCEC290096E8AC /* FMDatabasePool.m in Sources */,
+				86C9D8631AC0060700956C8B /* Event.swift in Sources */,
 				8670878F1ABFE32E00EAAF7B /* AppDelegate.swift in Sources */,
+				867E46151ACCEC290096E8AC /* FMDatabaseQueue.m in Sources */,
+				86E552A21AC544AE0011CB94 /* EventsDetailViewController.swift in Sources */,
+				867E46161ACCEC290096E8AC /* FMDatabaseAdditions.m in Sources */,
+				867E46141ACCEC290096E8AC /* FMResultSet.m in Sources */,
+				867087AF1ABFED3B00EAAF7B /* EventsViewController.swift in Sources */,
+				867E46131ACCEC290096E8AC /* FMDatabase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,9 +392,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = test1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "test1/test1-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -348,9 +405,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = test1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "test1/test1-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -407,6 +466,7 @@
 				867087AA1ABFE32F00EAAF7B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		867087AB1ABFE32F00EAAF7B /* Build configuration list for PBXNativeTarget "test1Tests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +475,7 @@
 				867087AD1ABFE32F00EAAF7B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
