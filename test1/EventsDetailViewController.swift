@@ -9,12 +9,13 @@
 import UIKit
 
 class EventDetailsViewController: UITableViewController {
-    @IBOutlet weak var eventTextField: UITextField!
+    @IBOutlet var eventTextField: UITextField!
     var event:Event!
     var datePickerView:UIDatePicker!
-    @IBOutlet weak var datefield: UITextField!
+    var inputDateView:UIView!
+    @IBOutlet var datefield: UITextField!
     
-    @IBOutlet weak var doneButton: UIBarButtonItem!
+    @IBOutlet var doneButton: UIBarButtonItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,26 +46,25 @@ class EventDetailsViewController: UITableViewController {
     }
     
     @IBAction func textFieldEditing(sender: UITextField) {
-        let inputView = UIView(frame: CGRectMake(0, 0, self.view.frame.width, 240))
         
+        inputDateView = UIView(frame: CGRectMake(0, 0, self.view.frame.width, 240))
         
-        var datePickerView  : UIDatePicker = UIDatePicker(frame: CGRectMake(240, 40, 0, 0))
-        inputView.addSubview(datePickerView) // add date picker to UIView
+        datePickerView = UIDatePicker(frame: CGRectMake(160, 40, 0, 0))
+        inputDateView.addSubview(datePickerView) // add date picker to UIView
         
-        let buttonDone = UIButton(frame: CGRectMake((self.view.frame.size.width/2) - (100/2), 0, 100, 50))
-        buttonDone.setTitle("Done", forState: UIControlState.Normal)
-        buttonDone.setTitle("Done", forState: UIControlState.Highlighted)
-        buttonDone.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
-        buttonDone.setTitleColor(UIColor.grayColor(), forState: UIControlState.Highlighted)
+        let doneButton = UIButton(frame: CGRectMake((self.view.frame.size.width/2) - (100/2), 0, 100, 50))
+        doneButton.setTitle("Done", forState: UIControlState.Normal)
+        doneButton.setTitle("Done", forState: UIControlState.Highlighted)
+        doneButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+        doneButton.setTitleColor(UIColor.grayColor(), forState: UIControlState.Highlighted)
         
-        inputView.addSubview(buttonDone) // add Button to UIView
+        inputDateView.addSubview(doneButton) // add Button to UIView
         
-        buttonDone.addTarget(self, action: Selector("finishDone:"), forControlEvents: UIControlEvents.TouchUpInside) // set button click event
+        doneButton.addTarget(self, action: "doneButton:", forControlEvents: UIControlEvents.TouchUpInside) // set button click event
         
-        sender.inputView = inputView
-        datePickerView.addTarget(self, action: Selector("dateChanged:"), forControlEvents: UIControlEvents.ValueChanged)
-        
-           }
+        sender.inputView = inputDateView
+
+    }
     
     func dateChanged(sender: UIDatePicker) {
         var formatDate = NSDateFormatter()
@@ -72,11 +72,15 @@ class EventDetailsViewController: UITableViewController {
         datefield.text = formatDate.stringFromDate(sender.date)
     }
     
-//    func finishDone(sender:UIButton)
-//    {
-//        datePickerView.resignFirstResponder() // To resign the inputView on clicking done.
-//    }
-//    
+    func doneButton(sender:UIButton!)
+    {
+        println("done button done")
+        
+        dateChanged(datePickerView)
+        
+        datefield.inputView?.endEditing(true)
+//        datePickerView.endEditing(true) // To resign the inputView on clicking done.
     }
+}
 
 

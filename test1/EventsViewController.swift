@@ -20,7 +20,7 @@ class EventsViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+         self.navigationItem.leftBarButtonItem = self.editButtonItem()
         
         let filemgr = NSFileManager.defaultManager()
         let dirPaths =
@@ -56,6 +56,11 @@ class EventsViewController: UITableViewController {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
         return events.count
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        //CODE TO BE RUN ON CELL TOUCH
+        
     }
 
     

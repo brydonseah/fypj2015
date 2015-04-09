@@ -119,6 +119,7 @@
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
                                                         <action selector="textFieldEditing:" destination="lGw-LC-r7t" eventType="editingDidBegin" id="BY1-TT-4Rh"/>
+                                                        <outlet property="delegate" destination="lGw-LC-r7t" id="zJE-UH-ord"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -219,6 +220,32 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vh6-cA-O6v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3934" y="2452"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="ERn-CK-ufk">
+            <objects>
+                <tableViewController id="lJN-oi-Qhg" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="9N2-cI-AdO">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="efD-kX-4Ie">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="efD-kX-4Ie" id="7aj-6z-v39">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="lJN-oi-Qhg" id="AGq-11-isc"/>
+                            <outlet property="delegate" destination="lJN-oi-Qhg" id="Dzo-Fh-yc8"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VUq-6T-ST9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3947" y="3662"/>
         </scene>
         <!--Student-->
         <scene sceneID="hU1-g9-uPF">
