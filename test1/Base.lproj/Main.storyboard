@@ -119,7 +119,7 @@
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
                                                         <action selector="textFieldEditing:" destination="lGw-LC-r7t" eventType="editingDidBegin" id="BY1-TT-4Rh"/>
-                                                        <outlet property="delegate" destination="lGw-LC-r7t" id="zJE-UH-ord"/>
+                                                        <outlet property="delegate" destination="lGw-LC-r7t" id="ayh-Wv-3Ep"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>

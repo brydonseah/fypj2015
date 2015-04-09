@@ -78,7 +78,7 @@ class EventDetailsViewController: UITableViewController {
         
         dateChanged(datePickerView)
         
-        datefield.inputView?.endEditing(true)
+        datefield.resignFirstResponder()
 //        datePickerView.endEditing(true) // To resign the inputView on clicking done.
     }
 }
