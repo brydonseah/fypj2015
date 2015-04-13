@@ -10,9 +10,13 @@ import UIKit
 
 class EventsViewController: UITableViewController {
 
+    
     var events: [Event] = []
     var databasePath = NSString()
-    
+    var id =  Int32()
+    var nameEvent = String()
+    var dateEvent = String()
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,7 +24,7 @@ class EventsViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-         self.navigationItem.leftBarButtonItem = self.editButtonItem()
+         // self.navigationItem.leftBarButtonItem = self.editButtonItem()
         
         let filemgr = NSFileManager.defaultManager()
         let dirPaths =
@@ -36,7 +40,7 @@ class EventsViewController: UITableViewController {
         events = self.retrieveDataIntoArray()
         self.tableView.rowHeight = 121
         self.tableView.backgroundView = UIImageView(image: UIImage(named: "background"))
-        
+      
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,18 +62,11 @@ class EventsViewController: UITableViewController {
         return events.count
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        //CODE TO BE RUN ON CELL TOUCH
-        
-    }
-
-    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("EventCell", forIndexPath: indexPath) as EventTableViewCell
         let event = events[indexPath.row] as Event
         cell.titleLabel.text = event.title
         cell.dateLabel.text = event.date
-        
         
 //        if(indexPath.row % 2 == 0){
 //            cell.backgroundColor = UIColor.clearColor()
@@ -91,12 +88,13 @@ class EventsViewController: UITableViewController {
     @IBAction func saveEventDetail(segue:UIStoryboardSegue) {
         let eventDetailsViewController = segue.sourceViewController as EventDetailsViewController
         
-        //add the new player to the players array
+        //add the new event to the events array
         events.append(eventDetailsViewController.event)
         
         //update the tableView
         let indexPath = NSIndexPath(forRow: events.count-1, inSection: 0)
         tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+        
         
         //hide the detail view controller
         dismissViewControllerAnimated(true, completion: nil)
@@ -109,18 +107,22 @@ class EventsViewController: UITableViewController {
                 
                 let result = contactDB.executeUpdate(insertSQL,
                     withArgumentsInArray: nil)
-                
+              
                 if !result {
                     println("failure")
                     println("Error: \(contactDB.lastErrorMessage())")
-                } else {
+                }
+                else {
                     println("added")
                     eventDetailsViewController.eventTextField.text = ""
                     eventDetailsViewController.datefield.text = ""
+                   
                 }
             } else {
+                
                 println("Error: \(contactDB.lastErrorMessage())")
-            }
+        }
+        
         
 
         
@@ -140,8 +142,10 @@ class EventsViewController: UITableViewController {
                 
                 var name:String! = results?.stringForColumn("name")
                 var datetime:String! = results?.stringForColumn("datetime")
-                var event = Event(title: name, date: datetime)
-                
+                var idNum:Int32! = results?.intForColumn("ID")
+                id = idNum
+                println(idNum)
+                var event = Event(title: name, date: datetime, id: idNum)
                 dataArray.append(event)
             }
             contactDB.close()
@@ -198,7 +202,21 @@ class EventsViewController: UITableViewController {
         }
     }
     
-
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        //CODE TO BE RUN ON CELL TOUCH
+        //self.performSegueWithIdentifier("EventDetails", sender: indexPath)
+        
+        let indexPath = tableView.indexPathForSelectedRow()
+        let currentCell = tableView.cellForRowAtIndexPath(indexPath!) as EventTableViewCell!
+        
+        nameEvent = currentCell.titleLabel.text!
+        dateEvent = currentCell.dateLabel.text!
+        performSegueWithIdentifier("EventDetails", sender: self)
+   
+        
+    }
+    
     /*
     // Override to support rearranging the table view.
     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
@@ -214,14 +232,22 @@ class EventsViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        
+        if (segue.identifier == "EventDetails") {
+            
+            // initialize new view controller and cast it as your view controller
+            var devc = segue.destinationViewController as DetailsEventViewController
+            // your new view controller should have property that will store passed value
+            devc.nameEvent = nameEvent
+            devc.dateTimeEvent = dateEvent
+        }
     }
-    */
+
 
 }

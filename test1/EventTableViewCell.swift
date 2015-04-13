@@ -9,9 +9,13 @@
 import UIKit
 
 class EventTableViewCell: UITableViewCell {
-
+    
+    
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
+    
+    @IBOutlet var idLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

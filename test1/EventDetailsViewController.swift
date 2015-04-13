@@ -14,7 +14,9 @@ class EventDetailsViewController: UITableViewController {
     var datePickerView:UIDatePicker!
     var inputDateView:UIView!
     @IBOutlet var datefield: UITextField!
-    
+    var databasePath = NSString()
+    var id =  Int32()
+    var events: [Event] = []
     @IBOutlet var doneButton: UIBarButtonItem!
 
     override func viewDidLoad() {
@@ -41,7 +43,7 @@ class EventDetailsViewController: UITableViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "SaveEventDetail" {
-            event = Event(title: self.eventTextField.text, date: self.datefield.text)
+            event = Event(title: self.eventTextField.text, date: self.datefield.text, id: 0)
         }
     }
     
@@ -80,7 +82,10 @@ class EventDetailsViewController: UITableViewController {
         
         datefield.resignFirstResponder()
 //        datePickerView.endEditing(true) // To resign the inputView on clicking done.
+        
+        
     }
+    
 }
 
 

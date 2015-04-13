@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <scenes>
-        <!--Events-->
+        <!--Activities-->
         <scene sceneID="evt-za-M8C">
             <objects>
                 <tableViewController id="Rw8-JN-s1i" customClass="EventsViewController" customModule="test1" customModuleProvider="target" sceneMemberID="viewController">
@@ -21,14 +21,14 @@
                                         <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PJ0-M6-Wom">
                                             <rect key="frame" x="16" y="15" width="302" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bw1-wU-3K5">
                                             <rect key="frame" x="16" y="50" width="307" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -36,10 +36,18 @@
                                             <rect key="frame" x="260" y="0.0" width="446" height="112"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
+                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ID" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="czy-J2-uZo">
+                                            <rect key="frame" x="16" y="79" width="50" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="dateLabel" destination="bw1-wU-3K5" id="4kG-y5-YaX"/>
+                                    <outlet property="idLabel" destination="czy-J2-uZo" id="V8Q-ml-mlU"/>
                                     <outlet property="titleLabel" destination="PJ0-M6-Wom" id="BRy-dv-AWq"/>
                                 </connections>
                             </tableViewCell>
@@ -49,13 +57,16 @@
                             <outlet property="delegate" destination="Rw8-JN-s1i" id="2V2-fl-Ka0"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Events" id="0OR-Pz-QZ9">
+                    <navigationItem key="navigationItem" title="Activities" id="0OR-Pz-QZ9">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="7lO-Ly-7DJ">
                             <connections>
                                 <segue destination="N9i-Ti-2OZ" kind="modal" id="tyG-6j-woC"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="q3e-Sh-Y9v" kind="push" identifier="EventDetails" id="uEs-E1-gFJ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sgw-FH-EEl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -155,7 +166,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vHD-fu-2ed" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="cTf-Kh-exx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="5799" y="1071"/>
+            <point key="canvasLocation" x="5943" y="1265"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="R3q-YO-mTA">
@@ -171,7 +182,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DXg-Wf-VRi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4810" y="1072"/>
+            <point key="canvasLocation" x="4950" y="-68"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Q1g-RC-fc5">
@@ -192,7 +203,7 @@
             </objects>
             <point key="canvasLocation" x="2033" y="1795"/>
         </scene>
-        <!--Add Student-->
+        <!--Students-->
         <scene sceneID="NBY-26-4tH">
             <objects>
                 <tableViewController id="lnN-Y9-aLv" sceneMemberID="viewController">
@@ -213,7 +224,7 @@
                             <outlet property="delegate" destination="lnN-Y9-aLv" id="HD4-bp-XEw"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Add Student" id="uhF-6R-m3a">
+                    <navigationItem key="navigationItem" title="Students" id="uhF-6R-m3a">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="5Vg-OX-oz9"/>
                     </navigationItem>
                 </tableViewController>
@@ -221,31 +232,63 @@
             </objects>
             <point key="canvasLocation" x="3934" y="2452"/>
         </scene>
-        <!--Table View Controller-->
-        <scene sceneID="ERn-CK-ufk">
+        <!--Details Event View Controller-->
+        <scene sceneID="fl0-51-WMp">
             <objects>
-                <tableViewController id="lJN-oi-Qhg" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="9N2-cI-AdO">
+                <viewController id="q3e-Sh-Y9v" customClass="DetailsEventViewController" customModule="test1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iuu-w8-8Jj">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="60r-Y3-2Y2">
+                                <rect key="frame" x="131" y="155" width="429" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="Awe-PW-OQY">
+                                <rect key="frame" x="131" y="220" width="429" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5CW-Iy-UaS">
+                                <rect key="frame" x="16" y="159" width="102" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date &amp; Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="u1Q-m3-Dg1">
+                                <rect key="frame" x="16" y="224" width="102" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="3f0-In-76M">
+                                <rect key="frame" x="66" y="310" width="637" height="665"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="efD-kX-4Ie">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="efD-kX-4Ie" id="7aj-6z-v39">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="lJN-oi-Qhg" id="AGq-11-isc"/>
-                            <outlet property="delegate" destination="lJN-oi-Qhg" id="Dzo-Fh-yc8"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VUq-6T-ST9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="LP1-ph-sjC">
+                        <barButtonItem key="leftBarButtonItem" title="Update" id="Z6H-Q1-QYj">
+                            <connections>
+                                <segue destination="lGw-LC-r7t" kind="modal" identifier="UpdateDetails" id="Ahk-WO-tm8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="dateTimeEventTextField" destination="Awe-PW-OQY" id="LmF-n1-kQh"/>
+                        <outlet property="eventNameTextField" destination="60r-Y3-2Y2" id="Z7w-uJ-Wez"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ggF-dM-0As" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3947" y="3662"/>
+            <point key="canvasLocation" x="4955" y="1850"/>
         </scene>
         <!--Student-->
         <scene sceneID="hU1-g9-uPF">
@@ -277,4 +320,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="Ahk-WO-tm8"/>
+    </inferredMetricsTieBreakers>
 </document>

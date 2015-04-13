@@ -12,11 +12,13 @@ import UIKit
 class Event: NSObject {
     var title: String
     var date: String
+    var id: Int32
     
-     init(title: String, date: String) {
+    init(title: String, date: String, id: Int32) {
         
         self.title = title
         self.date = date
+        self.id = id
         super.init()
     }
 }
