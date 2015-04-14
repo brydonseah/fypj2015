@@ -16,6 +16,9 @@ class EventsViewController: UITableViewController {
     var id =  Int32()
     var nameEvent = String()
     var dateEvent = String()
+    var event: Event!
+    var eventUpdate: Event!
+    var currentCell: EventTableViewCell!
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +40,7 @@ class EventsViewController: UITableViewController {
         databasePath = docsDir.stringByAppendingPathComponent(
             "fypj2015.db")
         
-        events = self.retrieveDataIntoArray()
+        self.events = self.retrieveDataIntoArray()
         self.tableView.rowHeight = 121
         self.tableView.backgroundView = UIImageView(image: UIImage(named: "background"))
       
@@ -64,7 +67,7 @@ class EventsViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("EventCell", forIndexPath: indexPath) as EventTableViewCell
-        let event = events[indexPath.row] as Event
+        self.event = self.events[indexPath.row] as Event
         cell.titleLabel.text = event.title
         cell.dateLabel.text = event.date
         
@@ -79,6 +82,15 @@ class EventsViewController: UITableViewController {
         // Configure the cell...
 
         return cell
+    }
+    
+    @IBAction func unwindEventDetail(segue:UIStoryboardSegue){
+        
+        self.events = self.retrieveDataIntoArray()
+        //hide the detail view controller
+        dismissViewControllerAnimated(true, completion: nil)
+        
+        self.tableView.reloadData()
     }
     
     @IBAction func cancelToEventsViewController(segue:UIStoryboardSegue) {
@@ -122,10 +134,6 @@ class EventsViewController: UITableViewController {
                 
                 println("Error: \(contactDB.lastErrorMessage())")
         }
-        
-        
-
-        
     }
     
     func retrieveDataIntoArray() -> [Event]{
@@ -144,7 +152,7 @@ class EventsViewController: UITableViewController {
                 var datetime:String! = results?.stringForColumn("datetime")
                 var idNum:Int32! = results?.intForColumn("ID")
                 id = idNum
-                println(idNum)
+                //println(idNum)
                 var event = Event(title: name, date: datetime, id: idNum)
                 dataArray.append(event)
             }
@@ -171,50 +179,14 @@ class EventsViewController: UITableViewController {
     
     // Override to support editing the table view.
      override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            
-            var eventTitle = events[indexPath.row].title
-    
-            // Delete the row from the data source
-            events.removeAtIndex(indexPath.row)
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
-            
-            let contactDB = FMDatabase(path: databasePath)
-            
-            
-            if contactDB.open() {
-                
-                let deleteSQL = "DELETE FROM EVENTS WHERE name ='" + eventTitle + "'"
-                
-                let result = contactDB.executeUpdate(deleteSQL,
-                    withArgumentsInArray: nil)
-                
-                if !result {
-                    println("failure")
-                    println("Error: \(contactDB.lastErrorMessage())")
-                } else {
-                    println("deleted")
-                }
-            } else {
-                println("Error: \(contactDB.lastErrorMessage())")
             }
-
-        }
-    }
     
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         //CODE TO BE RUN ON CELL TOUCH
         //self.performSegueWithIdentifier("EventDetails", sender: indexPath)
-        
-        let indexPath = tableView.indexPathForSelectedRow()
-        let currentCell = tableView.cellForRowAtIndexPath(indexPath!) as EventTableViewCell!
-        
-        nameEvent = currentCell.titleLabel.text!
-        dateEvent = currentCell.dateLabel.text!
+       
         performSegueWithIdentifier("EventDetails", sender: self)
-   
-        
     }
     
     /*
@@ -231,6 +203,46 @@ class EventsViewController: UITableViewController {
         return true
     }
     */
+    
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
+        var editAction = UITableViewRowAction(style: .Normal, title: "Edit") { (action, indexPath)  -> Void in
+            tableView.editing = false
+            println("Edit")
+        }
+        editAction.backgroundColor = UIColor.grayColor()
+        
+        var dAction  = UITableViewRowAction(style: .Normal, title: "Delete") { (action, indexPath)  -> Void in
+            tableView.editing = false
+            var eventTitle = self.events[indexPath.row].title
+            
+            // Delete the row from the data source
+            self.events.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+            let contactDB = FMDatabase(path: self.databasePath)
+            
+            if contactDB.open() {
+                
+                let deleteSQL = "DELETE FROM EVENTS WHERE name ='" + eventTitle + "'"
+                
+                let result = contactDB.executeUpdate(deleteSQL,
+                    withArgumentsInArray: nil)
+                
+                if !result {
+                    println("failure")
+                    println("Error: \(contactDB.lastErrorMessage())")
+                }
+                else {
+                    println("deleted")
+                }
+            }
+            else {
+                println("Error: \(contactDB.lastErrorMessage())")
+            }
+        }
+        dAction.backgroundColor = UIColor.redColor()
+        return [dAction, editAction]
+    }
+
 
     
     // MARK: - Navigation
@@ -241,11 +253,13 @@ class EventsViewController: UITableViewController {
         
         if (segue.identifier == "EventDetails") {
             
+            var iPath: NSIndexPath = tableView.indexPathForSelectedRow()!
             // initialize new view controller and cast it as your view controller
             var devc = segue.destinationViewController as DetailsEventViewController
             // your new view controller should have property that will store passed value
-            devc.nameEvent = nameEvent
-            devc.dateTimeEvent = dateEvent
+            
+            var e = self.events[iPath.row]
+            devc.event = e
         }
     }
 
