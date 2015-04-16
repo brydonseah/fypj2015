@@ -8,14 +8,17 @@
 
 import UIKit
 
-class DetailsEventViewController: UIViewController {
+class DetailsEventViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet var dateTimeTextField: UITextField!
     @IBOutlet var eventNameTextField: UITextField!
-    @IBOutlet var dateTimeLabel: UILabel!
+    
     
     var event: Event!
     var databasePath = NSString()
     var idNum: Int32!
+    var datePickerView:UIDatePicker!
+    var inputDateView:UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,10 +33,11 @@ class DetailsEventViewController: UIViewController {
         let contactDB = FMDatabase(path: databasePath)
         
         databasePath = docsDir.stringByAppendingPathComponent(
-            "fypj2015.db")
+            "fypj_2015")
 
        eventNameTextField.text = event.title
-       dateTimeLabel.text = event.date
+       dateTimeTextField.text = event.date
+  
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,7 +49,7 @@ class DetailsEventViewController: UIViewController {
         
         //println("method called")
         var eTitle = eventNameTextField.text
-        var eDate = self.event.date
+        var eDate = dateTimeTextField.text
         var eId = self.event.id
         
         let contactDB = FMDatabase(path: databasePath)
@@ -70,7 +74,44 @@ class DetailsEventViewController: UIViewController {
         self.performSegueWithIdentifier("UpdateEventDetail", sender: self)
     }
     
-    // MARK: - Navigation
+    @IBAction func textFieldEditing(sender: UITextField) {
+        
+        inputDateView = UIView(frame: CGRectMake(0, 0, self.view.frame.width, 240))
+        
+        datePickerView = UIDatePicker(frame: CGRectMake(160, 40, 0, 0))
+        inputDateView.addSubview(datePickerView) // add date picker to UIView
+        
+        let doneButton = UIButton(frame: CGRectMake((self.view.frame.size.width/2) - (100/2), 0, 100, 50))
+        doneButton.setTitle("Done", forState: UIControlState.Normal)
+        doneButton.setTitle("Done", forState: UIControlState.Highlighted)
+        doneButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+        doneButton.setTitleColor(UIColor.grayColor(), forState: UIControlState.Highlighted)
+        
+        inputDateView.addSubview(doneButton) // add Button to UIView
+        
+        doneButton.addTarget(self, action: "doneButton:", forControlEvents: UIControlEvents.TouchUpInside) // set button click event
+        
+        sender.inputView = inputDateView
+        
+    }
+    
+    func dateChanged(sender: UIDatePicker) {
+        var formatDate = NSDateFormatter()
+        formatDate.dateFormat = "dd-MM-yyyy hh:mm:aa"
+        dateTimeTextField.text = formatDate.stringFromDate(sender.date)
+    }
+    
+    func doneButton(sender:UIButton!)
+    {
+        println("done button done")
+        dateChanged(datePickerView)
+        dateTimeTextField.resignFirstResponder()
+        
+    }
+
+    
+    
+      // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -78,7 +119,7 @@ class DetailsEventViewController: UIViewController {
             var vc = segue.destinationViewController as EventsViewController
             vc.eventUpdate = event
             eventNameTextField.text = ""
-            dateTimeLabel.text = "" 
+            dateTimeTextField.text = "" 
         }
         
             

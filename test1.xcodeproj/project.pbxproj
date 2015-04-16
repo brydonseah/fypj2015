@@ -24,6 +24,7 @@
 		86C9D8671AC009F600956C8B /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C9D8661AC009F600956C8B /* EventTableViewCell.swift */; };
 		86CE3E2F1AD79E0400EED2BA /* DetailsEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CE3E2E1AD79E0400EED2BA /* DetailsEventViewController.swift */; };
 		86E552A21AC544AE0011CB94 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E552A11AC544AE0011CB94 /* EventDetailsViewController.swift */; };
+		86F555B71ADF52FE00DE6019 /* DisableTextFieldProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F555B61ADF52FE00DE6019 /* DisableTextFieldProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		86C9D8661AC009F600956C8B /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		86CE3E2E1AD79E0400EED2BA /* DetailsEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsEventViewController.swift; sourceTree = "<group>"; };
 		86E552A11AC544AE0011CB94 /* EventDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
+		86F555B61ADF52FE00DE6019 /* DisableTextFieldProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisableTextFieldProperties.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				86C9D8621AC0060700956C8B /* Event.swift */,
 				86C9D8661AC009F600956C8B /* EventTableViewCell.swift */,
 				86CE3E2E1AD79E0400EED2BA /* DetailsEventViewController.swift */,
+				86F555B61ADF52FE00DE6019 /* DisableTextFieldProperties.swift */,
 			);
 			path = test1;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				86C9D8631AC0060700956C8B /* Event.swift in Sources */,
 				8670878F1ABFE32E00EAAF7B /* AppDelegate.swift in Sources */,
 				867E46151ACCEC290096E8AC /* FMDatabaseQueue.m in Sources */,
+				86F555B71ADF52FE00DE6019 /* DisableTextFieldProperties.swift in Sources */,
 				86E552A21AC544AE0011CB94 /* EventDetailsViewController.swift in Sources */,
 				867E46161ACCEC290096E8AC /* FMDatabaseAdditions.m in Sources */,
 				867E46141ACCEC290096E8AC /* FMResultSet.m in Sources */,

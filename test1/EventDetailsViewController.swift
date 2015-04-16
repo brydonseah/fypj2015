@@ -43,7 +43,7 @@ class EventDetailsViewController: UITableViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "SaveEventDetail" {
-            event = Event(title: self.eventTextField.text, date: self.datefield.text, id: 0)
+            event = Event(title: self.eventTextField.text, date: self.datefield.text, id: 0, code: 0)
         }
     }
     
@@ -77,12 +77,8 @@ class EventDetailsViewController: UITableViewController {
     func doneButton(sender:UIButton!)
     {
         println("done button done")
-        
         dateChanged(datePickerView)
-        
         datefield.resignFirstResponder()
-//        datePickerView.endEditing(true) // To resign the inputView on clicking done.
-        
         
     }
     

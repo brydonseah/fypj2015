@@ -19,6 +19,7 @@ class EventsViewController: UITableViewController {
     var event: Event!
     var eventUpdate: Event!
     var currentCell: EventTableViewCell!
+    var code = Int32()
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,12 +39,11 @@ class EventsViewController: UITableViewController {
         let contactDB = FMDatabase(path: databasePath)
         
         databasePath = docsDir.stringByAppendingPathComponent(
-            "fypj2015.db")
+            "fypj_2015")
         
         self.events = self.retrieveDataIntoArray()
         self.tableView.rowHeight = 121
         self.tableView.backgroundView = UIImageView(image: UIImage(named: "background"))
-      
     }
 
     override func didReceiveMemoryWarning() {
@@ -110,12 +110,14 @@ class EventsViewController: UITableViewController {
         
         //hide the detail view controller
         dismissViewControllerAnimated(true, completion: nil)
-       
+        
+            code = Int32(arc4random_uniform(9999))
+        
             let contactDB = FMDatabase(path: databasePath)
             
             if contactDB.open() {
                 
-                let insertSQL = "INSERT INTO EVENTS (name, datetime) VALUES ('\(eventDetailsViewController.eventTextField.text)', '\(eventDetailsViewController.datefield.text)')"
+                let insertSQL = "INSERT INTO EVENTS (name, datetime, code) VALUES ('\(eventDetailsViewController.eventTextField.text)', '\(eventDetailsViewController.datefield.text)',' \(code)')"
                 
                 let result = contactDB.executeUpdate(insertSQL,
                     withArgumentsInArray: nil)
@@ -128,7 +130,7 @@ class EventsViewController: UITableViewController {
                     println("added")
                     eventDetailsViewController.eventTextField.text = ""
                     eventDetailsViewController.datefield.text = ""
-                   
+                    self.events = self.retrieveDataIntoArray()
                 }
             } else {
                 
@@ -151,9 +153,11 @@ class EventsViewController: UITableViewController {
                 var name:String! = results?.stringForColumn("name")
                 var datetime:String! = results?.stringForColumn("datetime")
                 var idNum:Int32! = results?.intForColumn("ID")
+                var codeNum:Int32! = results?.intForColumn("Code")
                 id = idNum
+                code = codeNum
                 //println(idNum)
-                var event = Event(title: name, date: datetime, id: idNum)
+                var event = Event(title: name, date: datetime, id: idNum, code:codeNum)
                 dataArray.append(event)
             }
             contactDB.close()
@@ -165,6 +169,10 @@ class EventsViewController: UITableViewController {
         }
         
         return dataArray
+    }
+    
+    func compareDate() {
+     
     }
 
 
@@ -185,8 +193,7 @@ class EventsViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         //CODE TO BE RUN ON CELL TOUCH
         //self.performSegueWithIdentifier("EventDetails", sender: indexPath)
-       
-        performSegueWithIdentifier("EventDetails", sender: self)
+        performSegueWithIdentifier("EventDetails", sender: indexPath)
     }
     
     /*
@@ -205,11 +212,11 @@ class EventsViewController: UITableViewController {
     */
     
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
-        var editAction = UITableViewRowAction(style: .Normal, title: "Edit") { (action, indexPath)  -> Void in
-            tableView.editing = false
-            println("Edit")
-        }
-        editAction.backgroundColor = UIColor.grayColor()
+//        var editAction = UITableViewRowAction(style: .Normal, title: "Edit") { (action, indexPath)  -> Void in
+//            tableView.editing = false
+//            self.performSegueWithIdentifier("EventDetails", sender: indexPath)
+//        }
+//        editAction.backgroundColor = UIColor.grayColor()
         
         var dAction  = UITableViewRowAction(style: .Normal, title: "Delete") { (action, indexPath)  -> Void in
             tableView.editing = false
@@ -240,7 +247,7 @@ class EventsViewController: UITableViewController {
             }
         }
         dAction.backgroundColor = UIColor.redColor()
-        return [dAction, editAction]
+        return [dAction]
     }
 
 
@@ -253,7 +260,7 @@ class EventsViewController: UITableViewController {
         
         if (segue.identifier == "EventDetails") {
             
-            var iPath: NSIndexPath = tableView.indexPathForSelectedRow()!
+            var iPath: NSIndexPath = sender as NSIndexPath
             // initialize new view controller and cast it as your view controller
             var devc = segue.destinationViewController as DetailsEventViewController
             // your new view controller should have property that will store passed value
@@ -261,6 +268,7 @@ class EventsViewController: UITableViewController {
             var e = self.events[iPath.row]
             devc.event = e
         }
+       
     }
 
 

@@ -26,27 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let docsDir = dirPaths[0] as String
         
         databasePath = docsDir.stringByAppendingPathComponent(
-            "fypj2015.db")
-        
-        if !filemgr.fileExistsAtPath(databasePath) {
-            
-            let fypj2015 = FMDatabase(path: databasePath)
-            
-            if fypj2015 == nil {
-                println("Error: \(fypj2015.lastErrorMessage())")
-            }
-            
-            if fypj2015.open() {
-                let sql_stmt = "CREATE TABLE IF NOT EXISTS EVENTS (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT, DATETIME TEXT)"
-                if !fypj2015.executeStatements(sql_stmt) {
-                    println("Error: \(fypj2015.lastErrorMessage())")
-                }
-                fypj2015.close()
-            } else {
-                println("Error: \(fypj2015.lastErrorMessage())")
-            }
-        }
-        
+            "fypj_2015")
+                
         return true
     }
 
