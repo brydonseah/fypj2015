@@ -23,10 +23,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NSSearchPathForDirectoriesInDomains(.DocumentDirectory,
             .UserDomainMask, true)
         
-        let docsDir = dirPaths[0] as String
+        let docsDir = dirPaths[0] as! String
         
         databasePath = docsDir.stringByAppendingPathComponent(
-            "fypj_2015")
+            "fypj_2015.db")
                 
         return true
     }

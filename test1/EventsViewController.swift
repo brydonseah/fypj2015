@@ -20,6 +20,10 @@ class EventsViewController: UITableViewController {
     var eventUpdate: Event!
     var currentCell: EventTableViewCell!
     var code = Int32()
+    var dateFormatter = NSDateFormatter()
+    var eventDate = NSDate()
+    
+    
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,15 +39,17 @@ class EventsViewController: UITableViewController {
         NSSearchPathForDirectoriesInDomains(.DocumentDirectory,
             .UserDomainMask, true)
         
-        let docsDir = dirPaths[0] as String
-        let contactDB = FMDatabase(path: databasePath)
+        let docsDir = dirPaths[0] as! String
+        let contactDB = FMDatabase(path: databasePath as String)
         
         databasePath = docsDir.stringByAppendingPathComponent(
-            "fypj_2015")
+            "fypj_2015.db")
         
         self.events = self.retrieveDataIntoArray()
         self.tableView.rowHeight = 121
         self.tableView.backgroundView = UIImageView(image: UIImage(named: "background"))
+        
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -66,20 +72,27 @@ class EventsViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("EventCell", forIndexPath: indexPath) as EventTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("EventCell", forIndexPath: indexPath) as! EventTableViewCell
         self.event = self.events[indexPath.row] as Event
         cell.titleLabel.text = event.title
         cell.dateLabel.text = event.date
-        
-//        if(indexPath.row % 2 == 0){
-//            cell.backgroundColor = UIColor.clearColor()
-//        } else {
-//            cell.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.2)
-//            cell.textLabel?.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.0)
-//            cell.detailTextLabel?.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.0)
-//        }
-        
         // Configure the cell...
+    
+        var cDate = NSDate()
+        var formatDate = NSDateFormatter()
+        formatDate.dateFormat = "dd-MM-yyyy hh:mm:aa"
+        var eventDateDate = formatDate.dateFromString(event.date)
+        
+        if eventDateDate?.compare(cDate) == NSComparisonResult.OrderedDescending {
+        
+            cell.titleLabel.textColor = UIColor.redColor()
+            println("Earlier")
+        }
+        else if eventDateDate?.compare(cDate) == NSComparisonResult.OrderedAscending {
+            
+            cell.titleLabel.textColor = UIColor.purpleColor()
+            println("OKAY")
+        }
 
         return cell
     }
@@ -98,7 +111,7 @@ class EventsViewController: UITableViewController {
     }
     
     @IBAction func saveEventDetail(segue:UIStoryboardSegue) {
-        let eventDetailsViewController = segue.sourceViewController as EventDetailsViewController
+        let eventDetailsViewController = segue.sourceViewController as! EventDetailsViewController
         
         //add the new event to the events array
         events.append(eventDetailsViewController.event)
@@ -113,7 +126,7 @@ class EventsViewController: UITableViewController {
         
             code = Int32(arc4random_uniform(9999))
         
-            let contactDB = FMDatabase(path: databasePath)
+            let contactDB = FMDatabase(path: databasePath as String)
             
             if contactDB.open() {
                 
@@ -139,7 +152,7 @@ class EventsViewController: UITableViewController {
     }
     
     func retrieveDataIntoArray() -> [Event]{
-        let contactDB = FMDatabase(path: databasePath)
+        let contactDB = FMDatabase(path: databasePath as String)
         var dataArray : [Event] = []
         
         if contactDB.open() {
@@ -225,7 +238,7 @@ class EventsViewController: UITableViewController {
             // Delete the row from the data source
             self.events.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
-            let contactDB = FMDatabase(path: self.databasePath)
+            let contactDB = FMDatabase(path: self.databasePath as String)
             
             if contactDB.open() {
                 
@@ -250,6 +263,7 @@ class EventsViewController: UITableViewController {
         return [dAction]
     }
 
+    
 
     
     // MARK: - Navigation
@@ -260,9 +274,9 @@ class EventsViewController: UITableViewController {
         
         if (segue.identifier == "EventDetails") {
             
-            var iPath: NSIndexPath = sender as NSIndexPath
+            var iPath: NSIndexPath = sender as! NSIndexPath
             // initialize new view controller and cast it as your view controller
-            var devc = segue.destinationViewController as DetailsEventViewController
+            var devc = segue.destinationViewController as! DetailsEventViewController
             // your new view controller should have property that will store passed value
             
             var e = self.events[iPath.row]

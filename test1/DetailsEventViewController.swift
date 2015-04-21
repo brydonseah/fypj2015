@@ -29,11 +29,11 @@ class DetailsEventViewController: UIViewController, UITextFieldDelegate {
         NSSearchPathForDirectoriesInDomains(.DocumentDirectory,
             .UserDomainMask, true)
         
-        let docsDir = dirPaths[0] as String
-        let contactDB = FMDatabase(path: databasePath)
+        let docsDir = dirPaths[0] as! String
+        let contactDB = FMDatabase(path: databasePath as String)
         
         databasePath = docsDir.stringByAppendingPathComponent(
-            "fypj_2015")
+            "fypj_2015.db")
 
        eventNameTextField.text = event.title
        dateTimeTextField.text = event.date
@@ -52,7 +52,7 @@ class DetailsEventViewController: UIViewController, UITextFieldDelegate {
         var eDate = dateTimeTextField.text
         var eId = self.event.id
         
-        let contactDB = FMDatabase(path: databasePath)
+        let contactDB = FMDatabase(path: databasePath as String)
         
         if contactDB.open() {
             
@@ -106,7 +106,6 @@ class DetailsEventViewController: UIViewController, UITextFieldDelegate {
         println("done button done")
         dateChanged(datePickerView)
         dateTimeTextField.resignFirstResponder()
-        
     }
 
     
@@ -116,7 +115,7 @@ class DetailsEventViewController: UIViewController, UITextFieldDelegate {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "UpdateEventDetail" {
-            var vc = segue.destinationViewController as EventsViewController
+            var vc = segue.destinationViewController as! EventsViewController
             vc.eventUpdate = event
             eventNameTextField.text = ""
             dateTimeTextField.text = "" 
