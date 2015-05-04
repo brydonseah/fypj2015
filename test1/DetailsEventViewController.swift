@@ -57,7 +57,7 @@ class DetailsEventViewController: UIViewController, UITextFieldDelegate {
         if contactDB.open() {
             
             var updateSQL = "UPDATE EVENTS SET NAME ='" + eTitle + "', DATETIME ='" + eDate
-            updateSQL += "' WHERE ID = " + eId.description
+            updateSQL += "' WHERE ID = " + eId
             
             //println(eId.description)
             let result = contactDB.executeUpdate(updateSQL,

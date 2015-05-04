@@ -10,17 +10,9 @@ import Foundation
 import UIKit
 
 class Event: NSObject {
-    var title: String
-    var date: String
-    var id: Int32
-    var code: Int32
+    var title: String = ""
+    var date: String = ""
+    var id: String = ""
+    var code: String = ""
     
-    init(title: String, date: String, id: Int32, code: Int32) {
-        
-        self.title = title
-        self.date = date
-        self.id = id
-        self.code = code
-        super.init()
     }
-}

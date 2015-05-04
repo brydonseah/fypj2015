@@ -13,16 +13,17 @@ class EventsViewController: UITableViewController {
     
     var events: [Event] = []
     var databasePath = NSString()
-    var id =  Int32()
+    var id =  String()
+    var code = String()
     var nameEvent = String()
     var dateEvent = String()
     var event: Event!
     var eventUpdate: Event!
     var currentCell: EventTableViewCell!
-    var code = Int32()
+    
     var dateFormatter = NSDateFormatter()
     var eventDate = NSDate()
-    
+    var myArray: [NSDictionary] = []
     
         
     override func viewDidLoad() {
@@ -48,7 +49,7 @@ class EventsViewController: UITableViewController {
         self.events = self.retrieveDataIntoArray()
         self.tableView.rowHeight = 121
         self.tableView.backgroundView = UIImageView(image: UIImage(named: "background"))
-        
+        self.register()
 
     }
 
@@ -111,10 +112,17 @@ class EventsViewController: UITableViewController {
     }
     
     @IBAction func saveEventDetail(segue:UIStoryboardSegue) {
+        
         let eventDetailsViewController = segue.sourceViewController as! EventDetailsViewController
         
+        var ref = Firebase(url: "https://fypjquest2015.firebaseio.com/")
+        let postRef = ref.childByAppendingPath("activities")
+        let post1 = ["name": "\(eventDetailsViewController.eventTextField.text)", "datetime": "\(eventDetailsViewController.datefield.text)", "code": "\(code)"]
+        let post1Ref = postRef.childByAutoId()
+        post1Ref.setValue(post1)
+
         //add the new event to the events array
-        events.append(eventDetailsViewController.event)
+        events.append(eventDetailsViewController.e)
         
         //update the tableView
         let indexPath = NSIndexPath(forRow: events.count-1, inSection: 0)
@@ -124,7 +132,7 @@ class EventsViewController: UITableViewController {
         //hide the detail view controller
         dismissViewControllerAnimated(true, completion: nil)
         
-            code = Int32(arc4random_uniform(9999))
+            code = String(arc4random_uniform(9999))
         
             let contactDB = FMDatabase(path: databasePath as String)
             
@@ -165,12 +173,16 @@ class EventsViewController: UITableViewController {
                 
                 var name:String! = results?.stringForColumn("name")
                 var datetime:String! = results?.stringForColumn("datetime")
-                var idNum:Int32! = results?.intForColumn("ID")
-                var codeNum:Int32! = results?.intForColumn("Code")
+                var idNum:String! = results?.stringForColumn("ID")
+                var codeNum:String! = results?.stringForColumn("Code")
                 id = idNum
                 code = codeNum
                 //println(idNum)
-                var event = Event(title: name, date: datetime, id: idNum, code:codeNum)
+                var event = Event()
+                event.title = name
+                event.date = datetime
+                event.id = idNum
+                event.code = codeNum as String!
                 dataArray.append(event)
             }
             contactDB.close()
@@ -184,9 +196,19 @@ class EventsViewController: UITableViewController {
         return dataArray
     }
     
-    func compareDate() {
-     
+    func register() {
+        var ref = Firebase(url: "https://fypjquest2015.firebaseio.com/activities")
+        ref.observeEventType(.Value, withBlock: {
+            snapshot in
+            if let i = snapshot.value as? NSDictionary {
+                for item in i{
+                    self.myArray.append(i)
+                    println(self.myArray.count)
+                }
+            }
+        })
     }
+
 
 
     /*

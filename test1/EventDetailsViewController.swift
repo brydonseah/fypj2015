@@ -18,6 +18,7 @@ class EventDetailsViewController: UITableViewController {
     var id =  Int32()
     var events: [Event] = []
     @IBOutlet var doneButton: UIBarButtonItem!
+    var e = Event()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +44,8 @@ class EventDetailsViewController: UITableViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "SaveEventDetail" {
-            event = Event(title: self.eventTextField.text, date: self.datefield.text, id: 0, code: 0)
+            e.title = self.eventTextField.text
+            e.date = self.datefield.text
         }
     }
     
