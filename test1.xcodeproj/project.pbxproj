@@ -12,6 +12,10 @@
 		862262651AF754EF00C46B0D /* StudentResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862262601AF754EF00C46B0D /* StudentResultsViewController.swift */; };
 		862262661AF754EF00C46B0D /* StudentQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862262611AF754EF00C46B0D /* StudentQuizViewController.swift */; };
 		862262671AF754EF00C46B0D /* ImageCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862262621AF754EF00C46B0D /* ImageCameraViewController.swift */; };
+		865D242A1AF9E9C90097AE35 /* login2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 865D24271AF9E9C90097AE35 /* login2.jpg */; };
+		865D242B1AF9E9C90097AE35 /* teacher.png in Resources */ = {isa = PBXBuildFile; fileRef = 865D24281AF9E9C90097AE35 /* teacher.png */; };
+		865D242E1AF9E9DF0097AE35 /* Tini.png in Resources */ = {isa = PBXBuildFile; fileRef = 865D242D1AF9E9DF0097AE35 /* Tini.png */; };
+		865D24301AF9EA6D0097AE35 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865D242F1AF9EA6D0097AE35 /* LoginViewController.swift */; };
 		8670878F1ABFE32E00EAAF7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8670878E1ABFE32E00EAAF7B /* AppDelegate.swift */; };
 		867087941ABFE32E00EAAF7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 867087921ABFE32E00EAAF7B /* Main.storyboard */; };
 		867087961ABFE32E00EAAF7B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 867087951ABFE32E00EAAF7B /* Images.xcassets */; };
@@ -59,6 +63,10 @@
 		862262601AF754EF00C46B0D /* StudentResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentResultsViewController.swift; sourceTree = "<group>"; };
 		862262611AF754EF00C46B0D /* StudentQuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentQuizViewController.swift; sourceTree = "<group>"; };
 		862262621AF754EF00C46B0D /* ImageCameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCameraViewController.swift; sourceTree = "<group>"; };
+		865D24271AF9E9C90097AE35 /* login2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = login2.jpg; sourceTree = "<group>"; };
+		865D24281AF9E9C90097AE35 /* teacher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teacher.png; sourceTree = "<group>"; };
+		865D242D1AF9E9DF0097AE35 /* Tini.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tini.png; sourceTree = "<group>"; };
+		865D242F1AF9EA6D0097AE35 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		867087891ABFE32E00EAAF7B /* test1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8670878D1ABFE32E00EAAF7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8670878E1ABFE32E00EAAF7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -156,19 +164,25 @@
 		8670878B1ABFE32E00EAAF7B /* test1 */ = {
 			isa = PBXGroup;
 			children = (
+				865D242F1AF9EA6D0097AE35 /* LoginViewController.swift */,
 				867087AE1ABFED3B00EAAF7B /* EventsViewController.swift */,
 				8670878E1ABFE32E00EAAF7B /* AppDelegate.swift */,
 				867087921ABFE32E00EAAF7B /* Main.storyboard */,
+				865D242D1AF9E9DF0097AE35 /* Tini.png */,
+				865D24281AF9E9C90097AE35 /* teacher.png */,
+				865D24271AF9E9C90097AE35 /* login2.jpg */,
 				867087951ABFE32E00EAAF7B /* Images.xcassets */,
 				86E552A11AC544AE0011CB94 /* EventDetailsViewController.swift */,
 				867087971ABFE32E00EAAF7B /* LaunchScreen.xib */,
-				86C9D8621AC0060700956C8B /* Event.swift */,
 				86CE3E2E1AD79E0400EED2BA /* DetailsEventViewController.swift */,
 				86DA79B51AF76F4F0066F0C2 /* ClassPickerTableViewController.swift */,
-				86DA79B71AF76F5A0066F0C2 /* Student.swift */,
 				86DA79B81AF76F5A0066F0C2 /* StudentDetailsTableViewController.swift */,
 				86DA79B91AF76F5A0066F0C2 /* StudentsTableViewController.swift */,
 				86DA79BA1AF76F5A0066F0C2 /* UpdateStudentsViewController.swift */,
+				862262611AF754EF00C46B0D /* StudentQuizViewController.swift */,
+				8622625F1AF754EF00C46B0D /* StudentMainViewController.swift */,
+				862262621AF754EF00C46B0D /* ImageCameraViewController.swift */,
+				862262601AF754EF00C46B0D /* StudentResultsViewController.swift */,
 				8670878C1ABFE32E00EAAF7B /* Supporting Files */,
 			);
 			path = test1;
@@ -178,12 +192,10 @@
 			isa = PBXGroup;
 			children = (
 				86F555B61ADF52FE00DE6019 /* DisableTextFieldProperties.swift */,
+				86DA79B71AF76F5A0066F0C2 /* Student.swift */,
+				86C9D8621AC0060700956C8B /* Event.swift */,
 				86C9D8661AC009F600956C8B /* EventTableViewCell.swift */,
 				8622625E1AF754EF00C46B0D /* TransitionManager.swift */,
-				8622625F1AF754EF00C46B0D /* StudentMainViewController.swift */,
-				862262601AF754EF00C46B0D /* StudentResultsViewController.swift */,
-				862262611AF754EF00C46B0D /* StudentQuizViewController.swift */,
-				862262621AF754EF00C46B0D /* ImageCameraViewController.swift */,
 				867E46081ACCEC290096E8AC /* FMDB.h */,
 				867E46091ACCEC290096E8AC /* FMDatabase.h */,
 				867E460A1ACCEC290096E8AC /* FMDatabase.m */,
@@ -298,7 +310,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				865D242B1AF9E9C90097AE35 /* teacher.png in Resources */,
+				865D242A1AF9E9C90097AE35 /* login2.jpg in Resources */,
 				867087941ABFE32E00EAAF7B /* Main.storyboard in Resources */,
+				865D242E1AF9E9DF0097AE35 /* Tini.png in Resources */,
 				867087991ABFE32E00EAAF7B /* LaunchScreen.xib in Resources */,
 				867087961ABFE32E00EAAF7B /* Images.xcassets in Resources */,
 			);
@@ -321,6 +336,7 @@
 				86CE3E2F1AD79E0400EED2BA /* DetailsEventViewController.swift in Sources */,
 				86C9D8671AC009F600956C8B /* EventTableViewCell.swift in Sources */,
 				867E46171ACCEC290096E8AC /* FMDatabasePool.m in Sources */,
+				865D24301AF9EA6D0097AE35 /* LoginViewController.swift in Sources */,
 				86DA79BE1AF76F5A0066F0C2 /* UpdateStudentsViewController.swift in Sources */,
 				862262671AF754EF00C46B0D /* ImageCameraViewController.swift in Sources */,
 				862262631AF754EF00C46B0D /* TransitionManager.swift in Sources */,

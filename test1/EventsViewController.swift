@@ -12,6 +12,7 @@ class EventsViewController: UITableViewController {
 
     
     var events: [Event] = []
+    var dataArray: [Event] = []
     var databasePath = NSString()
     var id =  String()
     var code = String()
@@ -25,7 +26,7 @@ class EventsViewController: UITableViewController {
     var eventDate = NSDate()
     var myArray: [NSDictionary] = []
     
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,6 +35,8 @@ class EventsViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
          // self.navigationItem.leftBarButtonItem = self.editButtonItem()
+        
+        
         
         let filemgr = NSFileManager.defaultManager()
         let dirPaths =
@@ -46,10 +49,12 @@ class EventsViewController: UITableViewController {
         databasePath = docsDir.stringByAppendingPathComponent(
             "fypj_2015.db")
         
-        self.events = self.retrieveDataIntoArray()
+//        self.events = self.retrieveDataIntoArray()
         self.tableView.rowHeight = 121
         self.tableView.backgroundView = UIImageView(image: UIImage(named: "background"))
-        self.register()
+
+        println("hahaha")
+        self.tableView.reloadData()
 
     }
 
@@ -57,7 +62,7 @@ class EventsViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -69,14 +74,22 @@ class EventsViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return events.count
+        return self.dataArray.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        println("hello")
+        
         let cell = tableView.dequeueReusableCellWithIdentifier("EventCell", forIndexPath: indexPath) as! EventTableViewCell
-        self.event = self.events[indexPath.row] as Event
+  
+        self.event = self.dataArray[indexPath.row] as Event
+        
+        println(event.title)
         cell.titleLabel.text = event.title
         cell.dateLabel.text = event.date
+        
+//        self.cellForRowAtIndexPath(indexPath)
+
         // Configure the cell...
     
         var cDate = NSDate()
@@ -94,9 +107,43 @@ class EventsViewController: UITableViewController {
             cell.titleLabel.textColor = UIColor.purpleColor()
             println("OKAY")
         }
-
+//        let cell = self.cellForRowAtIndexPath(self.myArray, indexPath: indexPath)
         return cell
     }
+    
+//    func cellForRowAtIndexPath(dataA: [NSDictionary], indexPath: NSIndexPath) -> UITableViewCell?{
+//        
+//        let cell = tableView.dequeueReusableCellWithIdentifier("EventCell", forIndexPath: indexPath) as! EventTableViewCell
+//        if (dataA.count < 1){
+//            return nil
+//        } else {
+//            let object: NSDictionary = dataA[0]
+//            println(object["name"])
+//            cell.titleLabel.text = object["name"] as? String
+//            cell.dateLabel.text = object["datetime"] as? String
+//        return cell
+//        }
+//    }
+    
+//    func register() {
+//        var ref = Firebase(url: "https://fypjquest2015.firebaseio.com/activities")
+//        ref.observeEventType(.Value, withBlock: {
+//            snapshot in
+//            if let i = snapshot.value as? NSDictionary {
+//                for item in i{
+//                    if let value = item.value as? NSDictionary {
+//                        var e = Event()
+//                        e.title = value["name"] as! String
+//                        e.date = value["datetime"] as! String
+//                        e.code = value["code"] as! String
+//                        self.events.append(e)
+//                        println(e.title)
+//                        println(self.events.count)
+//                    }
+//                }
+//            }
+//        })
+//    }
     
     @IBAction func unwindEventDetail(segue:UIStoryboardSegue){
         
@@ -196,19 +243,7 @@ class EventsViewController: UITableViewController {
         return dataArray
     }
     
-    func register() {
-        var ref = Firebase(url: "https://fypjquest2015.firebaseio.com/activities")
-        ref.observeEventType(.Value, withBlock: {
-            snapshot in
-            if let i = snapshot.value as? NSDictionary {
-                for item in i{
-                    self.myArray.append(i)
-                    println(self.myArray.count)
-                }
-            }
-        })
-    }
-
+    
 
 
     /*
@@ -222,7 +257,7 @@ class EventsViewController: UITableViewController {
     
     // Override to support editing the table view.
      override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-            }
+        }
     
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

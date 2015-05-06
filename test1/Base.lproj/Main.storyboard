@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C109" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="TxR-ur-u0B">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C109" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="rRs-Xk-AMc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
@@ -64,11 +64,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sgw-FH-EEl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3902" y="1072"/>
+            <point key="canvasLocation" x="5862" y="1072"/>
         </scene>
         <!--Event-->
         <scene sceneID="4N5-MA-0Qf">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pen-mM-POc" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="PRD-vX-xGZ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Event" image="1427808579_calendar-32" id="APX-xv-tAZ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kvJ-1M-zlF">
@@ -79,9 +80,8 @@
                         <segue destination="Rw8-JN-s1i" kind="relationship" relationship="rootViewController" id="ETB-Ab-Jdm"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pen-mM-POc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2914" y="1072"/>
+            <point key="canvasLocation" x="4874" y="1072"/>
         </scene>
         <!--Add Event-->
         <scene sceneID="NWD-EQ-K9q">
@@ -164,7 +164,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vHD-fu-2ed" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="cTf-Kh-exx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="5931" y="981"/>
+            <point key="canvasLocation" x="7891" y="981"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="R3q-YO-mTA">
@@ -186,6 +186,7 @@
         <scene sceneID="Q1g-RC-fc5">
             <objects>
                 <tabBarController id="TxR-ur-u0B" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="ZFP-Ga-whr"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Xgw-bh-zTG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
@@ -199,38 +200,21 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ohS-5f-Sk1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1989" y="1915"/>
+            <point key="canvasLocation" x="3949" y="1915"/>
         </scene>
-        <!--Students-->
-        <scene sceneID="NBY-26-4tH">
+        <!--View Controller-->
+        <scene sceneID="t7S-uw-h6H">
             <objects>
-                <tableViewController id="lnN-Y9-aLv" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="GVN-WE-Fos">
+                <viewController id="QEf-s5-FEA" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Iit-g8-cZZ">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="z4X-JE-grF">
-                                <rect key="frame" x="0.0" y="22" width="768" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z4X-JE-grF" id="BW0-Pf-RMH">
-                                    <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="lnN-Y9-aLv" id="a7V-LZ-umt"/>
-                            <outlet property="delegate" destination="lnN-Y9-aLv" id="HD4-bp-XEw"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Students" id="uhF-6R-m3a">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="5Vg-OX-oz9"/>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vh6-cA-O6v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IzO-Ez-VvD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3646" y="5604"/>
+            <point key="canvasLocation" x="3657" y="2987"/>
         </scene>
         <!--Details Event View Controller-->
         <scene sceneID="fl0-51-WMp">
@@ -294,7 +278,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ggF-dM-0As" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Enf-SE-c8u" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="5041" y="1788"/>
+            <point key="canvasLocation" x="7001" y="1788"/>
         </scene>
         <!--Student Main View Controller-->
         <scene sceneID="KAF-B4-hL8">
@@ -543,7 +527,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ssx-e4-hqs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4748" y="2824"/>
+            <point key="canvasLocation" x="6708" y="2824"/>
         </scene>
         <!--Add Student-->
         <scene sceneID="HZ2-Nl-KgM">
@@ -770,14 +754,88 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qTO-7i-FTx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2936" y="2908"/>
+            <point key="canvasLocation" x="4896" y="2908"/>
+        </scene>
+        <!--initial-->
+        <scene sceneID="vRy-h7-XUV">
+            <objects>
+                <viewController title="initial" id="qik-yC-0n0" customClass="LoginViewController" customModule="test1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fQF-GX-Pyn">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login2.jpg" id="e3l-2L-qNa">
+                                <rect key="frame" x="0.0" y="20" width="768" height="1024"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gM3-1z-N44">
+                                <rect key="frame" x="434" y="381" width="245" height="300"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="teacher.png">
+                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="TxR-ur-u0B" kind="push" identifier="Teacher" id="Cua-Eh-GlW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Tpj-xi-ODx">
+                                <rect key="frame" x="77" y="381" width="237" height="300"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Tini.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teacher" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PZr-i0-cmk">
+                                <rect key="frame" x="499" y="714" width="135" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1I4-NC-Tp7">
+                                <rect key="frame" x="129" y="714" width="143" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Td1-3S-9PR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JrZ-tR-k4n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2814" y="1915"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Jxo-GZ-o6e">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="rRs-Xk-AMc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bEa-Qg-KSW">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qik-yC-0n0" kind="relationship" relationship="rootViewController" id="esu-6b-6em"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8x6-G2-f9U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1834" y="1915"/>
         </scene>
     </scenes>
     <resources>
         <image name="1427808468_student-32" width="32" height="32"/>
         <image name="1427808579_calendar-32" width="32" height="32"/>
+        <image name="Tini.png" width="182" height="300"/>
         <image name="chernoe_derevo" width="2580" height="1434"/>
+        <image name="login2.jpg" width="2560" height="1600"/>
         <image name="math symbol1" width="2580" height="1434"/>
+        <image name="teacher.png" width="182" height="300"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

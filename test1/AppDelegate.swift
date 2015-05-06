@@ -13,21 +13,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    var databasePath = NSString()
-
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        
-        let filemgr = NSFileManager.defaultManager()
-        let dirPaths =
-        NSSearchPathForDirectoriesInDomains(.DocumentDirectory,
-            .UserDomainMask, true)
-        
-        let docsDir = dirPaths[0] as! String
-        
-        databasePath = docsDir.stringByAppendingPathComponent(
-            "fypj_2015.db")
-                
         return true
     }
 
