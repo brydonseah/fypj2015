@@ -52,7 +52,6 @@ class EventsViewController: UITableViewController {
 //        self.events = self.retrieveDataIntoArray()
         self.tableView.rowHeight = 121
         self.tableView.backgroundView!.alpha = 0.3 // = UIColor.blackColor().colorWithAlphaComponent(0.3)
-        
         self.tableView.backgroundView = UIImageView(image: UIImage(named: "projimg"))
         println("hahaha")
         self.tableView.reloadData()
