@@ -41,7 +41,7 @@ class UpdateStudentsViewController: UIViewController, UITextFieldDelegate {
     
         self.imageView.alpha = 0.3 // = UIColor.blackColor().colorWithAlphaComponent(0.3)
     
-        self.imageView.image = UIImage(named:"GreenImg")
+        self.imageView.image = UIImage(named:"projimg")
         //imageView.setbgImageColor(onePixelImageWithColor(bgImageColor))
         
         
