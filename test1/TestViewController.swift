@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  TestViewController.swift
 //  test1
 //
 //  Created by fypjadmin on 6/5/15.
@@ -8,13 +8,13 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class TestViewController: UIViewController {
 
     var dataArray: [Event] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.retrieve()
+     self.retrieve()
         // Do any additional setup after loading the view.
     }
 
@@ -41,8 +41,9 @@ class LoginViewController: UIViewController {
                 }
             }
         })
-        
+
     }
+    
 
     
     // MARK: - Navigation
@@ -51,20 +52,14 @@ class LoginViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if (segue.identifier == "Teacher") {
-            // initialize new view controller and cast it as your view controller
-           println(self.dataArray.count)
-            let tab: UITabBarController = segue.destinationViewController as! UITabBarController
-            let nav: UINavigationController = tab.viewControllers?.first as! UINavigationController
-            let evc: EventsViewController = nav.viewControllers?.first as! EventsViewController
+        if(segue.identifier == "push"){
+        let evc = segue.destinationViewController as! TestTableViewController
             if(self.dataArray.count == 0){
-            println("NO data")
-            // your new view controller should have property that will store passed value
+                println("nothing")
             } else {
-                println(self.dataArray.count)
-                evc.dataArray = self.dataArray
+                evc.events = self.dataArray
             }
-        }
+      }
     }
 
 

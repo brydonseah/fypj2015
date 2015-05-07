@@ -16,6 +16,8 @@
 		865D242B1AF9E9C90097AE35 /* teacher.png in Resources */ = {isa = PBXBuildFile; fileRef = 865D24281AF9E9C90097AE35 /* teacher.png */; };
 		865D242E1AF9E9DF0097AE35 /* Tini.png in Resources */ = {isa = PBXBuildFile; fileRef = 865D242D1AF9E9DF0097AE35 /* Tini.png */; };
 		865D24301AF9EA6D0097AE35 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865D242F1AF9EA6D0097AE35 /* LoginViewController.swift */; };
+		865D24321AFA164D0097AE35 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865D24311AFA164D0097AE35 /* TestViewController.swift */; };
+		865D24341AFA174C0097AE35 /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865D24331AFA174C0097AE35 /* TestTableViewController.swift */; };
 		8670878F1ABFE32E00EAAF7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8670878E1ABFE32E00EAAF7B /* AppDelegate.swift */; };
 		867087941ABFE32E00EAAF7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 867087921ABFE32E00EAAF7B /* Main.storyboard */; };
 		867087961ABFE32E00EAAF7B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 867087951ABFE32E00EAAF7B /* Images.xcassets */; };
@@ -67,6 +69,8 @@
 		865D24281AF9E9C90097AE35 /* teacher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teacher.png; sourceTree = "<group>"; };
 		865D242D1AF9E9DF0097AE35 /* Tini.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tini.png; sourceTree = "<group>"; };
 		865D242F1AF9EA6D0097AE35 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		865D24311AFA164D0097AE35 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		865D24331AFA174C0097AE35 /* TestTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
 		867087891ABFE32E00EAAF7B /* test1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8670878D1ABFE32E00EAAF7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8670878E1ABFE32E00EAAF7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -184,6 +188,8 @@
 				862262621AF754EF00C46B0D /* ImageCameraViewController.swift */,
 				862262601AF754EF00C46B0D /* StudentResultsViewController.swift */,
 				8670878C1ABFE32E00EAAF7B /* Supporting Files */,
+				865D24311AFA164D0097AE35 /* TestViewController.swift */,
+				865D24331AFA174C0097AE35 /* TestTableViewController.swift */,
 			);
 			path = test1;
 			sourceTree = "<group>";
@@ -334,6 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86CE3E2F1AD79E0400EED2BA /* DetailsEventViewController.swift in Sources */,
+				865D24341AFA174C0097AE35 /* TestTableViewController.swift in Sources */,
 				86C9D8671AC009F600956C8B /* EventTableViewCell.swift in Sources */,
 				867E46171ACCEC290096E8AC /* FMDatabasePool.m in Sources */,
 				865D24301AF9EA6D0097AE35 /* LoginViewController.swift in Sources */,
@@ -343,6 +350,7 @@
 				86C9D8631AC0060700956C8B /* Event.swift in Sources */,
 				86DA79B61AF76F4F0066F0C2 /* ClassPickerTableViewController.swift in Sources */,
 				8670878F1ABFE32E00EAAF7B /* AppDelegate.swift in Sources */,
+				865D24321AFA164D0097AE35 /* TestViewController.swift in Sources */,
 				867E46151ACCEC290096E8AC /* FMDatabaseQueue.m in Sources */,
 				86F555B71ADF52FE00DE6019 /* DisableTextFieldProperties.swift in Sources */,
 				862262651AF754EF00C46B0D /* StudentResultsViewController.swift in Sources */,
