@@ -53,7 +53,6 @@ class LoginViewController: UIViewController {
         // Pass the selected object to the new view controller.
         if (segue.identifier == "Teacher") {
             // initialize new view controller and cast it as your view controller
-           println(self.dataArray.count)
             let tab: UITabBarController = segue.destinationViewController as! UITabBarController
             let nav: UINavigationController = tab.viewControllers?.first as! UINavigationController
             let evc: EventsViewController = nav.viewControllers?.first as! EventsViewController
@@ -61,7 +60,6 @@ class LoginViewController: UIViewController {
             println("NO data")
             // your new view controller should have property that will store passed value
             } else {
-                println(self.dataArray.count)
                 evc.dataArray = self.dataArray
             }
         }
