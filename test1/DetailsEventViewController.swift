@@ -47,6 +47,9 @@ class DetailsEventViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func updateEventDetails(){
         
+        
+        
+        
         //println("method called")
         var eTitle = eventNameTextField.text
         var eDate = dateTimeTextField.text

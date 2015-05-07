@@ -128,38 +128,38 @@ class EventsViewController: UITableViewController {
         let post1Ref = postRef.childByAutoId()
         post1Ref.setValue(post1)
         
-//        let filemgr = NSFileManager.defaultManager()
-//        let dirPaths =
-//        NSSearchPathForDirectoriesInDomains(.DocumentDirectory,
-//            .UserDomainMask, true)
-//        
-//        let docsDir = dirPaths[0] as! String
-//        
-//        databasePath = docsDir.stringByAppendingPathComponent(
-//            "fypj_2015.db")
-//
-//            let contactDB = FMDatabase(path: databasePath as String)
-//            if contactDB.open() {
-//                
-//                let insertSQL = "INSERT INTO EVENTS (name, datetime, code) VALUES ('\(eventDetailsViewController.eventTextField.text)', '\(eventDetailsViewController.datefield.text)',' \(code)')"
-//                
-//                let result = contactDB.executeUpdate(insertSQL,
-//                    withArgumentsInArray: nil)
-//              
-//                if !result {
-//                    println("failure")
-//                    println("Error: \(contactDB.lastErrorMessage())")
-//                }
-//                else {
-//                    println("added")
-//                    eventDetailsViewController.eventTextField.text = ""
-//                    eventDetailsViewController.datefield.text = ""
-//                    self.events = self.retrieveDataIntoArray()
-//                }
-//            } else {
-//                
-//                println("Error: \(contactDB.lastErrorMessage())")
-//        }
+        let filemgr = NSFileManager.defaultManager()
+        let dirPaths =
+        NSSearchPathForDirectoriesInDomains(.DocumentDirectory,
+            .UserDomainMask, true)
+        
+        let docsDir = dirPaths[0] as! String
+        
+        databasePath = docsDir.stringByAppendingPathComponent(
+            "fypj_2015.db")
+
+            let contactDB = FMDatabase(path: databasePath as String)
+            if contactDB.open() {
+                
+                let insertSQL = "INSERT INTO EVENTS (name, datetime, code) VALUES ('\(eventDetailsViewController.eventTextField.text)', '\(eventDetailsViewController.datefield.text)',' \(code)')"
+                
+                let result = contactDB.executeUpdate(insertSQL,
+                    withArgumentsInArray: nil)
+              
+                if !result {
+                    println("failure")
+                    println("Error: \(contactDB.lastErrorMessage())")
+                }
+                else {
+                    println("added")
+                    eventDetailsViewController.eventTextField.text = ""
+                    eventDetailsViewController.datefield.text = ""
+                    self.events = self.retrieveDataIntoArray()
+                }
+            } else {
+                
+                println("Error: \(contactDB.lastErrorMessage())")
+        }
     }
     
     func retrieveDataIntoArray() -> [Event]{

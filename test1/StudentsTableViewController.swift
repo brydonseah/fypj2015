@@ -44,7 +44,7 @@ class StudentsTableViewController: UITableViewController, UISearchBarDelegate, U
         let contactDB = FMDatabase(path: databasePath as String)
         
         databasePath = docsDir.stringByAppendingPathComponent(
-            "fypj_2015")
+            "fypj_2015.db")
         
         self.students = self.retrieveStudent()
         self.tableView.rowHeight = 100
@@ -89,9 +89,6 @@ class StudentsTableViewController: UITableViewController, UISearchBarDelegate, U
     @IBAction func unwindStudentDetails(segue:UIStoryboardSegue){
         
         self.students = self.retrieveStudent()
-        //hide the detail view controller
-        dismissViewControllerAnimated(true, completion: nil)
-        
         self.tableView.reloadData()
     }
 

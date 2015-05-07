@@ -34,14 +34,14 @@ class UpdateStudentsViewController: UIViewController, UITextFieldDelegate {
         let contactDB = FMDatabase(path: databasePath as String)
         
         databasePath = docsDir.stringByAppendingPathComponent(
-            "fypj_2015")
+            "fypj_2015.db")
         
         studentName.text = student.name
         studentClass.text = student.category
     
         self.imageView.alpha = 0.3 // = UIColor.blackColor().colorWithAlphaComponent(0.3)
     
-        self.imageView.image = UIImage(named:"projimg")
+        self.imageView.image = UIImage(named:"GreenImg")
         //imageView.setbgImageColor(onePixelImageWithColor(bgImageColor))
         
         
