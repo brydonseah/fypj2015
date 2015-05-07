@@ -164,10 +164,6 @@
 		8670878B1ABFE32E00EAAF7B /* test1 */ = {
 			isa = PBXGroup;
 			children = (
-				86EE7B1C1AFB5BD5002764A2 /* ClassPickerTableViewController.swift */,
-				86EE7B1D1AFB5BD5002764A2 /* StudentDetailsTableViewController.swift */,
-				86EE7B1E1AFB5BD5002764A2 /* StudentsTableViewController.swift */,
-				86EE7B1F1AFB5BD5002764A2 /* UpdateStudentsViewController.swift */,
 				865D242F1AF9EA6D0097AE35 /* LoginViewController.swift */,
 				867087AE1ABFED3B00EAAF7B /* EventsViewController.swift */,
 				8670878E1ABFE32E00EAAF7B /* AppDelegate.swift */,
@@ -183,6 +179,10 @@
 				8622625F1AF754EF00C46B0D /* StudentMainViewController.swift */,
 				862262621AF754EF00C46B0D /* ImageCameraViewController.swift */,
 				862262601AF754EF00C46B0D /* StudentResultsViewController.swift */,
+				86EE7B1C1AFB5BD5002764A2 /* ClassPickerTableViewController.swift */,
+				86EE7B1D1AFB5BD5002764A2 /* StudentDetailsTableViewController.swift */,
+				86EE7B1E1AFB5BD5002764A2 /* StudentsTableViewController.swift */,
+				86EE7B1F1AFB5BD5002764A2 /* UpdateStudentsViewController.swift */,
 				8670878C1ABFE32E00EAAF7B /* Supporting Files */,
 			);
 			path = test1;

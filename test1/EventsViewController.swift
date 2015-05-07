@@ -57,13 +57,12 @@ class EventsViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
-//        if(self.dataArray.count == 0){
-//            return self.events.count
-//        } else {
-//            return self.dataArray.count
-//        }
-        return self.dataArray.count
+         //Return the number of rows in the section.
+        if(self.dataArray.count == 0){
+            return self.events.count
+        } else {
+            return self.dataArray.count
+        }
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -123,10 +122,7 @@ class EventsViewController: UITableViewController {
         tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
  
         var ref = Firebase(url: "https://fypjquest2015.firebaseio.com/")
-        let postRef = ref.childByAppendingPath("activities")
-        let post1 = ["name": "\(eventDetailsViewController.eventTextField.text)", "datetime": "\(eventDetailsViewController.datefield.text)", "code": "\(code)"]
-        let post1Ref = postRef.childByAutoId()
-        post1Ref.setValue(post1)
+        
         
         let filemgr = NSFileManager.defaultManager()
         let dirPaths =
@@ -256,7 +252,7 @@ class EventsViewController: UITableViewController {
 //        }
 //        editAction.backgroundColor = UIColor.grayColor()
         
-        var dAction  = UITableViewRowAction(style: .Normal, title: "Delete") { (action, indexPath)  -> Void in
+            var dAction  = UITableViewRowAction(style: .Normal, title: "Delete") { (action, indexPath)  -> Void in
             tableView.editing = false
             var eventTitle = self.events[indexPath.row].title
             
