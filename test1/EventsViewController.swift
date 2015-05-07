@@ -96,28 +96,6 @@ class EventsViewController: UITableViewController {
         return cell
     }
     
-    func retrieve2(){
-        var ref = Firebase(url: "https://fypjquest2015.firebaseio.com/activities")
-        ref.observeEventType(.Value, withBlock: {
-            snapshot in
-            if let i = snapshot.value as? NSDictionary {
-                for item in i{
-                    if let value = item.value as? NSDictionary {
-                        var e = Event()
-                        e.title = value["name"] as! String
-                        e.date = value["datetime"] as! String
-                        e.code = value["code"] as! String
-                        self.dataArray.append(e)
-                        println(self.dataArray.count)
-                        
-                    }
-                }
-            }
-        })
-        
-    }
-
-    
     @IBAction func unwindEventDetail(segue:UIStoryboardSegue){
         
         self.events = self.retrieveDataIntoArray()
@@ -143,50 +121,45 @@ class EventsViewController: UITableViewController {
         //update the tableView
         let indexPath = NSIndexPath(forRow: dataArray.count-1, inSection: 0)
         tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-        
-        
-        //hide the detail view controller
-        dismissViewControllerAnimated(true, completion: nil)
-
-        
+ 
         var ref = Firebase(url: "https://fypjquest2015.firebaseio.com/")
         let postRef = ref.childByAppendingPath("activities")
         let post1 = ["name": "\(eventDetailsViewController.eventTextField.text)", "datetime": "\(eventDetailsViewController.datefield.text)", "code": "\(code)"]
         let post1Ref = postRef.childByAutoId()
         post1Ref.setValue(post1)
         
-        let filemgr = NSFileManager.defaultManager()
-        let dirPaths =
-        NSSearchPathForDirectoriesInDomains(.DocumentDirectory,
-            .UserDomainMask, true)
-        
-        let docsDir = dirPaths[0] as! String
-        
-        databasePath = docsDir.stringByAppendingPathComponent(
-            "fypj_2015.db")
-
-            let contactDB = FMDatabase(path: databasePath as String)
-            if contactDB.open() {
-                
-                let insertSQL = "INSERT INTO EVENTS (name, datetime, code) VALUES ('\(eventDetailsViewController.eventTextField.text)', '\(eventDetailsViewController.datefield.text)',' \(code)')"
-                
-                let result = contactDB.executeUpdate(insertSQL,
-                    withArgumentsInArray: nil)
-              
-                if !result {
-                    println("failure")
-                    println("Error: \(contactDB.lastErrorMessage())")
-                }
-                else {
-                    println("added")
-                    eventDetailsViewController.eventTextField.text = ""
-                    eventDetailsViewController.datefield.text = ""
-                    self.events = self.retrieveDataIntoArray()
-                }
-            } else {
-                
-                println("Error: \(contactDB.lastErrorMessage())")
-        }
+//        let filemgr = NSFileManager.defaultManager()
+//        let dirPaths =
+//        NSSearchPathForDirectoriesInDomains(.DocumentDirectory,
+//            .UserDomainMask, true)
+//        
+//        let docsDir = dirPaths[0] as! String
+//        
+//        databasePath = docsDir.stringByAppendingPathComponent(
+//            "fypj_2015.db")
+//
+//            let contactDB = FMDatabase(path: databasePath as String)
+//            if contactDB.open() {
+//                
+//                let insertSQL = "INSERT INTO EVENTS (name, datetime, code) VALUES ('\(eventDetailsViewController.eventTextField.text)', '\(eventDetailsViewController.datefield.text)',' \(code)')"
+//                
+//                let result = contactDB.executeUpdate(insertSQL,
+//                    withArgumentsInArray: nil)
+//              
+//                if !result {
+//                    println("failure")
+//                    println("Error: \(contactDB.lastErrorMessage())")
+//                }
+//                else {
+//                    println("added")
+//                    eventDetailsViewController.eventTextField.text = ""
+//                    eventDetailsViewController.datefield.text = ""
+//                    self.events = self.retrieveDataIntoArray()
+//                }
+//            } else {
+//                
+//                println("Error: \(contactDB.lastErrorMessage())")
+//        }
     }
     
     func retrieveDataIntoArray() -> [Event]{

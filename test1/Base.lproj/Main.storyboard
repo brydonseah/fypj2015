@@ -274,6 +274,17 @@
                                     <segue destination="aiX-Lo-e4g" kind="custom" id="Ha8-Ze-UZ6"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" id="l10-EE-ZGR">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" id="xuk-DS-jds">
+                                        <rect key="frame" x="374" y="471" width="20" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -511,7 +522,7 @@
                             <tableViewSection headerTitle="Student Name" id="I8a-Xq-48Q">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="OtJ-UY-9mc">
-                                        <rect key="frame" x="0.0" y="50" width="768" height="44"/>
+                                        <rect key="frame" x="0.0" y="114" width="768" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OtJ-UY-9mc" id="tK7-18-Yuy">
                                             <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
@@ -531,7 +542,7 @@
                             <tableViewSection headerTitle="Select Class" id="E00-sX-HDh">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="classCell" textLabel="OWd-4x-00w" detailTextLabel="q35-pb-9QY" style="IBUITableViewCellStyleValue1" id="DES-1O-3xq">
-                                        <rect key="frame" x="0.0" y="137" width="768" height="44"/>
+                                        <rect key="frame" x="0.0" y="201" width="768" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DES-1O-3xq" id="M1y-qD-H7X">
                                             <rect key="frame" x="0.0" y="0.0" width="735" height="43"/>
