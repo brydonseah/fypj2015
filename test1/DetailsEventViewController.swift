@@ -50,6 +50,8 @@ class DetailsEventViewController: UIViewController, UITextFieldDelegate {
         
         
         
+        
+        
         //println("method called")
         var eTitle = eventNameTextField.text
         var eDate = dateTimeTextField.text

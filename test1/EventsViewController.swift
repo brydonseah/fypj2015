@@ -122,7 +122,10 @@ class EventsViewController: UITableViewController {
         tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
  
         var ref = Firebase(url: "https://fypjquest2015.firebaseio.com/")
-        
+        let postRef = ref.childByAppendingPath("activities")
+        let post1 = ["name": "\(eventDetailsViewController.eventTextField.text)", "datetime": "\(eventDetailsViewController.datefield.text)", "code": "\(code)"]
+        let post1Ref = postRef.childByAutoId()
+        post1Ref.setValue(post1)
         
         let filemgr = NSFileManager.defaultManager()
         let dirPaths =

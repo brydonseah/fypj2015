@@ -25,11 +25,13 @@ class LoginViewController: UIViewController {
     
     func retrieve(){
         var ref = Firebase(url: "https://fypjquest2015.firebaseio.com/activities")
-        ref.observeEventType(.Value, withBlock: {
+        ref.queryOrderedByKey().observeEventType(.Value, withBlock: {
             snapshot in
             if let i = snapshot.value as? NSDictionary {
                 for item in i{
                     if let value = item.value as? NSDictionary {
+                        
+                        println("\(item.key)")
                         var e = Event()
                         e.title = value["name"] as! String
                         e.date = value["datetime"] as! String
