@@ -14,5 +14,5 @@ class Event: NSObject {
     var date: String = ""
     var id: String = ""
     var code: String = ""
-    
+    var uniqueKey: String = ""
     }

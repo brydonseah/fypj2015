@@ -47,35 +47,37 @@ class DetailsEventViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func updateEventDetails(){
         
-        
-        
-        
-        
-        
-        //println("method called")
-        var eTitle = eventNameTextField.text
-        var eDate = dateTimeTextField.text
-        var eId = self.event.id
-        
-        let contactDB = FMDatabase(path: databasePath as String)
-        
-        if contactDB.open() {
-            
-            var updateSQL = "UPDATE EVENTS SET NAME ='" + eTitle + "', DATETIME ='" + eDate
-            updateSQL += "' WHERE ID = " + eId
-            
-            //println(eId.description)
-            let result = contactDB.executeUpdate(updateSQL,
-                withArgumentsInArray: nil)
-            
-            if !result {
-                println("failure")
-                println("Error: \(contactDB.lastErrorMessage())")
-            }
-        } else {
-            
-            println("Error: \(contactDB.lastErrorMessage())")
-        }
+        //Firebase - Update
+        var ref = Firebase(url: "https://fypjquest2015.firebaseio.com/activities")
+        var hopperRef = ref.childByAppendingPath("\(event.uniqueKey)")
+        var updateValue = ["name": "\(eventNameTextField.text)", "datetime": "\(dateTimeTextField.text)"]
+        hopperRef.updateChildValues(updateValue)
+
+//        //SQLite - Update
+//        var eTitle = eventNameTextField.text
+//        var eDate = dateTimeTextField.text
+//        var eCode = self.event.code
+//        
+//        let contactDB = FMDatabase(path: databasePath as String)
+//        
+//        if contactDB.open() {
+//            
+//            var updateSQL = "UPDATE EVENTS SET NAME ='" + eTitle + "', DATETIME ='" + eDate
+//            updateSQL += "' WHERE CODE = " + eCode
+//            
+//            //println(eId.description)
+//            let result = contactDB.executeUpdate(updateSQL,
+//                withArgumentsInArray: nil)
+//            
+//            if !result {
+//                
+//                println("failure")
+//                println("Error: \(contactDB.lastErrorMessage())")
+//            }
+//        } else {
+//            
+//            println("Error: \(contactDB.lastErrorMessage())")
+//        }
         self.performSegueWithIdentifier("UpdateEventDetail", sender: self)
     }
     
@@ -108,7 +110,7 @@ class DetailsEventViewController: UIViewController, UITextFieldDelegate {
     
     func doneButton(sender:UIButton!)
     {
-        println("done button done")
+        //println("done button done")
         dateChanged(datePickerView)
         dateTimeTextField.resignFirstResponder()
     }
@@ -126,14 +128,6 @@ class DetailsEventViewController: UIViewController, UITextFieldDelegate {
             dateTimeTextField.text = "" 
         }
         
-            
-        
     }
     
-    
-    
-    
-    
-    
-
 }

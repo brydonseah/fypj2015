@@ -49,10 +49,6 @@ class StudentsTableViewController: UITableViewController, UISearchBarDelegate, U
         self.students = self.retrieveStudent()
         self.tableView.rowHeight = 100
         self.tableView.backgroundView = UIImageView(image: UIImage(named: "background"))
-        
-                
-        
-       
 
     }
 
@@ -106,11 +102,6 @@ class StudentsTableViewController: UITableViewController, UISearchBarDelegate, U
         //update the tableView
         let indexPath = NSIndexPath(forRow: students.count-1, inSection: 0)
         tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-        
-        
-        //hide the detail view controller
-        dismissViewControllerAnimated(true, completion: nil)
-        
         
         let contactDB = FMDatabase(path: databasePath as String)
         

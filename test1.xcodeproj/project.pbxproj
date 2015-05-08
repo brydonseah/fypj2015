@@ -167,6 +167,7 @@
 				865D242F1AF9EA6D0097AE35 /* LoginViewController.swift */,
 				867087AE1ABFED3B00EAAF7B /* EventsViewController.swift */,
 				8670878E1ABFE32E00EAAF7B /* AppDelegate.swift */,
+				86CE3E2E1AD79E0400EED2BA /* DetailsEventViewController.swift */,
 				867087921ABFE32E00EAAF7B /* Main.storyboard */,
 				865D242D1AF9E9DF0097AE35 /* Tini.png */,
 				865D24281AF9E9C90097AE35 /* teacher.png */,
@@ -174,15 +175,10 @@
 				867087951ABFE32E00EAAF7B /* Images.xcassets */,
 				86E552A11AC544AE0011CB94 /* EventDetailsViewController.swift */,
 				867087971ABFE32E00EAAF7B /* LaunchScreen.xib */,
-				86CE3E2E1AD79E0400EED2BA /* DetailsEventViewController.swift */,
 				862262611AF754EF00C46B0D /* StudentQuizViewController.swift */,
 				8622625F1AF754EF00C46B0D /* StudentMainViewController.swift */,
 				862262621AF754EF00C46B0D /* ImageCameraViewController.swift */,
 				862262601AF754EF00C46B0D /* StudentResultsViewController.swift */,
-				86EE7B1C1AFB5BD5002764A2 /* ClassPickerTableViewController.swift */,
-				86EE7B1D1AFB5BD5002764A2 /* StudentDetailsTableViewController.swift */,
-				86EE7B1E1AFB5BD5002764A2 /* StudentsTableViewController.swift */,
-				86EE7B1F1AFB5BD5002764A2 /* UpdateStudentsViewController.swift */,
 				8670878C1ABFE32E00EAAF7B /* Supporting Files */,
 			);
 			path = test1;
@@ -191,6 +187,10 @@
 		8670878C1ABFE32E00EAAF7B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				86EE7B1C1AFB5BD5002764A2 /* ClassPickerTableViewController.swift */,
+				86EE7B1D1AFB5BD5002764A2 /* StudentDetailsTableViewController.swift */,
+				86EE7B1E1AFB5BD5002764A2 /* StudentsTableViewController.swift */,
+				86EE7B1F1AFB5BD5002764A2 /* UpdateStudentsViewController.swift */,
 				86F555B61ADF52FE00DE6019 /* DisableTextFieldProperties.swift */,
 				86DA79B71AF76F5A0066F0C2 /* Student.swift */,
 				86C9D8621AC0060700956C8B /* Event.swift */,

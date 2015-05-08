@@ -10,7 +10,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
-    var dataArray: [Event] = []
+    var myArray: [Event] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,14 +30,12 @@ class LoginViewController: UIViewController {
             if let i = snapshot.value as? NSDictionary {
                 for item in i{
                     if let value = item.value as? NSDictionary {
-                        
-                        println("\(item.key)")
                         var e = Event()
+                        e.uniqueKey = item.key as! String
                         e.title = value["name"] as! String
                         e.date = value["datetime"] as! String
                         e.code = value["code"] as! String
-                        self.dataArray.append(e)
-                        println(self.dataArray.count)
+                        self.myArray.append(e)
                         
                     }
                 }
@@ -58,11 +56,11 @@ class LoginViewController: UIViewController {
             let tab: UITabBarController = segue.destinationViewController as! UITabBarController
             let nav: UINavigationController = tab.viewControllers?.first as! UINavigationController
             let evc: EventsViewController = nav.viewControllers?.first as! EventsViewController
-            if(self.dataArray.count == 0){
+            if(self.myArray.count == 0){
             println("NO data")
             // your new view controller should have property that will store passed value
             } else {
-                evc.dataArray = self.dataArray
+                evc.dataArray = self.myArray
             }
         }
     }
