@@ -98,6 +98,7 @@ class EventsViewController: UITableViewController {
     
     func refresh(sender:AnyObject)
     {
+        dataArray.removeAll()
         // Updating your data here...
         var ref = Firebase(url: "https://fypjquest2015.firebaseio.com/activities")
         ref.queryOrderedByKey().observeEventType(.Value, withBlock: {

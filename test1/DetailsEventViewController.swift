@@ -52,7 +52,8 @@ class DetailsEventViewController: UIViewController, UITextFieldDelegate {
         var hopperRef = ref.childByAppendingPath("\(event.uniqueKey)")
         var updateValue = ["name": "\(eventNameTextField.text)", "datetime": "\(dateTimeTextField.text)"]
         hopperRef.updateChildValues(updateValue)
-
+        
+        
 //        //SQLite - Update
 //        var eTitle = eventNameTextField.text
 //        var eDate = dateTimeTextField.text
