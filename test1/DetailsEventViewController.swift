@@ -19,6 +19,8 @@ class DetailsEventViewController: UIViewController, UITextFieldDelegate {
     var idNum: Int32!
     var datePickerView:UIDatePicker!
     var inputDateView:UIView!
+    var code: String!
+    var index: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +39,9 @@ class DetailsEventViewController: UIViewController, UITextFieldDelegate {
 
        eventNameTextField.text = event.title
        dateTimeTextField.text = event.date
-  
+       println(event.code)
+//       println(event.title)
+//       println(event.date)
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,42 +49,63 @@ class DetailsEventViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func updateEventDetails(){
-        
-        //Firebase - Update
-        var ref = Firebase(url: "https://fypjquest2015.firebaseio.com/activities")
-        var hopperRef = ref.childByAppendingPath("\(event.uniqueKey)")
-        var updateValue = ["name": "\(eventNameTextField.text)", "datetime": "\(dateTimeTextField.text)"]
-        hopperRef.updateChildValues(updateValue)
-        
-        
-//        //SQLite - Update
-//        var eTitle = eventNameTextField.text
-//        var eDate = dateTimeTextField.text
-//        var eCode = self.event.code
+//    @IBAction func updateEventDetails(){
+//        dispatch_sync(dispatch_get_global_queue(
+//            Int(QOS_CLASS_USER_INTERACTIVE.value), 0)) {
+//        //Firebase - Update
+//        var ref = Firebase(url: "https://fypjquest2015.firebaseio.com/activities")
+//        var hopperRef = ref.childByAppendingPath("\(self.event.uniqueKey)")
+//        var updateValue = ["name": "\(self.eventNameTextField.text)", "datetime": "\(self.dateTimeTextField.text)"]
+//        hopperRef.updateChildValues(updateValue)
 //        
-//        let contactDB = FMDatabase(path: databasePath as String)
+////        println(hopperRef)
+////        println(updateValue)
 //        
-//        if contactDB.open() {
+//        println("help me")
+//        /*ref.observeEventType(.ChildChanged, withBlock: { snapshot in
 //            
-//            var updateSQL = "UPDATE EVENTS SET NAME ='" + eTitle + "', DATETIME ='" + eDate
-//            updateSQL += "' WHERE CODE = " + eCode
-//            
-//            //println(eId.description)
-//            let result = contactDB.executeUpdate(updateSQL,
-//                withArgumentsInArray: nil)
-//            
-//            if !result {
-//                
-//                println("failure")
-//                println("Error: \(contactDB.lastErrorMessage())")
-//            }
-//        } else {
-//            
-//            println("Error: \(contactDB.lastErrorMessage())")
+//            let name = snapshot.value["name"] as? String
+//            println("The updated post title is \(name)")
+//        })*/
 //        }
-        self.performSegueWithIdentifier("UpdateEventDetail", sender: self)
-    }
+//        var ref = Firebase(url: "https://fypjquest2015.firebaseio.com/activities")
+//        ref.observeEventType(.ChildChanged, withBlock: { snapshot in
+//            let name = snapshot.value["name"] as! String
+//            println("The updated post title is \(name)")
+//            }, withCancelBlock: { error in
+//                println(error.description)
+//        })
+//
+//        
+//        println("come on")
+//        
+////        //SQLite - Update
+////        var eTitle = eventNameTextField.text
+////        var eDate = dateTimeTextField.text
+////        var eCode = self.event.code
+////        
+////        let contactDB = FMDatabase(path: databasePath as String)
+////        
+////        if contactDB.open() {
+////            
+////            var updateSQL = "UPDATE EVENTS SET NAME ='" + eTitle + "', DATETIME ='" + eDate
+////            updateSQL += "' WHERE CODE = " + eCode
+////            
+////            //println(eId.description)
+////            let result = contactDB.executeUpdate(updateSQL,
+////                withArgumentsInArray: nil)
+////            
+////            if !result {
+////                
+////                println("failure")
+////                println("Error: \(contactDB.lastErrorMessage())")
+////            }
+////        } else {
+////            
+////            println("Error: \(contactDB.lastErrorMessage())")
+////        }
+//        self.performSegueWithIdentifier("UpdateEventDetail", sender: self)
+//    }
     
     @IBAction func textFieldEditing(sender: UITextField) {
         
@@ -125,6 +150,15 @@ class DetailsEventViewController: UIViewController, UITextFieldDelegate {
         if segue.identifier == "UpdateEventDetail" {
             var vc = segue.destinationViewController as! EventsViewController
             vc.eventUpdate = event
+            vc.updatedName = self.eventNameTextField.text
+            vc.updatedDate = self.dateTimeTextField.text
+            vc.indexOfObject = self.index
+            
+            var ref = Firebase(url: "https://fypjquest2015.firebaseio.com/activities")
+            var hopperRef = ref.childByAppendingPath("\(event.uniqueKey)")
+            var updateValue = ["name": "\(self.eventNameTextField.text)", "datetime": "\(self.dateTimeTextField.text)"]
+            hopperRef.updateChildValues(updateValue)
+            
             eventNameTextField.text = ""
             dateTimeTextField.text = "" 
         }

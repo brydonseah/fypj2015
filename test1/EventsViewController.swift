@@ -16,6 +16,10 @@ class EventsViewController: UITableViewController {
     var databasePath = NSString()
     var id =  String()
     var code = String()
+
+    var updatedName: String!
+    var updatedDate: String!
+    var uniqKey: String!
     
     var event: Event!
     var eventUpdate: Event!
@@ -23,11 +27,13 @@ class EventsViewController: UITableViewController {
     
     var dateFormatter = NSDateFormatter()
     var eventDate = NSDate()
+    var indexOfObject: Int!
+    var e1: Event!
+    var ref = Firebase(url: "https://fypjquest2015.firebaseio.com/activities")
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
@@ -35,13 +41,52 @@ class EventsViewController: UITableViewController {
         // self.navigationItem.leftBarButtonItem = self.editButtonItem()
         
         //        self.events = self.retrieveDataIntoArray()
-        self.tableView.rowHeight = 121
+        ref.queryOrderedByKey().observeEventType(.ChildAdded, withBlock: { snapshot in
+            
+            let name = snapshot.value["name"] as! String
+            let datetime = snapshot.value["datetime"] as! String
+            let code = snapshot.value["code"] as! String
+            let uniqKey = snapshot.key as String
+            
+            var e = Event()
+            e.uniqueKey = uniqKey
+            e.title = name
+            e.date = datetime
+            e.code = code
+            
+            self.dataArray.append(e)
+            self.tableView.reloadData()
+            println(name)
+            
+        })
+
+        ref.queryOrderedByKey().observeEventType(.ChildChanged, withBlock: { snapshot in
+            let name = snapshot.value["name"] as! String
+            let datetime = snapshot.value["datetime"] as! String
+            var e = self.dataArray[self.indexOfObject]
+            e.title = self.updatedName
+            e.date = self.updatedDate
+            println("The updated name is \(name),\(datetime)")
+            self.tableView.reloadData()
+        })
         
-        self.refreshControl?.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        
+        ref.queryOrderedByKey().observeEventType(.ChildRemoved, withBlock: { snapshot in
+            let name = snapshot.value["name"] as! String
+            let datetime = snapshot.value["datetime"] as! String
+            println("The removed object name is \(name),\(datetime)")
+            self.tableView.reloadData()
+        })
+
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
+        self.tableView.rowHeight = 121
+//        self.refreshControl?.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        
         //   self.tableView.backgroundView!.alpha = 0.3 // = UIColor.blackColor().colorWithAlphaComponent(0.3)
         // self.tableView.backgroundView = UIImageView(image: UIImage(named: "projimg"))
         //        println(self.dataArray.count)
-        
+ 
     }
     
     override func didReceiveMemoryWarning() {
@@ -60,73 +105,67 @@ class EventsViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         //Return the number of rows in the section.
-        if(self.dataArray.count == 0){
-            return self.events.count
-        } else {
             return self.dataArray.count
-        }
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        var e = Event()
-        
+   
         let cell = tableView.dequeueReusableCellWithIdentifier("EventCell", forIndexPath: indexPath) as! EventTableViewCell
         
-        e = self.dataArray[indexPath.row] as Event
+       let e = self.dataArray[indexPath.row] as Event
         cell.titleLabel.text = e.title
         cell.dateLabel.text = e.date
         
         // Configure the cell...
-        var cDate = NSDate()
-        var formatDate = NSDateFormatter()
-        formatDate.dateFormat = "dd-MM-yyyy hh:mm:aa"
-        var eventDateDate = formatDate.dateFromString(e.date)
-        
-        if eventDateDate?.compare(cDate) == NSComparisonResult.OrderedDescending {
-            
-            cell.titleLabel.textColor = UIColor.blackColor()
-            //            println("Earlier")
-        }
-        else if eventDateDate?.compare(cDate) == NSComparisonResult.OrderedAscending {
-            
-            cell.titleLabel.textColor = UIColor.redColor()
-            //            println("OKAY")
-        }
+//        var cDate = NSDate()
+//        var formatDate = NSDateFormatter()
+//        formatDate.dateFormat = "dd-MM-yyyy hh:mm:aa"
+//        var eventDateDate = formatDate.dateFromString(e1.date)
+//        
+//        if eventDateDate?.compare(cDate) == NSComparisonResult.OrderedDescending {
+//            
+//            cell.titleLabel.textColor = UIColor.blackColor()
+//            //            println("Earlier")
+//        }
+//        else if eventDateDate?.compare(cDate) == NSComparisonResult.OrderedAscending {
+//            
+//            cell.titleLabel.textColor = UIColor.redColor()
+//            //            println("OKAY")
+//        }
         return cell
     }
     
-    func refresh(sender:AnyObject)
-    {
-        dataArray.removeAll()
-        // Updating your data here...
-        var ref = Firebase(url: "https://fypjquest2015.firebaseio.com/activities")
-        ref.queryOrderedByKey().observeEventType(.Value, withBlock: {
-            snapshot in
-            if let i = snapshot.value as? NSDictionary {
-                for item in i{
-                    if let value = item.value as? NSDictionary {
-                        var e = Event()
-                        e.uniqueKey = item.key as! String
-                        e.title = value["name"] as! String
-                        e.date = value["datetime"] as! String
-                        e.code = value["code"] as! String
-                        self.dataArray.append(e)
-                    }
-                }
-            }
-        })
-        println(self.dataArray.count)
-        var delayInSeconds = 5.0;
-        var popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
-        dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
-            // When done requesting/reloading/processing invoke endRefreshing, to close the control
-            println("first")
-            self.tableView.reloadData()
-            println("second")
-            self.refreshControl!.endRefreshing()
-        }
-    }
+//    func refresh(sender:AnyObject)
+//    {
+//        dataArray.removeAll()
+//        // Updating your data here...
+//        var ref = Firebase(url: "https://fypjquest2015.firebaseio.com/activities")
+//        ref.queryOrderedByKey().observeEventType(.Value, withBlock: {
+//            snapshot in
+//            if let i = snapshot.value as? NSDictionary {
+//                for item in i{
+//                    if let value = item.value as? NSDictionary {
+//                        var e = Event()
+//                        e.uniqueKey = item.key as! String
+//                        e.title = value["name"] as! String
+//                        e.date = value["datetime"] as! String
+//                        e.code = value["code"] as! String
+//                        self.dataArray.append(e)
+//                    }
+//                }
+//            }
+//        })
+//        println(self.dataArray.count)
+//        var delayInSeconds = 5.0;
+//        var popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
+//        dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
+//            // When done requesting/reloading/processing invoke endRefreshing, to close the control
+//            println("first")
+//            self.tableView.reloadData()
+//            println("second")
+//            self.refreshControl!.endRefreshing()
+//        }
+//    }
     
     //    @IBAction func unwindEventDetail(segue:UIStoryboardSegue){
 //
@@ -134,30 +173,39 @@ class EventsViewController: UITableViewController {
 ////        self.retrieveUpdate()
 //    }
     
+    
     @IBAction func cancelToEventsViewController(segue:UIStoryboardSegue) {
         
     }
     
     @IBAction func saveEventDetail(segue:UIStoryboardSegue) {
-        
         let eventDetailsViewController = segue.sourceViewController as! EventDetailsViewController
-        
-        code = String(arc4random_uniform(9999))
-        
         //add the new event to the events array
         //events.append(eventDetailsViewController.e)
-        dataArray.append(eventDetailsViewController.e)
+        
+        //dataArray.append(eventDetailsViewController.e)
         
         //update the tableView
-        let indexPath = NSIndexPath(forRow: dataArray.count-1, inSection: 0)
-        tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+//        let indexPath = NSIndexPath(forRow:dataArray.count-1, inSection: 0)
+//        tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
         
-        //Firebase - Create
-        var ref = Firebase(url: "https://fypjquest2015.firebaseio.com/")
-        let postRef = ref.childByAppendingPath("activities")
-        let post1 = ["name": "\(eventDetailsViewController.eventTextField.text)", "datetime": "\(eventDetailsViewController.datefield.text)", "code": "\(code)"]
-        let post1Ref = postRef.childByAutoId()
-        post1Ref.setValue(post1)
+       
+
+//            let name = snapshot.value["name"] as! String
+//            println(name)
+//            let datetime = snapshot.value["datetime"] as! String
+//            let code = snapshot.value["code"] as! String
+//            let key = snapshot.key as String
+//            
+//            var e = Event()
+//            e.uniqueKey = key
+//            e.title = name
+//            e.date = datetime
+//            e.code = code
+//            println("LoginView")
+//            self.dataArray.append(e)
+        
+
         
         //SQLite - Create
 //        let filemgr = NSFileManager.defaultManager()
@@ -194,54 +242,54 @@ class EventsViewController: UITableViewController {
 //        }
     }
     
-    func retrieveDataIntoArray() -> [Event]{
-        
-        let filemgr = NSFileManager.defaultManager()
-        let dirPaths =
-        NSSearchPathForDirectoriesInDomains(.DocumentDirectory,
-            .UserDomainMask, true)
-        
-        let docsDir = dirPaths[0] as! String
-        
-        databasePath = docsDir.stringByAppendingPathComponent(
-            "fypj_2015.db")
-        
-        let contactDB = FMDatabase(path: databasePath as String)
-        var sqlArray : [Event] = []
-        
-        if contactDB.open() {
-            let querySQL = "SELECT * FROM EVENTS"
-            
-            let results:FMResultSet? = contactDB.executeQuery(querySQL,
-                withArgumentsInArray: nil)
-            
-            while results?.next() == true {
-                
-                var name:String! = results?.stringForColumn("name")
-                var datetime:String! = results?.stringForColumn("datetime")
-                var idNum:String! = results?.stringForColumn("ID")
-                var codeNum:String! = results?.stringForColumn("Code")
-                id = idNum
-                code = codeNum
-                //println(idNum)
-                var event = Event()
-                event.title = name
-                event.date = datetime
-                event.id = idNum
-                event.code = codeNum as String!
-                sqlArray.append(event)
-                println(sqlArray.count)
-            }
-            contactDB.close()
-            
-            return sqlArray
-        }
-        else {
-            println("Error: \(contactDB.lastErrorMessage())")
-        }
-        
-        return sqlArray
-    }
+//    func retrieveDataIntoArray() -> [Event]{
+//        
+//        let filemgr = NSFileManager.defaultManager()
+//        let dirPaths =
+//        NSSearchPathForDirectoriesInDomains(.DocumentDirectory,
+//            .UserDomainMask, true)
+//        
+//        let docsDir = dirPaths[0] as! String
+//        
+//        databasePath = docsDir.stringByAppendingPathComponent(
+//            "fypj_2015.db")
+//        
+//        let contactDB = FMDatabase(path: databasePath as String)
+//        var sqlArray : [Event] = []
+//        
+//        if contactDB.open() {
+//            let querySQL = "SELECT * FROM EVENTS"
+//            
+//            let results:FMResultSet? = contactDB.executeQuery(querySQL,
+//                withArgumentsInArray: nil)
+//            
+//            while results?.next() == true {
+//                
+//                var name:String! = results?.stringForColumn("name")
+//                var datetime:String! = results?.stringForColumn("datetime")
+//                var idNum:String! = results?.stringForColumn("ID")
+//                var codeNum:String! = results?.stringForColumn("Code")
+//                id = idNum
+//                code = codeNum
+//                //println(idNum)
+//                var event = Event()
+//                event.title = name
+//                event.date = datetime
+//                event.id = idNum
+//                event.code = codeNum as String!
+//                sqlArray.append(event)
+//                println(sqlArray.count)
+//            }
+//            contactDB.close()
+//            
+//            return sqlArray
+//        }
+//        else {
+//            println("Error: \(contactDB.lastErrorMessage())")
+//        }
+//        
+//        return sqlArray
+//    }
     
 //    func retrieveUpdate() -> [Event]{
 //        var temp: [Event] = []
@@ -268,13 +316,21 @@ class EventsViewController: UITableViewController {
     
     @IBAction func updateEventDetails(segue:UIStoryboardSegue){
         
-        let devc = segue.sourceViewController as! DetailsEventViewController
+        
+        
+        
+        
+      /*  dispatch_sync(dispatch_get_global_queue(
+            Int(QOS_CLASS_USER_INTERACTIVE.value), 0)) {*/
+//        let devc = segue.sourceViewController as! DetailsEventViewController
+// 
+//        var ref = Firebase(url: "https://fypjquest2015.firebaseio.com/activities")
         
         //Firebase - Update
-        var ref = Firebase(url: "https://fypjquest2015.firebaseio.com/activities")
-        var hopperRef = ref.childByAppendingPath("\(devc.event.uniqueKey)")
-        var updateValue = ["name": "\(devc.eventNameTextField.text)", "datetime": "\(devc.dateTimeTextField.text)"]
-        hopperRef.updateChildValues(updateValue)
+        
+//        var hopperRef = ref.childByAppendingPath("\(devc.event.uniqueKey)")
+//        var updateValue = ["name": "\(updatedName)", "datetime": "\(updatedDate)"]
+//        hopperRef.updateChildValues(updateValue)
         
         //        //SQLite - Update
         //        var eTitle = eventNameTextField.text
@@ -301,7 +357,8 @@ class EventsViewController: UITableViewController {
         //            
         //            println("Error: \(contactDB.lastErrorMessage())")
         //        }
-//        self.performSegueWithIdentifier("UpdateEventDetail", sender: self)
+//        self.performSegueWithIdentifier("UpdateEventDetail", sender: self) 
+        //}
     }
 
     
@@ -354,48 +411,51 @@ class EventsViewController: UITableViewController {
             tableView.editing = false
             var eventTitle = self.dataArray[indexPath.row].uniqueKey
             
-            // Delete the row from the data source
-            self.dataArray.removeAtIndex(indexPath.row)
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
-            
-            
             var ref = Firebase(url: "https://fypjquest2015.firebaseio.com/activities")
             var hopperRef = ref.childByAppendingPath("\(eventTitle)")
             hopperRef.removeValue()
             
             
-            
-            let filemgr = NSFileManager.defaultManager()
-            let dirPaths =
-            NSSearchPathForDirectoriesInDomains(.DocumentDirectory,
-                .UserDomainMask, true)
-            
-            let docsDir = dirPaths[0] as! String
-            
-            self.databasePath = docsDir.stringByAppendingPathComponent(
-                "fypj_2015.db")
+            // Delete the row from the data source
+            self.dataArray.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
             
             
-            let contactDB = FMDatabase(path: self.databasePath as String)
+           
             
-            if contactDB.open() {
-                
-                let deleteSQL = "DELETE FROM EVENTS WHERE name ='" + eventTitle + "'"
-                
-                let result = contactDB.executeUpdate(deleteSQL,
-                    withArgumentsInArray: nil)
-                
-                if !result {
-                    println("failure")
-                    println("Error: \(contactDB.lastErrorMessage())")
-                }
-                else {
-                    println("deleted")
-                }
-            }
-            else {
-                println("Error: \(contactDB.lastErrorMessage())")
-            }
+            
+            
+//            let filemgr = NSFileManager.defaultManager()
+//            let dirPaths =
+//            NSSearchPathForDirectoriesInDomains(.DocumentDirectory,
+//                .UserDomainMask, true)
+//            
+//            let docsDir = dirPaths[0] as! String
+//            
+//            self.databasePath = docsDir.stringByAppendingPathComponent(
+//                "fypj_2015.db")
+//            
+//            
+//            let contactDB = FMDatabase(path: self.databasePath as String)
+//            
+//            if contactDB.open() {
+//                
+//                let deleteSQL = "DELETE FROM EVENTS WHERE name ='" + eventTitle + "'"
+//                
+//                let result = contactDB.executeUpdate(deleteSQL,
+//                    withArgumentsInArray: nil)
+//                
+//                if !result {
+//                    println("failure")
+//                    println("Error: \(contactDB.lastErrorMessage())")
+//                }
+//                else {
+//                    println("deleted")
+//                }
+//            }
+//            else {
+//                println("Error: \(contactDB.lastErrorMessage())")
+//            }
         }
         dAction.backgroundColor = UIColor.redColor()
         return [dAction]
@@ -418,7 +478,9 @@ class EventsViewController: UITableViewController {
             // your new view controller should have property that will store passed value
             
             var e = self.dataArray[iPath.row]
+            println(e.uniqueKey)
             devc.event = e
+            devc.index = iPath.row
         }
         
     }

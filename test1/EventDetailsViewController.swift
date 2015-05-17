@@ -19,6 +19,7 @@ class EventDetailsViewController: UITableViewController {
     var events: [Event] = []
     @IBOutlet var doneButton: UIBarButtonItem!
     var e = Event()
+    var codeUniq: String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +47,17 @@ class EventDetailsViewController: UITableViewController {
         if segue.identifier == "SaveEventDetail" {
             e.title = self.eventTextField.text
             e.date = self.datefield.text
+            codeUniq = String(arc4random_uniform(9999))
+            e.code = codeUniq
+            //Firebase - Create
+            var ref = Firebase(url: "https://fypjquest2015.firebaseio.com/")
+            let postRef = ref.childByAppendingPath("activities")
+            let post1 = ["name": "\(eventTextField.text)", "datetime": "\(datefield.text)", "code": "\(codeUniq)"]
+            let post1Ref = postRef.childByAutoId()
+            //        println(post1Ref)
+            post1Ref.setValue(post1)
+            
+            
         }
     }
     
