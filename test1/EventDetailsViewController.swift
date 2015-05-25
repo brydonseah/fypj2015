@@ -50,7 +50,7 @@ class EventDetailsViewController: UITableViewController {
             codeUniq = String(arc4random_uniform(9999))
             e.code = codeUniq
             //Firebase - Create
-            var ref = Firebase(url: "https://fypjquest2015.firebaseio.com/")
+            var ref = Firebase(url: "https://quest2015.firebaseio.com/")
             let postRef = ref.childByAppendingPath("activities")
             let post1 = ["name": "\(eventTextField.text)", "datetime": "\(datefield.text)", "code": "\(codeUniq)"]
             let post1Ref = postRef.childByAutoId()

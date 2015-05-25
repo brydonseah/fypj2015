@@ -1,17 +1,15 @@
 //
-//  QuizTableViewController.swift
+//  MainStudentTableViewController.swift
 //  test1
 //
-//  Created by fypjadmin on 12/5/15.
+//  Created by fypjadmin on 25/5/15.
 //  Copyright (c) 2015 nyp. All rights reserved.
 //
 
 import UIKit
 
-class QuizTableViewController: UITableViewController {
+class MainStudentTableViewController: UITableViewController {
 
-    var quizArray: [Question] = []
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,26 +30,24 @@ class QuizTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 1
+        return 0
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return self.quizArray.count
+        return 0
     }
 
-    
+    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("QuizCell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
 
         // Configure the cell...
-//        cell.textLabel?.text =
-//        cell.detailTextLabel?.text =
-//        
+
         return cell
     }
-
+    */
 
     /*
     // Override to support conditional editing of the table view.

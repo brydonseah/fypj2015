@@ -154,7 +154,7 @@ class DetailsEventViewController: UIViewController, UITextFieldDelegate {
             vc.updatedDate = self.dateTimeTextField.text
             vc.indexOfObject = self.index
             
-            var ref = Firebase(url: "https://fypjquest2015.firebaseio.com/activities")
+            var ref = Firebase(url: "https://quest2015.firebaseio.com/activities")
             var hopperRef = ref.childByAppendingPath("\(event.uniqueKey)")
             var updateValue = ["name": "\(self.eventNameTextField.text)", "datetime": "\(self.dateTimeTextField.text)"]
             hopperRef.updateChildValues(updateValue)

@@ -12,19 +12,9 @@ import CoreData
 
 class Student : NSObject {
     
-    var studentID: Int32
-    var name: String
-    var category: String
-    
-    
-    
-    init(studentID: Int32, name: String, category: String) {
-        
-        self.studentID = studentID
-        self.name = name
-        self.category = category
-        super.init()
-    }
-
+    var studentID: String = ""
+    var gender: String = ""
+    var name: String = ""
+    var category: String = ""
 
 }

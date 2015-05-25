@@ -29,7 +29,10 @@ class EventsViewController: UITableViewController {
     var eventDate = NSDate()
     var indexOfObject: Int!
     var e1: Event!
-    var ref = Firebase(url: "https://fypjquest2015.firebaseio.com/activities")
+    var ref = Firebase(url: "https://quest2015.firebaseio.com/activities")
+    
+    var userEmail: String!
+    var userPass: String!
     
     
     override func viewDidLoad() {
@@ -64,8 +67,8 @@ class EventsViewController: UITableViewController {
             let name = snapshot.value["name"] as! String
             let datetime = snapshot.value["datetime"] as! String
             var e = self.dataArray[self.indexOfObject]
-            e.title = self.updatedName
-            e.date = self.updatedDate
+            e.title = name //self.updatedName
+            e.date =  datetime //self.updatedDate
             println("The updated name is \(name),\(datetime)")
             self.tableView.reloadData()
         })
@@ -81,11 +84,9 @@ class EventsViewController: UITableViewController {
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.rowHeight = 121
-//        self.refreshControl?.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+      
+        println(self.userEmail)
         
-        //   self.tableView.backgroundView!.alpha = 0.3 // = UIColor.blackColor().colorWithAlphaComponent(0.3)
-        // self.tableView.backgroundView = UIImageView(image: UIImage(named: "projimg"))
-        //        println(self.dataArray.count)
  
     }
     
@@ -134,45 +135,6 @@ class EventsViewController: UITableViewController {
 //        }
         return cell
     }
-    
-//    func refresh(sender:AnyObject)
-//    {
-//        dataArray.removeAll()
-//        // Updating your data here...
-//        var ref = Firebase(url: "https://fypjquest2015.firebaseio.com/activities")
-//        ref.queryOrderedByKey().observeEventType(.Value, withBlock: {
-//            snapshot in
-//            if let i = snapshot.value as? NSDictionary {
-//                for item in i{
-//                    if let value = item.value as? NSDictionary {
-//                        var e = Event()
-//                        e.uniqueKey = item.key as! String
-//                        e.title = value["name"] as! String
-//                        e.date = value["datetime"] as! String
-//                        e.code = value["code"] as! String
-//                        self.dataArray.append(e)
-//                    }
-//                }
-//            }
-//        })
-//        println(self.dataArray.count)
-//        var delayInSeconds = 5.0;
-//        var popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
-//        dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
-//            // When done requesting/reloading/processing invoke endRefreshing, to close the control
-//            println("first")
-//            self.tableView.reloadData()
-//            println("second")
-//            self.refreshControl!.endRefreshing()
-//        }
-//    }
-    
-    //    @IBAction func unwindEventDetail(segue:UIStoryboardSegue){
-//
-//        //        self.events = self.retrieveDataIntoArray()
-////        self.retrieveUpdate()
-//    }
-    
     
     @IBAction func cancelToEventsViewController(segue:UIStoryboardSegue) {
         
@@ -411,7 +373,7 @@ class EventsViewController: UITableViewController {
             tableView.editing = false
             var eventTitle = self.dataArray[indexPath.row].uniqueKey
             
-            var ref = Firebase(url: "https://fypjquest2015.firebaseio.com/activities")
+            var ref = Firebase(url: "https://quest2015.firebaseio.com/activities")
             var hopperRef = ref.childByAppendingPath("\(eventTitle)")
             hopperRef.removeValue()
             
@@ -419,11 +381,7 @@ class EventsViewController: UITableViewController {
             // Delete the row from the data source
             self.dataArray.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
-            
-            
-           
-            
-            
+
             
 //            let filemgr = NSFileManager.defaultManager()
 //            let dirPaths =

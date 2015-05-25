@@ -1,42 +1,39 @@
 //
-//  ClassPickerTableViewController.swift
+//  GenderPickerTableViewController.swift
 //  test1
 //
-//  Created by fypjadmin on 15/4/15.
+//  Created by fypjadmin on 8/5/15.
 //  Copyright (c) 2015 nyp. All rights reserved.
 //
 
 import UIKit
 
-class ClassPickerTableViewController: UITableViewController {
+class GenderPickerTableViewController: UITableViewController {
     
-    var categories: [String]!
+    var genders: [String]!
     
-    var selectedCategory: String? = nil
-    var selectedCategoryIndex: Int? = 0
+    var selectedGender: String? = nil
+    var selectedGenderIndex: Int? = 0
     var cellColor : UIColor = UIColor(red: (238/255.0), green: (232/255.0), blue: (170/255.0), alpha: 0.8)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         self.tableView.rowHeight = 100
-        self.tableView.backgroundView = UIImageView(image: UIImage(named: "img3"))
-        self.tableView.backgroundView!.alpha = 0.0 // = UIColor.blackColor().colorWithAlphaComponent(0.3)
-        
+        self.tableView.backgroundView = UIImageView(image: UIImage(named: "background"))
+        self.tableView.backgroundView!.alpha = 0.5 // = UIColor.blackColor().colorWithAlphaComponent(0.3)
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        categories = ["1A",
-                    "1B",
-                    "1C"]
+        genders = ["M",
+        "F"]
         
-        if let category = selectedCategory {
-            
-            selectedCategoryIndex = find(categories, category)!
+        if let gender = selectedGender {
+            selectedGenderIndex = find(genders,gender)!
         }
     }
 
@@ -52,66 +49,71 @@ class ClassPickerTableViewController: UITableViewController {
         // Return the number of sections.
         return 1
     }
+    
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return categories.count
+        return genders.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("categoryCell", forIndexPath: indexPath) as! UITableViewCell
-        cell.textLabel?.text = categories[indexPath.row]
+        let cell = tableView.dequeueReusableCellWithIdentifier("genderCell", forIndexPath: indexPath) as! UITableViewCell
         
         cell.backgroundColor = cellColor
 
-        if indexPath.row == selectedCategoryIndex {
+        cell.textLabel?.text = genders[indexPath.row]
+        if indexPath.row == selectedGenderIndex {
             cell.accessoryType = .Checkmark
         } else {
             cell.accessoryType = .None
         }
 
+
         return cell
     }
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         //Other row is selected - need to deselect it
-        if let index = selectedCategoryIndex {
+        if let index = selectedGenderIndex {
             let cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: index, inSection: 0))
             cell?.accessoryType = .None
         }
         
-        selectedCategoryIndex = indexPath.row
-        selectedCategory = categories[indexPath.row]
+        selectedGenderIndex = indexPath.row
+        selectedGender = genders[indexPath.row]
         
         //update the checkmark for the current row
         let cell = tableView.cellForRowAtIndexPath(indexPath)
         cell?.accessoryType = .Checkmark
     }
     
+    
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "SaveSelectedCategory" {
+        if segue.identifier == "SaveSelectedGender"{
             if let cell = sender as? UITableViewCell {
                 let indexPath = tableView.indexPathForCell(cell)
-                selectedCategoryIndex = indexPath?.row
-                if let index = selectedCategoryIndex {
-                    selectedCategory = categories[index]
+                selectedGenderIndex = indexPath?.row
+                if let index = selectedGenderIndex {
+                    selectedGender = genders[index]
                 }
             }
         }
     }
-  
-   
     
     
 
+
+    
+  
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
+        // Return NO if you do not want the specified item to be e3ditable.
         return true
     }
     */
@@ -143,14 +145,5 @@ class ClassPickerTableViewController: UITableViewController {
     }
     */
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }

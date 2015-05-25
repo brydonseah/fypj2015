@@ -11,16 +11,24 @@ import UIKit
 class StudentDetailsTableViewController: UITableViewController {
     
     
+    @IBOutlet var studNameTextField: UITextField!
     @IBOutlet var categoryLabel: UILabel!
+    @IBOutlet var genderLabel: UILabel!
     var student:Student!
     var students: [Student] = []
-    @IBOutlet var studNameTextField: UITextField!
+    
     var category:String = "1A"
     var databasePath = NSString()
     var studentID = Int32()
+    var gender:String = "M"
+    @IBOutlet var studentImage: UIImageView!
+    var ref = Firebase(url: "https://quest2015.firebaseio.com/")
+    var s: Student!
     
     override func viewDidLoad(){
         super.viewDidLoad()
+        
+        genderLabel.text = gender
         categoryLabel.text = category
         
 
@@ -30,6 +38,10 @@ class StudentDetailsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
+        self.studentImage.alpha = 0.5 // = UIColor.blackColor().colorWithAlphaComponent(0.3)
+        self.studentImage.image = UIImage(named:"background")
+
+        
         
     }
 
@@ -38,23 +50,18 @@ class StudentDetailsTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
-        return 2
-    }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
-        return 1
-    }
-    
     @IBAction func saveStudentDetail(segue:UIStoryboardSegue) {
         
     }
+    
+    @IBAction func selectedGender(segue:UIStoryboardSegue) {
+        if let genderPickerTableViewController = segue.sourceViewController as? GenderPickerTableViewController, selectedGender = genderPickerTableViewController.selectedGender {
+            
+            genderLabel.text = selectedGender
+            gender = selectedGender
+        }
+    }
+
     
     @IBAction func selectedCategory(segue:UIStoryboardSegue) {
         if let classPickerTableViewController = segue.sourceViewController as? ClassPickerTableViewController, selectedCategory = classPickerTableViewController.selectedCategory {
@@ -63,12 +70,35 @@ class StudentDetailsTableViewController: UITableViewController {
             category = selectedCategory
         }
     }
+    
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
+        
         if segue.identifier == "SaveStudentDetail" {
-            student = Student(studentID: 0, name: self.studNameTextField.text, category: category)
             
+            println(self.studNameTextField.text)
+            var name = studNameTextField.text
+            
+            var s = Student()
+            s.name = name
+            s.gender = gender
+            s.category = category
+            
+            let postRef = ref.childByAppendingPath("students")
+            let post1 = ["name": "\(studNameTextField.text)", "gender": "\(gender)", "class": "\(category)"]
+            let post1Ref = postRef.childByAutoId()
+            //        println(post1Ref)
+            post1Ref.setValue(post1)
+
+            
+            if segue.identifier == "PickGender" {
+                if let genderPickerTableViewController = segue.destinationViewController as?
+                    GenderPickerTableViewController{
+                        genderPickerTableViewController.selectedGender = gender
+                }
+            }
+
         
         if segue.identifier == "PickCategory" {
             
@@ -77,6 +107,8 @@ class StudentDetailsTableViewController: UITableViewController {
                 classPickerTableViewController.selectedCategory = category
             }
             }
+            
+            
         }
     }
     
