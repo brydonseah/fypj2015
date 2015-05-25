@@ -46,7 +46,7 @@
 		86DDE7B81B13203D00555492 /* GenderPickerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DDE7B01B13203D00555492 /* GenderPickerTableViewController.swift */; };
 		86DDE7B91B13203D00555492 /* UpdateStudentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DDE7B11B13203D00555492 /* UpdateStudentsViewController.swift */; };
 		86DDE7BA1B13203D00555492 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DDE7B21B13203D00555492 /* Student.swift */; };
-		86DDE7BC1B13234F00555492 /* StudentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DDE7BB1B13234F00555492 /* StudentTableViewCell.swift */; };
+		86DDE7BE1B134B1900555492 /* StudentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DDE7BD1B134B1900555492 /* StudentTableViewCell.swift */; };
 		86E552A21AC544AE0011CB94 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E552A11AC544AE0011CB94 /* EventDetailsViewController.swift */; };
 		86EDF6571B01CB07006A2A39 /* Question Mark-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 86EDF6561B01CB07006A2A39 /* Question Mark-32.png */; };
 		86EDF65D1B01D9AD006A2A39 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EDF65C1B01D9AD006A2A39 /* Question.swift */; };
@@ -128,7 +128,7 @@
 		86DDE7B01B13203D00555492 /* GenderPickerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenderPickerTableViewController.swift; sourceTree = "<group>"; };
 		86DDE7B11B13203D00555492 /* UpdateStudentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateStudentsViewController.swift; sourceTree = "<group>"; };
 		86DDE7B21B13203D00555492 /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
-		86DDE7BB1B13234F00555492 /* StudentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentTableViewCell.swift; sourceTree = "<group>"; };
+		86DDE7BD1B134B1900555492 /* StudentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentTableViewCell.swift; sourceTree = "<group>"; };
 		86E552A11AC544AE0011CB94 /* EventDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
 		86EDF6561B01CB07006A2A39 /* Question Mark-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Question Mark-32.png"; sourceTree = "<group>"; };
 		86EDF65C1B01D9AD006A2A39 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
@@ -198,7 +198,7 @@
 				86DDE7A31B12EDFE00555492 /* StudentLoginViewController.swift */,
 				86DDE7A51B12F37800555492 /* MainStudentTableViewController.swift */,
 				86DDE7A91B131CCC00555492 /* StudentActivityTableViewController.swift */,
-				86DDE7BB1B13234F00555492 /* StudentTableViewCell.swift */,
+				86DDE7BD1B134B1900555492 /* StudentTableViewCell.swift */,
 			);
 			name = Brydon;
 			sourceTree = "<group>";
@@ -451,7 +451,7 @@
 				867E46161ACCEC290096E8AC /* FMDatabaseAdditions.m in Sources */,
 				86DDE7AA1B131CCC00555492 /* StudentActivityTableViewController.swift in Sources */,
 				86DDE7B51B13203D00555492 /* StudentCellViewCell.swift in Sources */,
-				86DDE7BC1B13234F00555492 /* StudentTableViewCell.swift in Sources */,
+				86DDE7BE1B134B1900555492 /* StudentTableViewCell.swift in Sources */,
 				867E46141ACCEC290096E8AC /* FMResultSet.m in Sources */,
 				86DDE7B91B13203D00555492 /* UpdateStudentsViewController.swift in Sources */,
 				86DDE7B31B13203D00555492 /* ClassPickerTableViewController.swift in Sources */,

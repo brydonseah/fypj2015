@@ -28,7 +28,13 @@ class StudentActivityTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         //CODE TO BE RUN ON CELL TOUCH
         //self.performSegueWithIdentifier("EventDetails", sender: indexPath)
-        performSegueWithIdentifier("studentActivity", sender: indexPath)
+        if (indexPath.row == 0) {
+            self.performSegueWithIdentifier("Preparation", sender: self)
+        } else if (indexPath.row == 1){
+            self.performSegueWithIdentifier("Shopping", sender: self)
+        } else if (indexPath.row == 2) {
+            self.performSegueWithIdentifier("Feedback", sender: self)
+        }
     }
 
 

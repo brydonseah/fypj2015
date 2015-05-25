@@ -88,10 +88,6 @@ class StudentsTableViewController: UITableViewController{
         self.tableView.backgroundView = UIImageView(image: UIImage(named: "img3"))
         self.tableView.backgroundView!.alpha = 0.9 // = UIColor.blackColor().colorWithAlphaComponent(0.3)
        // retrieveStudent()
-        
-        
-        
-        
   
     }
     
@@ -117,8 +113,6 @@ class StudentsTableViewController: UITableViewController{
         
         // ask for reusable cell from the tableview, the tableview will create a new one if it doesnt have any
         let cell = self.tableView.dequeueReusableCellWithIdentifier("StudentCell", forIndexPath: indexPath) as! StudentCellViewCell
-        
-        var student: Student
         
         
        // cell.backgroundColor!.alpha = 0.5

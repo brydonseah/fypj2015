@@ -9,10 +9,11 @@
 import UIKit
 
 class StudentTableViewCell: UITableViewCell {
-    
+
     @IBOutlet var genderImg: UIImageView!
     
-    @IBOutlet var studentNameLabel: UILabel!
+    @IBOutlet var studentLabel: UILabel!
+    
     
     
     override func awakeFromNib() {
