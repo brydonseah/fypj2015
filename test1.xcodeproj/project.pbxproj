@@ -56,6 +56,7 @@
 		8D9FEDA81B139C4500EBD92E /* ReceiptPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9FEDA71B139C4500EBD92E /* ReceiptPhotoViewController.swift */; };
 		8D9FEDAA1B13A08C00EBD92E /* MiniQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9FEDA91B13A08C00EBD92E /* MiniQuizViewController.swift */; };
 		8D9FEDAE1B13A83200EBD92E /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9FEDAD1B13A83200EBD92E /* FeedbackViewController.swift */; };
+		8D9FEDB01B13A9E800EBD92E /* StudentActivityCheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9FEDAF1B13A9E800EBD92E /* StudentActivityCheckInViewController.swift */; };
 		8DE3B8771B08FCAB007E4227 /* login.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8DE3B8761B08FCAB007E4227 /* login.jpg */; };
 		8DF08E4B1B12143800B61B47 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF08E4A1B12143800B61B47 /* CameraViewController.swift */; };
 		8DF08E4D1B12143E00B61B47 /* ForgotPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF08E4C1B12143E00B61B47 /* ForgotPassViewController.swift */; };
@@ -141,6 +142,7 @@
 		8D9FEDA71B139C4500EBD92E /* ReceiptPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiptPhotoViewController.swift; sourceTree = "<group>"; };
 		8D9FEDA91B13A08C00EBD92E /* MiniQuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiniQuizViewController.swift; sourceTree = "<group>"; };
 		8D9FEDAD1B13A83200EBD92E /* FeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
+		8D9FEDAF1B13A9E800EBD92E /* StudentActivityCheckInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentActivityCheckInViewController.swift; sourceTree = "<group>"; };
 		8DE3B8761B08FCAB007E4227 /* login.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = login.jpg; sourceTree = "<group>"; };
 		8DF08E4A1B12143800B61B47 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		8DF08E4C1B12143E00B61B47 /* ForgotPassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPassViewController.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				8DF08E541B1215F400B61B47 /* TeacherLoginViewController.swift */,
 				8DF08E561B12160900B61B47 /* TeacherSignUpViewController.swift */,
 				8D9FEDAD1B13A83200EBD92E /* FeedbackViewController.swift */,
+				8D9FEDAF1B13A9E800EBD92E /* StudentActivityCheckInViewController.swift */,
 			);
 			name = Brydon;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 				8D9FEDAA1B13A08C00EBD92E /* MiniQuizViewController.swift in Sources */,
 				86DDE7A41B12EDFE00555492 /* StudentLoginViewController.swift in Sources */,
 				8DF08E631B1242E800B61B47 /* ChangeEmailTableViewController.swift in Sources */,
+				8D9FEDB01B13A9E800EBD92E /* StudentActivityCheckInViewController.swift in Sources */,
 				8DF08E511B12144400B61B47 /* RecordViewController.swift in Sources */,
 				86E552A21AC544AE0011CB94 /* EventDetailsViewController.swift in Sources */,
 				8DF08E4D1B12143E00B61B47 /* ForgotPassViewController.swift in Sources */,
