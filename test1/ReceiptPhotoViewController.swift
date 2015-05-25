@@ -17,6 +17,7 @@ class ReceiptPhotoViewController: UIViewController, UINavigationControllerDelega
     @IBOutlet var nextButton: UIButton!
     var studentTotalAmt: String!
     var studentBudget: String!
+    var saveImg: UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +47,7 @@ class ReceiptPhotoViewController: UIViewController, UINavigationControllerDelega
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
         let imageData = UIImagePNGRepresentation(image) as NSData
         imagen.image = image
-        
+        imagen.image = saveImg
         
         //guarda en album de fotos
         UIImageWriteToSavedPhotosAlbum(image, self, "image:didFinishSavingWithError:contextInfo:", nil)
@@ -85,7 +86,12 @@ class ReceiptPhotoViewController: UIViewController, UINavigationControllerDelega
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        
+        if (segue.identifier == "miniQuiz") {
+            let mq = segue.destinationViewController as! MiniQuizViewController
+            mq.studentTotalAmt = self.studentTotalAmt
+            mq.studentBudget = self.studentBudget
+            mq.image = self.saveImg
+        }
     }
     
 

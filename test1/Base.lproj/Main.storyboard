@@ -642,7 +642,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="735" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Reflection" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="77M-dO-zwx">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Feedback" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="77M-dO-zwx">
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -679,6 +679,7 @@
                     <connections>
                         <segue destination="T6E-tT-EyB" kind="push" identifier="Preparation" id="9bo-fk-8cr"/>
                         <segue destination="jge-SK-hjh" kind="push" identifier="Shopping" id="3BH-a9-b8E"/>
+                        <segue destination="yx8-m3-kPJ" kind="push" identifier="Feedback" id="lDP-Hs-Zeh"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="crF-te-o2C" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -909,25 +910,106 @@
                         <outlet property="cameraBarButton" destination="EmG-AQ-c2l" id="Imc-SF-v7G"/>
                         <outlet property="imagen" destination="zmB-UR-wql" id="RaP-Jh-Zul"/>
                         <outlet property="nextButton" destination="ae2-fv-Ime" id="S6w-Nj-AeP"/>
+                        <segue destination="70I-gg-jTW" kind="push" identifier="miniQuiz" id="1ey-LH-06Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ntC-ZA-vD8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="8572" y="250"/>
         </scene>
-        <!--View Controller-->
+        <!--Mini Quiz View Controller-->
         <scene sceneID="Mco-9T-iJJ">
             <objects>
-                <viewController id="70I-gg-jTW" sceneMemberID="viewController">
+                <viewController id="70I-gg-jTW" customClass="MiniQuizViewController" customModule="test1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mPh-qe-4iP">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your starting amount in your wallet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="d9z-Us-Tgf">
+                                <rect key="frame" x="54" y="288" width="389" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="wX6-Ow-7Ol">
+                                <rect key="frame" x="451" y="288" width="184" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="Vck-ld-u3m">
+                                <rect key="frame" x="451" y="349" width="184" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How much did you spent?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ika-zk-Bs0">
+                                <rect key="frame" x="54" y="418" width="389" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="vSB-uX-zpI">
+                                <rect key="frame" x="451" y="418" width="184" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How much is the amount?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZBR-zK-Z4h">
+                                <rect key="frame" x="54" y="654" width="389" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="V94-9H-dwL">
+                                <rect key="frame" x="451" y="654" width="184" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="5dollar" id="yaJ-oD-oLH">
+                                <rect key="frame" x="128" y="480" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="10dollar" id="92O-Y2-aZh">
+                                <rect key="frame" x="402" y="480" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="eUd-bF-prI">
+                                <rect key="frame" x="353" y="789" width="54" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveShoppingAnswers:" destination="70I-gg-jTW" eventType="touchUpInside" id="WNM-3M-DwQ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your budget you wrote " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JxH-iK-oES">
+                                <rect key="frame" x="54" y="349" width="389" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="P7P-gc-dEp"/>
+                    <connections>
+                        <outlet property="budgetAmtTextField" destination="Vck-ld-u3m" id="dRM-R3-051"/>
+                        <outlet property="spentAmtTextField" destination="vSB-uX-zpI" id="Scl-Mx-bfw"/>
+                        <outlet property="totalAmtTextField" destination="wX6-Ow-7Ol" id="Ruu-AI-E8x"/>
+                        <segue destination="eK0-CX-TzM" kind="unwind" identifier="unwindStudentActivityFromQuiz" unwindAction="unwindStudentActivity:" id="rFv-6X-XeK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a5M-Nz-u1K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="eK0-CX-TzM" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="9391" y="250"/>
+            <point key="canvasLocation" x="9400" y="250"/>
         </scene>
         <!--initial-->
         <scene sceneID="vRy-h7-XUV">
@@ -1431,6 +1513,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ML-mF-UHY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2901" y="5357"/>
+        </scene>
+        <!--Feedback View Controller-->
+        <scene sceneID="6TG-tw-4IC">
+            <objects>
+                <viewController id="yx8-m3-kPJ" customClass="FeedbackViewController" customModule="test1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zKY-D9-891">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. Was the activity useful to you?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YAn-Rj-2n4">
+                                <rect key="frame" x="175" y="254" width="384" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="l6v-CL-Ah1">
+                                <rect key="frame" x="298" y="355" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="deD-Ja-jKZ">
+                                <rect key="frame" x="429" y="355" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="RRc-26-zIS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qXn-KI-7o2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6171" y="1697"/>
         </scene>
         <!--Events-->
         <scene sceneID="jkw-kB-B4K">
