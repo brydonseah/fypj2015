@@ -1,22 +1,22 @@
 //
-//  CameraViewController.swift
+//  ReceiptPhotoViewController.swift
 //  test1
 //
-//  Created by fypjadmin on 22/5/15.
+//  Created by Eugene Tan on 26/5/15.
 //  Copyright (c) 2015 nyp. All rights reserved.
 //
 
 import UIKit
 import MobileCoreServices
 
-class CameraViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-   
+class ReceiptPhotoViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    
+    @IBOutlet var cameraBarButton: UIBarButtonItem!
     @IBOutlet var imagen: UIImageView!
-    @IBOutlet var saveButton: UIButton!
-    
-    var b64string: NSString!
-    
-    var ref = Firebase(url: "https://quest2015.firebaseio.com/")
+   
+    @IBOutlet var nextButton: UIButton!
+    var studentTotalAmt: String!
+    var studentBudget: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +44,7 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]){
         
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
-        let imageData = UIImagePNGRepresentation(image) as NSData 
+        let imageData = UIImagePNGRepresentation(image) as NSData
         imagen.image = image
         
         
@@ -53,8 +53,7 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
         
         //guarda en documents
         let documentsPath = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true).last as! NSString
-        var currentDate = NSDate()
-        let filePath = documentsPath.stringByAppendingPathComponent("\(currentDate).png")
+        let filePath = documentsPath.stringByAppendingPathComponent("pic.png")
         imageData.writeToFile(filePath, atomically: true)
         
         
@@ -65,46 +64,29 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    @IBAction func savePhoto(sender: UIButton){
-    
-        var saveImg: UIImage = imagen.image!
-        
-        let imageData = UIImageJPEGRepresentation(saveImg, 0.0)
-        
-        b64string = imageData.base64EncodedStringWithOptions(.allZeros)
-        
-        var usersRef = ref.childByAppendingPath("images")
-        
-        var post = ["image": self.b64string]
-        
-        let postRef = usersRef.childByAutoId()
-        
-        postRef.setValue(post)
-        
-        
-        var loginSuccess = UIAlertController(title: "Photo is saved.", message: "", preferredStyle: UIAlertControllerStyle.Alert)
-        loginSuccess.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action: UIAlertAction!) in
-        }))
-        
-        self.presentViewController(loginSuccess, animated: true, completion: nil)
-
-    }
-    
     func image(image: UIImage, didFinishSavingWithError error: NSErrorPointer, contextInfo: UnsafePointer<()>){
         if(error != nil){
             println("ERROR IMAGE \(error.debugDescription)")
         }
     }
+    
+    @IBAction func nextButton(sender: UIButton) {
+        self.performSegueWithIdentifier("miniQuiz", sender: self)
+    }
+
+
 
     
-    /*
+
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
     }
-    */
+    
 
 }
