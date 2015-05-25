@@ -1,5 +1,5 @@
 //
-//  StudentActivityCheckInViewController.swift
+//  StudentEventCheckInViewController.swift
 //  test1
 //
 //  Created by Eugene Tan on 26/5/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StudentActivityCheckInViewController: UIViewController {
+class StudentEventCheckInViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

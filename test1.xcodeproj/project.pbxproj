@@ -56,7 +56,9 @@
 		8D9FEDA81B139C4500EBD92E /* ReceiptPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9FEDA71B139C4500EBD92E /* ReceiptPhotoViewController.swift */; };
 		8D9FEDAA1B13A08C00EBD92E /* MiniQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9FEDA91B13A08C00EBD92E /* MiniQuizViewController.swift */; };
 		8D9FEDAE1B13A83200EBD92E /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9FEDAD1B13A83200EBD92E /* FeedbackViewController.swift */; };
-		8D9FEDB01B13A9E800EBD92E /* StudentActivityCheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9FEDAF1B13A9E800EBD92E /* StudentActivityCheckInViewController.swift */; };
+		8D9FEDB21B13AC3500EBD92E /* StudentEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9FEDB11B13AC3500EBD92E /* StudentEventTableViewController.swift */; };
+		8D9FEDB41B13ADA800EBD92E /* StudentEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9FEDB31B13ADA800EBD92E /* StudentEventTableViewCell.swift */; };
+		8D9FEDB91B13B02700EBD92E /* StudentEventCheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9FEDB81B13B02700EBD92E /* StudentEventCheckInViewController.swift */; };
 		8DE3B8771B08FCAB007E4227 /* login.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8DE3B8761B08FCAB007E4227 /* login.jpg */; };
 		8DF08E4B1B12143800B61B47 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF08E4A1B12143800B61B47 /* CameraViewController.swift */; };
 		8DF08E4D1B12143E00B61B47 /* ForgotPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF08E4C1B12143E00B61B47 /* ForgotPassViewController.swift */; };
@@ -142,7 +144,9 @@
 		8D9FEDA71B139C4500EBD92E /* ReceiptPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiptPhotoViewController.swift; sourceTree = "<group>"; };
 		8D9FEDA91B13A08C00EBD92E /* MiniQuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiniQuizViewController.swift; sourceTree = "<group>"; };
 		8D9FEDAD1B13A83200EBD92E /* FeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
-		8D9FEDAF1B13A9E800EBD92E /* StudentActivityCheckInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentActivityCheckInViewController.swift; sourceTree = "<group>"; };
+		8D9FEDB11B13AC3500EBD92E /* StudentEventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentEventTableViewController.swift; sourceTree = "<group>"; };
+		8D9FEDB31B13ADA800EBD92E /* StudentEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentEventTableViewCell.swift; sourceTree = "<group>"; };
+		8D9FEDB81B13B02700EBD92E /* StudentEventCheckInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentEventCheckInViewController.swift; sourceTree = "<group>"; };
 		8DE3B8761B08FCAB007E4227 /* login.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = login.jpg; sourceTree = "<group>"; };
 		8DF08E4A1B12143800B61B47 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		8DF08E4C1B12143E00B61B47 /* ForgotPassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPassViewController.swift; sourceTree = "<group>"; };
@@ -186,33 +190,10 @@
 		865C35371B01FC91008637DC /* Brydon */ = {
 			isa = PBXGroup;
 			children = (
-				8DF08E4A1B12143800B61B47 /* CameraViewController.swift */,
-				8DF08E621B1242E800B61B47 /* ChangeEmailTableViewController.swift */,
-				8DF08E601B12401F00B61B47 /* ChangePasswordTableViewController.swift */,
-				86CE3E2E1AD79E0400EED2BA /* DetailsEventViewController.swift */,
-				86F555B61ADF52FE00DE6019 /* DisableTextFieldProperties.swift */,
-				86C9D8621AC0060700956C8B /* Event.swift */,
-				86E552A11AC544AE0011CB94 /* EventDetailsViewController.swift */,
-				867087AE1ABFED3B00EAAF7B /* EventsViewController.swift */,
-				86C9D8661AC009F600956C8B /* EventTableViewCell.swift */,
-				8DF08E4C1B12143E00B61B47 /* ForgotPassViewController.swift */,
-				865D242F1AF9EA6D0097AE35 /* LoginViewController.swift */,
-				86DDE7A51B12F37800555492 /* MainStudentTableViewController.swift */,
-				8D9FEDA91B13A08C00EBD92E /* MiniQuizViewController.swift */,
-				8D9FEDA71B139C4500EBD92E /* ReceiptPhotoViewController.swift */,
-				8DF08E4E1B12144400B61B47 /* RecordedAudio.swift */,
-				8DF08E4F1B12144400B61B47 /* RecordViewController.swift */,
-				8DF08E5E1B1235F700B61B47 /* SettingsTableViewController.swift */,
-				86DDE7A91B131CCC00555492 /* StudentActivityTableViewController.swift */,
-				86DDE7A31B12EDFE00555492 /* StudentLoginViewController.swift */,
-				8D9FEDA31B138D0400EBD92E /* StudentPreparationViewController.swift */,
-				86DDE7BD1B134B1900555492 /* StudentTableViewCell.swift */,
-				8D9FEDA51B1398D200EBD92E /* SupermarketSimulatorViewController.swift */,
-				8DF08E591B1217F400B61B47 /* TeacherIndexViewController.swift */,
-				8DF08E541B1215F400B61B47 /* TeacherLoginViewController.swift */,
-				8DF08E561B12160900B61B47 /* TeacherSignUpViewController.swift */,
-				8D9FEDAD1B13A83200EBD92E /* FeedbackViewController.swift */,
-				8D9FEDAF1B13A9E800EBD92E /* StudentActivityCheckInViewController.swift */,
+				865C35381B020067008637DC /* FMDB FIles */,
+				8D9FEDB71B13AFD000EBD92E /* General */,
+				8D9FEDB61B13AF7500EBD92E /* Student's part */,
+				8D9FEDB51B13AF0400EBD92E /* Teacher's part */,
 			);
 			name = Brydon;
 			sourceTree = "<group>";
@@ -265,7 +246,6 @@
 			isa = PBXGroup;
 			children = (
 				8DF08E581B12169F00B61B47 /* Anas */,
-				865C35381B020067008637DC /* FMDB FIles */,
 				865C35371B01FC91008637DC /* Brydon */,
 				8DE3B8761B08FCAB007E4227 /* login.jpg */,
 				86EDF6561B01CB07006A2A39 /* Question Mark-32.png */,
@@ -309,6 +289,56 @@
 				867087A31ABFE32F00EAAF7B /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8D9FEDB51B13AF0400EBD92E /* Teacher's part */ = {
+			isa = PBXGroup;
+			children = (
+				8DF08E621B1242E800B61B47 /* ChangeEmailTableViewController.swift */,
+				8DF08E601B12401F00B61B47 /* ChangePasswordTableViewController.swift */,
+				86CE3E2E1AD79E0400EED2BA /* DetailsEventViewController.swift */,
+				86C9D8621AC0060700956C8B /* Event.swift */,
+				86E552A11AC544AE0011CB94 /* EventDetailsViewController.swift */,
+				867087AE1ABFED3B00EAAF7B /* EventsViewController.swift */,
+				86C9D8661AC009F600956C8B /* EventTableViewCell.swift */,
+				8DF08E4C1B12143E00B61B47 /* ForgotPassViewController.swift */,
+				8DF08E5E1B1235F700B61B47 /* SettingsTableViewController.swift */,
+				8DF08E591B1217F400B61B47 /* TeacherIndexViewController.swift */,
+				8DF08E541B1215F400B61B47 /* TeacherLoginViewController.swift */,
+				8DF08E561B12160900B61B47 /* TeacherSignUpViewController.swift */,
+			);
+			name = "Teacher's part";
+			sourceTree = "<group>";
+		};
+		8D9FEDB61B13AF7500EBD92E /* Student's part */ = {
+			isa = PBXGroup;
+			children = (
+				8DF08E4A1B12143800B61B47 /* CameraViewController.swift */,
+				8D9FEDAD1B13A83200EBD92E /* FeedbackViewController.swift */,
+				86DDE7A51B12F37800555492 /* MainStudentTableViewController.swift */,
+				8D9FEDA91B13A08C00EBD92E /* MiniQuizViewController.swift */,
+				8D9FEDA71B139C4500EBD92E /* ReceiptPhotoViewController.swift */,
+				8DF08E4E1B12144400B61B47 /* RecordedAudio.swift */,
+				8DF08E4F1B12144400B61B47 /* RecordViewController.swift */,
+				86DDE7A91B131CCC00555492 /* StudentActivityTableViewController.swift */,
+				8D9FEDB81B13B02700EBD92E /* StudentEventCheckInViewController.swift */,
+				8D9FEDB31B13ADA800EBD92E /* StudentEventTableViewCell.swift */,
+				8D9FEDB11B13AC3500EBD92E /* StudentEventTableViewController.swift */,
+				86DDE7A31B12EDFE00555492 /* StudentLoginViewController.swift */,
+				8D9FEDA31B138D0400EBD92E /* StudentPreparationViewController.swift */,
+				86DDE7BD1B134B1900555492 /* StudentTableViewCell.swift */,
+				8D9FEDA51B1398D200EBD92E /* SupermarketSimulatorViewController.swift */,
+			);
+			name = "Student's part";
+			sourceTree = "<group>";
+		};
+		8D9FEDB71B13AFD000EBD92E /* General */ = {
+			isa = PBXGroup;
+			children = (
+				86F555B61ADF52FE00DE6019 /* DisableTextFieldProperties.swift */,
+				865D242F1AF9EA6D0097AE35 /* LoginViewController.swift */,
+			);
+			name = General;
 			sourceTree = "<group>";
 		};
 		8DF08E581B12169F00B61B47 /* Anas */ = {
@@ -439,11 +469,13 @@
 				8D9FEDA81B139C4500EBD92E /* ReceiptPhotoViewController.swift in Sources */,
 				8DF08E571B12160900B61B47 /* TeacherSignUpViewController.swift in Sources */,
 				8DF08E5F1B1235F700B61B47 /* SettingsTableViewController.swift in Sources */,
+				8D9FEDB91B13B02700EBD92E /* StudentEventCheckInViewController.swift in Sources */,
 				86DDE7BA1B13203D00555492 /* Student.swift in Sources */,
 				865D24301AF9EA6D0097AE35 /* LoginViewController.swift in Sources */,
 				86DDE7B61B13203D00555492 /* StudentDetailsTableViewController.swift in Sources */,
 				862262671AF754EF00C46B0D /* ImageCameraViewController.swift in Sources */,
 				86DDE7B41B13203D00555492 /* TextToSpeechViewController.swift in Sources */,
+				8D9FEDB21B13AC3500EBD92E /* StudentEventTableViewController.swift in Sources */,
 				86DDE7A61B12F37800555492 /* MainStudentTableViewController.swift in Sources */,
 				86C9D8631AC0060700956C8B /* Event.swift in Sources */,
 				8670878F1ABFE32E00EAAF7B /* AppDelegate.swift in Sources */,
@@ -457,7 +489,6 @@
 				8D9FEDAA1B13A08C00EBD92E /* MiniQuizViewController.swift in Sources */,
 				86DDE7A41B12EDFE00555492 /* StudentLoginViewController.swift in Sources */,
 				8DF08E631B1242E800B61B47 /* ChangeEmailTableViewController.swift in Sources */,
-				8D9FEDB01B13A9E800EBD92E /* StudentActivityCheckInViewController.swift in Sources */,
 				8DF08E511B12144400B61B47 /* RecordViewController.swift in Sources */,
 				86E552A21AC544AE0011CB94 /* EventDetailsViewController.swift in Sources */,
 				8DF08E4D1B12143E00B61B47 /* ForgotPassViewController.swift in Sources */,
@@ -472,6 +503,7 @@
 				86DDE7B31B13203D00555492 /* ClassPickerTableViewController.swift in Sources */,
 				8D9FEDAE1B13A83200EBD92E /* FeedbackViewController.swift in Sources */,
 				8D3CFD221B079F5D00B44C05 /* TestTableViewController.swift in Sources */,
+				8D9FEDB41B13ADA800EBD92E /* StudentEventTableViewCell.swift in Sources */,
 				867087AF1ABFED3B00EAAF7B /* EventsViewController.swift in Sources */,
 				867E46131ACCEC290096E8AC /* FMDatabase.m in Sources */,
 				8DF08E551B1215F400B61B47 /* TeacherLoginViewController.swift in Sources */,
