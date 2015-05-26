@@ -7,13 +7,13 @@
         <!--Activities-->
         <scene sceneID="evt-za-M8C">
             <objects>
-                <tableViewController storyboardIdentifier="EventsViewController" id="Rw8-JN-s1i" customClass="EventsViewController" customModule="test1" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="EventsViewController" id="Rw8-JN-s1i" customClass="EventsViewController" customModule="Quest_15" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="121" sectionHeaderHeight="22" sectionFooterHeight="22" id="2rn-Wq-62N">
                         <rect key="frame" x="0.0" y="64" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="EventCell" rowHeight="121" id="9Hq-Jq-tm4" customClass="EventTableViewCell" customModule="test1" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="EventCell" rowHeight="121" id="9Hq-Jq-tm4" customClass="EventTableViewCell" customModule="Quest_15" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="86" width="768" height="121"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9Hq-Jq-tm4" id="kvu-my-1ih">
@@ -69,7 +69,7 @@
         <!--Add Event-->
         <scene sceneID="NWD-EQ-K9q">
             <objects>
-                <tableViewController id="lGw-LC-r7t" customClass="EventDetailsViewController" customModule="test1" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="lGw-LC-r7t" customClass="EventDetailsViewController" customModule="Quest_15" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="K9E-wX-Mtb">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -78,7 +78,7 @@
                             <tableViewSection headerTitle="Event Name" id="yoV-iq-3ae">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" id="a8L-Zl-eaa">
-                                        <rect key="frame" x="0.0" y="114" width="768" height="44"/>
+                                        <rect key="frame" x="0.0" y="50" width="768" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a8L-Zl-eaa" id="ikC-k7-hSM">
                                             <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
@@ -98,7 +98,7 @@
                             <tableViewSection headerTitle="Please Select Date &amp; Time" id="ex0-n4-Skc">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="Cwi-GK-M77">
-                                        <rect key="frame" x="0.0" y="201" width="768" height="44"/>
+                                        <rect key="frame" x="0.0" y="137" width="768" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Cwi-GK-M77" id="3LR-nz-GKh">
                                             <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
@@ -152,7 +152,7 @@
         <!--Teacher Index View Controller-->
         <scene sceneID="Q1g-RC-fc5">
             <objects>
-                <tabBarController id="TxR-ur-u0B" customClass="TeacherIndexViewController" customModule="test1" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="TxR-ur-u0B" customClass="TeacherIndexViewController" customModule="Quest_15" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="ZFP-Ga-whr"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Xgw-bh-zTG">
@@ -173,7 +173,7 @@
         <!--Settings-->
         <scene sceneID="XcN-Vs-5uh">
             <objects>
-                <tableViewController id="Lc1-qy-k9p" customClass="SettingsTableViewController" customModule="test1" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Lc1-qy-k9p" customClass="SettingsTableViewController" customModule="Quest_15" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="arg-J7-qRh">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -299,7 +299,7 @@
         <!--Change Password-->
         <scene sceneID="4k5-95-JCB">
             <objects>
-                <tableViewController id="img-kM-Q93" customClass="ChangePasswordTableViewController" customModule="test1" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="img-kM-Q93" customClass="ChangePasswordTableViewController" customModule="Quest_15" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="gYG-Tj-Qo9">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -398,7 +398,7 @@
         <!--Details Event View Controller-->
         <scene sceneID="fl0-51-WMp">
             <objects>
-                <viewController id="q3e-Sh-Y9v" customClass="DetailsEventViewController" customModule="test1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="q3e-Sh-Y9v" customClass="DetailsEventViewController" customModule="Quest_15" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iuu-w8-8Jj">
                         <rect key="frame" x="0.0" y="64" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -416,7 +416,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" id="6h5-UY-WR3" customClass="DisableTextFieldProperties" customModule="test1" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" id="6h5-UY-WR3" customClass="DisableTextFieldProperties" customModule="Quest_15" customModuleProvider="target">
                                 <rect key="frame" x="300" y="220" width="312" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -495,7 +495,7 @@
         <!--Image Camera View Controller-->
         <scene sceneID="6gT-Rg-LL1">
             <objects>
-                <viewController id="2Hz-PI-Jxd" customClass="ImageCameraViewController" customModule="test1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="2Hz-PI-Jxd" customClass="ImageCameraViewController" customModule="Quest_15" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vNv-hF-juD">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -540,7 +540,7 @@
         <!--Student Login View Controller-->
         <scene sceneID="sPG-VB-S7f">
             <objects>
-                <viewController id="ahf-Fn-T5c" customClass="StudentLoginViewController" customModule="test1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ahf-Fn-T5c" customClass="StudentLoginViewController" customModule="Quest_15" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Sfa-fD-baj">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -602,13 +602,13 @@
         <!--Student-->
         <scene sceneID="SP5-5D-Jvl">
             <objects>
-                <tableViewController id="o00-uq-ct7" customClass="MainStudentTableViewController" customModule="test1" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="o00-uq-ct7" customClass="MainStudentTableViewController" customModule="Quest_15" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="88" sectionHeaderHeight="22" sectionFooterHeight="22" id="qpF-3o-wP6">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="StudentTableCell" rowHeight="90" id="HU1-YK-t3M" customClass="StudentTableViewCell" customModule="test1" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="StudentTableCell" rowHeight="90" id="HU1-YK-t3M" customClass="StudentTableViewCell" customModule="Quest_15" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="86" width="768" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HU1-YK-t3M" id="brM-81-6xn">
@@ -653,7 +653,7 @@
         <!--Student Activity Table View Controller-->
         <scene sceneID="qz4-mt-m1d">
             <objects>
-                <tableViewController id="hgI-3K-rDd" customClass="StudentActivityTableViewController" customModule="test1" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="hgI-3K-rDd" customClass="StudentActivityTableViewController" customModule="Quest_15" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="0qt-iN-M6W">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -748,7 +748,7 @@
         <!--Student Preparation View Controller-->
         <scene sceneID="IDI-P2-gXU">
             <objects>
-                <viewController id="T6E-tT-EyB" customClass="StudentPreparationViewController" customModule="test1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="T6E-tT-EyB" customClass="StudentPreparationViewController" customModule="Quest_15" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9YK-xL-dOt">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -887,14 +887,14 @@
         <!--Student Event Table View Controller-->
         <scene sceneID="zCZ-ca-MOb">
             <objects>
-                <tableViewController id="Y95-qX-s0i" customClass="StudentEventTableViewController" customModule="test1" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Y95-qX-s0i" customClass="StudentEventTableViewController" customModule="Quest_15" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="i8q-PT-AnS">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="StudentEventCell" rowHeight="120" id="9fq-pv-zpK" customClass="StudentEventTableViewCell" customModule="test1" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="86" width="768" height="120"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="StudentEventCell" rowHeight="120" id="9fq-pv-zpK" customClass="StudentEventTableViewCell" customModule="Quest_15" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="22" width="768" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9fq-pv-zpK" id="h3c-zD-537">
                                     <rect key="frame" x="0.0" y="0.0" width="735" height="119"/>
@@ -939,7 +939,7 @@
         <!--Student Event Check In View Controller-->
         <scene sceneID="LE3-6s-v7d">
             <objects>
-                <viewController id="iJD-ol-BdK" customClass="StudentEventCheckInViewController" customModule="test1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="iJD-ol-BdK" customClass="StudentEventCheckInViewController" customModule="Quest_15" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5Tb-Ji-nDS">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1013,7 +1013,7 @@
         <!--Supermarket Simulator View Controller-->
         <scene sceneID="Zh9-fA-Cl4">
             <objects>
-                <viewController id="jge-SK-hjh" customClass="SupermarketSimulatorViewController" customModule="test1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jge-SK-hjh" customClass="SupermarketSimulatorViewController" customModule="Quest_15" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FLt-ks-kVo">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1061,7 +1061,7 @@
         <!--Mini Quiz View Controller-->
         <scene sceneID="Mco-9T-iJJ">
             <objects>
-                <viewController id="70I-gg-jTW" customClass="MiniQuizViewController" customModule="test1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="70I-gg-jTW" customClass="MiniQuizViewController" customModule="Quest_15" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mPh-qe-4iP">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1156,7 +1156,7 @@
         <!--initial-->
         <scene sceneID="vRy-h7-XUV">
             <objects>
-                <viewController title="initial" id="qik-yC-0n0" customClass="LoginViewController" customModule="test1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="initial" id="qik-yC-0n0" customClass="LoginViewController" customModule="Quest_15" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fQF-GX-Pyn">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1256,7 +1256,7 @@
         <!--Teacher Login View Controller-->
         <scene sceneID="qSs-2Y-tb9">
             <objects>
-                <viewController id="3IQ-A0-B8g" customClass="TeacherLoginViewController" customModule="test1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="3IQ-A0-B8g" customClass="TeacherLoginViewController" customModule="Quest_15" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oNq-AN-iLi">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1275,7 +1275,7 @@
                                 <rect key="frame" x="254" y="513" width="260" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ELC-ap-XLo">
                                 <rect key="frame" x="278" y="630" width="211" height="30"/>
@@ -1356,7 +1356,7 @@
         <!--Title-->
         <scene sceneID="HgE-Z0-DY5">
             <objects>
-                <viewController id="sI8-II-uQf" customClass="TeacherSignUpViewController" customModule="test1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="sI8-II-uQf" customClass="TeacherSignUpViewController" customModule="Quest_15" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="n2p-2z-MLH">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1395,7 +1395,7 @@
                                 <rect key="frame" x="284" y="693" width="260" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fHQ-em-8gM">
                                 <rect key="frame" x="187" y="621" width="85" height="21"/>
@@ -1415,7 +1415,7 @@
                                 <rect key="frame" x="284" y="617" width="260" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Teacher-icon" id="L4g-6V-edP">
                                 <rect key="frame" x="197" y="172" width="435" height="232"/>
@@ -1461,7 +1461,7 @@
         <!--Forgot Pass View Controller-->
         <scene sceneID="LOt-Ph-TZO">
             <objects>
-                <viewController id="BSc-6b-sqW" customClass="ForgotPassViewController" customModule="test1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BSc-6b-sqW" customClass="ForgotPassViewController" customModule="Quest_15" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YqR-AC-tgv">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1526,7 +1526,7 @@
         <!--Record View Controller-->
         <scene sceneID="bjF-Ig-HSJ">
             <objects>
-                <viewController id="Ccr-yl-64j" customClass="RecordViewController" customModule="test1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Ccr-yl-64j" customClass="RecordViewController" customModule="Quest_15" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZEL-sW-Sq3">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1585,7 +1585,7 @@
         <!--Camera View Controller-->
         <scene sceneID="ju5-hA-Jnn">
             <objects>
-                <viewController id="ME9-U4-o5s" customClass="CameraViewController" customModule="test1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ME9-U4-o5s" customClass="CameraViewController" customModule="Quest_15" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Et7-wX-5Wy">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1632,7 +1632,7 @@
         <!--Reflection-->
         <scene sceneID="6TG-tw-4IC">
             <objects>
-                <viewController id="yx8-m3-kPJ" customClass="FeedbackViewController" customModule="test1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="yx8-m3-kPJ" customClass="FeedbackViewController" customModule="Quest_15" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zKY-D9-891">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1764,7 +1764,7 @@
         <!--Change Email-->
         <scene sceneID="y1U-I1-kUW">
             <objects>
-                <tableViewController id="G1E-uy-YFO" customClass="ChangeEmailTableViewController" customModule="test1" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="G1E-uy-YFO" customClass="ChangeEmailTableViewController" customModule="Quest_15" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="uEa-Rs-3io">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1843,7 +1843,7 @@
                                                     <rect key="frame" x="0.0" y="7" width="768" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -1940,13 +1940,13 @@
         <!--Students-->
         <scene sceneID="9mO-Lx-DE3">
             <objects>
-                <tableViewController id="Fo3-bo-KUc" customClass="StudentsTableViewController" customModule="test1" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Fo3-bo-KUc" customClass="StudentsTableViewController" customModule="Quest_15" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" id="7YX-so-bd3">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell alpha="0.60000002384185791" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="StudentCell" rowHeight="90" id="cnN-NE-gR8" customClass="StudentCellViewCell" customModule="test1" customModuleProvider="target">
+                            <tableViewCell alpha="0.60000002384185791" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="StudentCell" rowHeight="90" id="cnN-NE-gR8" customClass="StudentCellViewCell" customModule="Quest_15" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="86" width="768" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cnN-NE-gR8" id="csy-CH-tz1">
@@ -1995,7 +1995,7 @@
         <!--Update Students View Controller-->
         <scene sceneID="Eit-1Y-A9D">
             <objects>
-                <viewController id="lnb-Na-wAG" customClass="UpdateStudentsViewController" customModule="test1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="lnb-Na-wAG" customClass="UpdateStudentsViewController" customModule="Quest_15" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bss-Ru-0iI">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2114,7 +2114,7 @@
         <!--Add Student-->
         <scene sceneID="72v-6a-Ojq">
             <objects>
-                <tableViewController id="tyt-8T-d44" customClass="StudentDetailsTableViewController" customModule="test1" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="tyt-8T-d44" customClass="StudentDetailsTableViewController" customModule="Quest_15" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="rsy-6R-bo4">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2127,7 +2127,7 @@
                             <tableViewSection headerTitle="Student Name" id="HOh-2O-0Zm">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="v1J-T5-0g1">
-                                        <rect key="frame" x="0.0" y="114" width="768" height="44"/>
+                                        <rect key="frame" x="0.0" y="50" width="768" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="v1J-T5-0g1" id="SpN-30-LMW">
                                             <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
@@ -2147,7 +2147,7 @@
                             <tableViewSection headerTitle="Selected Gender" id="QeS-UL-FxS">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="genderCell" textLabel="7Dw-oJ-OS8" detailTextLabel="TFm-1H-MCj" style="IBUITableViewCellStyleValue1" id="Fmu-KO-dUB">
-                                        <rect key="frame" x="0.0" y="201" width="768" height="44"/>
+                                        <rect key="frame" x="0.0" y="137" width="768" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fmu-KO-dUB" id="Nkv-MH-yiN">
                                             <rect key="frame" x="0.0" y="0.0" width="735" height="43"/>
@@ -2176,7 +2176,7 @@
                             <tableViewSection headerTitle="Select Class" id="uaP-Xr-VWN">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="classCell" textLabel="XJe-Pl-UgX" detailTextLabel="kb0-8e-Rkw" style="IBUITableViewCellStyleValue1" id="8Xg-12-yeS">
-                                        <rect key="frame" x="0.0" y="288" width="768" height="44"/>
+                                        <rect key="frame" x="0.0" y="224" width="768" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8Xg-12-yeS" id="QgK-wl-be8">
                                             <rect key="frame" x="0.0" y="0.0" width="735" height="43"/>
@@ -2237,7 +2237,7 @@
         <!--Choose Class-->
         <scene sceneID="Vmi-Kx-cRZ">
             <objects>
-                <tableViewController id="mcV-Jt-Rkt" customClass="ClassPickerTableViewController" customModule="test1" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="mcV-Jt-Rkt" customClass="ClassPickerTableViewController" customModule="Quest_15" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="8ZN-P3-Da0">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2279,7 +2279,7 @@
         <!--Choose Gender-->
         <scene sceneID="1fk-P1-vGm">
             <objects>
-                <tableViewController id="TXo-r1-4G1" customClass="GenderPickerTableViewController" customModule="test1" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="TXo-r1-4G1" customClass="GenderPickerTableViewController" customModule="Quest_15" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Ifp-XL-GS5">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
