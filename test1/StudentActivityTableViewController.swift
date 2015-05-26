@@ -12,6 +12,9 @@ class StudentActivityTableViewController: UITableViewController {
     
     var studentTotalAmt: String!
     var studentBudget: String!
+    var studentName: String!
+    
+    var stud: Student!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,12 +58,20 @@ class StudentActivityTableViewController: UITableViewController {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
         if (segue.identifier == "Shopping"){
-            
             let ssvc = segue.destinationViewController as! SupermarketSimulatorViewController
             ssvc.studentTotalAmt = self.studentTotalAmt
             ssvc.studentBudget = self.studentBudget
-            
-        } 
+            ssvc.stud = self.stud
+        } else if (segue.identifier == "Feedback"){
+            let f = segue.destinationViewController as! FeedbackViewController
+            f.stud = self.stud
+        } else if (segue.identifier == "CheckIn") {
+            let set = segue.destinationViewController as! StudentEventTableViewController
+            set.stud = self.stud
+        } else if (segue.identifier == "Preparation") {
+            let p = segue.destinationViewController as! StudentPreparationViewController
+            p.stud = self.stud
+        }
     }
     
 

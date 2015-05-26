@@ -52,7 +52,7 @@ class StudentsTableViewController: UITableViewController{
         
         ref.queryOrderedByKey().observeEventType(.ChildChanged, withBlock: { snapshot in
             let name = snapshot.value["name"] as! String
-            let studClass = snapshot.value["datetime"] as! String
+            let studClass = snapshot.value["class"] as! String
             let gender = snapshot.value["gender"] as! String
             var s = self.dataArray[self.indexOfObject]
             s.name = name
@@ -300,6 +300,7 @@ class StudentsTableViewController: UITableViewController{
             
             var s = self.dataArray[iPath.row]
             devc.student = s
+            devc.index = iPath.row
         }
         
     

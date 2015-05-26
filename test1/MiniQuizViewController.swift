@@ -34,13 +34,13 @@ class MiniQuizViewController: UIViewController {
     }
     
     @IBAction func saveShoppingAnswers(sender: UIButton){
-        //Firebase - Create
+//        Firebase - Create
 //        var ref = Firebase(url: "https://quest2015.firebaseio.com/")
 //        let postRef = ref.childByAppendingPath("shopping")
 //        let post1 = ["name": "\(eventTextField.text)", "datetime": "\(datefield.text)", "code": "\(codeUniq)"]
 //        let post1Ref = postRef.childByAutoId()
-        //        println(post1Ref)
-        //post1Ref.setValue(post1)
+//                println(post1Ref)
+//        post1Ref.setValue(post1)
         self.performSegueWithIdentifier("unwindStudentActivityFromQuiz", sender: self)
         
     }

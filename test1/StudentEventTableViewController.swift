@@ -13,6 +13,8 @@ class StudentEventTableViewController: UITableViewController {
     var dataArray: [Event] = []
     var ref = Firebase(url: "https://quest2015.firebaseio.com/activities")
     
+    var stud: Student!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +61,7 @@ class StudentEventTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.tableView.rowHeight = 121
     }
 
     override func didReceiveMemoryWarning() {
@@ -107,7 +110,12 @@ class StudentEventTableViewController: UITableViewController {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
         if(segue.identifier == "StudentEvent") {
-            let se = segue.destinationViewController
+            
+             var iPath: NSIndexPath = sender as! NSIndexPath
+            var e = self.dataArray[iPath.row]
+            let sec = segue.destinationViewController as! StudentEventCheckInViewController
+            sec.e = e
+            sec.stud = self.stud
         }
     }
     

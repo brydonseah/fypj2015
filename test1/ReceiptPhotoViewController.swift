@@ -44,10 +44,10 @@ class ReceiptPhotoViewController: UIViewController, UINavigationControllerDelega
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]){
         
-        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        var image = info[UIImagePickerControllerOriginalImage] as! UIImage
         let imageData = UIImagePNGRepresentation(image) as NSData
         imagen.image = image
-        imagen.image = saveImg
+        image = self.saveImg
         
         //guarda en album de fotos
         UIImageWriteToSavedPhotosAlbum(image, self, "image:didFinishSavingWithError:contextInfo:", nil)

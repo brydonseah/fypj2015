@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		862262671AF754EF00C46B0D /* ImageCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862262621AF754EF00C46B0D /* ImageCameraViewController.swift */; };
+		8656B2FD1B1412060070C662 /* YesRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8656B2FC1B1412060070C662 /* YesRadioButton.swift */; };
+		8656B2FF1B1414120070C662 /* NoRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8656B2FE1B1414120070C662 /* NoRadioButton.swift */; };
+		8656B3021B1417F50070C662 /* checked.png in Resources */ = {isa = PBXBuildFile; fileRef = 8656B3001B1417F50070C662 /* checked.png */; };
+		8656B3031B1417F50070C662 /* unchecked_checkbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 8656B3011B1417F50070C662 /* unchecked_checkbox.png */; };
 		865D242A1AF9E9C90097AE35 /* login2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 865D24271AF9E9C90097AE35 /* login2.jpg */; };
 		865D242B1AF9E9C90097AE35 /* teacher.png in Resources */ = {isa = PBXBuildFile; fileRef = 865D24281AF9E9C90097AE35 /* teacher.png */; };
 		865D242E1AF9E9DF0097AE35 /* Tini.png in Resources */ = {isa = PBXBuildFile; fileRef = 865D242D1AF9E9DF0097AE35 /* Tini.png */; };
@@ -85,6 +89,10 @@
 
 /* Begin PBXFileReference section */
 		862262621AF754EF00C46B0D /* ImageCameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCameraViewController.swift; sourceTree = "<group>"; };
+		8656B2FC1B1412060070C662 /* YesRadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YesRadioButton.swift; sourceTree = "<group>"; };
+		8656B2FE1B1414120070C662 /* NoRadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoRadioButton.swift; sourceTree = "<group>"; };
+		8656B3001B1417F50070C662 /* checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checked.png; sourceTree = "<group>"; };
+		8656B3011B1417F50070C662 /* unchecked_checkbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unchecked_checkbox.png; sourceTree = "<group>"; };
 		865D24271AF9E9C90097AE35 /* login2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = login2.jpg; sourceTree = "<group>"; };
 		865D24281AF9E9C90097AE35 /* teacher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teacher.png; sourceTree = "<group>"; };
 		865D242D1AF9E9DF0097AE35 /* Tini.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tini.png; sourceTree = "<group>"; };
@@ -258,6 +266,8 @@
 				867087951ABFE32E00EAAF7B /* Images.xcassets */,
 				867087971ABFE32E00EAAF7B /* LaunchScreen.xib */,
 				862262621AF754EF00C46B0D /* ImageCameraViewController.swift */,
+				8656B3001B1417F50070C662 /* checked.png */,
+				8656B3011B1417F50070C662 /* unchecked_checkbox.png */,
 				8670878C1ABFE32E00EAAF7B /* Supporting Files */,
 				8D3CFD211B079F5D00B44C05 /* TestTableViewController.swift */,
 				8D3CFD231B07B63E00B44C05 /* TestTableViewCell.swift */,
@@ -328,6 +338,8 @@
 				8D9FEDA31B138D0400EBD92E /* StudentPreparationViewController.swift */,
 				86DDE7BD1B134B1900555492 /* StudentTableViewCell.swift */,
 				8D9FEDA51B1398D200EBD92E /* SupermarketSimulatorViewController.swift */,
+				8656B2FC1B1412060070C662 /* YesRadioButton.swift */,
+				8656B2FE1B1414120070C662 /* NoRadioButton.swift */,
 			);
 			name = "Student's part";
 			sourceTree = "<group>";
@@ -439,8 +451,10 @@
 				8DF08E531B12144E00B61B47 /* APSN.png in Resources */,
 				865D242B1AF9E9C90097AE35 /* teacher.png in Resources */,
 				8DE3B8771B08FCAB007E4227 /* login.jpg in Resources */,
+				8656B3031B1417F50070C662 /* unchecked_checkbox.png in Resources */,
 				865D242A1AF9E9C90097AE35 /* login2.jpg in Resources */,
 				867087941ABFE32E00EAAF7B /* Main.storyboard in Resources */,
+				8656B3021B1417F50070C662 /* checked.png in Resources */,
 				865D242E1AF9E9DF0097AE35 /* Tini.png in Resources */,
 				867087991ABFE32E00EAAF7B /* LaunchScreen.xib in Resources */,
 				867087961ABFE32E00EAAF7B /* Images.xcassets in Resources */,
@@ -468,6 +482,7 @@
 				867E46171ACCEC290096E8AC /* FMDatabasePool.m in Sources */,
 				8D9FEDA81B139C4500EBD92E /* ReceiptPhotoViewController.swift in Sources */,
 				8DF08E571B12160900B61B47 /* TeacherSignUpViewController.swift in Sources */,
+				8656B2FF1B1414120070C662 /* NoRadioButton.swift in Sources */,
 				8DF08E5F1B1235F700B61B47 /* SettingsTableViewController.swift in Sources */,
 				8D9FEDB91B13B02700EBD92E /* StudentEventCheckInViewController.swift in Sources */,
 				86DDE7BA1B13203D00555492 /* Student.swift in Sources */,
@@ -487,6 +502,7 @@
 				8DF08E5A1B1217F400B61B47 /* TeacherIndexViewController.swift in Sources */,
 				8DF08E501B12144400B61B47 /* RecordedAudio.swift in Sources */,
 				8D9FEDAA1B13A08C00EBD92E /* MiniQuizViewController.swift in Sources */,
+				8656B2FD1B1412060070C662 /* YesRadioButton.swift in Sources */,
 				86DDE7A41B12EDFE00555492 /* StudentLoginViewController.swift in Sources */,
 				8DF08E631B1242E800B61B47 /* ChangeEmailTableViewController.swift in Sources */,
 				8DF08E511B12144400B61B47 /* RecordViewController.swift in Sources */,

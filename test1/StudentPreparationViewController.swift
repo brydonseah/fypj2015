@@ -33,6 +33,8 @@ class StudentPreparationViewController: UIViewController {
     var fiveDollarAmt: Double!
     var tenDollarAmt: Double!
     
+    var stud: Student!
+    
     let synth = AVSpeechSynthesizer()
     var myUtterance = AVSpeechUtterance(string: "")
 
@@ -72,6 +74,9 @@ class StudentPreparationViewController: UIViewController {
     }
     
     @IBAction func submit(sender: UIButton){
+        
+        
+        
         self.performSegueWithIdentifier("unwindStudentActivity", sender: self)
     }
 

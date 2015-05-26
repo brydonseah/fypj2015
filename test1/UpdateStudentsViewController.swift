@@ -23,6 +23,7 @@ class UpdateStudentsViewController: UIViewController, UIPickerViewDataSource, UI
     var studentID: Int32!
     var genderPickerView: UIPickerView!
     var classPickerView: UIPickerView!
+    var index: Int!
     
     override func viewDidLoad() {
         
@@ -169,7 +170,7 @@ class UpdateStudentsViewController: UIViewController, UIPickerViewDataSource, UI
 //
 //        }
 //        
-//        self.performSegueWithIdentifier("UpdateStudentDetail", sender: self)
+        self.performSegueWithIdentifier("UpdateStudentDetail", sender: self)
     }
     
 //    @IBAction func textFieldEditing(sender: UITextField) {
@@ -200,6 +201,7 @@ class UpdateStudentsViewController: UIViewController, UIPickerViewDataSource, UI
         if segue.identifier == "UpdateStudentDetail" {
             var vc = segue.destinationViewController as! StudentsTableViewController
             vc.studentUpdate = student
+            vc.indexOfObject = index
             studentName.text = ""
             studentGender.text = ""
             studentClass.text = ""

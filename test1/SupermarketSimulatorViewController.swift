@@ -14,7 +14,7 @@ class SupermarketSimulatorViewController: UIViewController {
     
     var studentTotalAmt: String!
     var studentBudget: String!
-    
+    var stud: Student!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +48,7 @@ class SupermarketSimulatorViewController: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if (segue.identifier == "receiptPhoto") {
-            let rp = segue.destinationViewController as! ReceiptPhotoViewController
+            let rp = segue.destinationViewController as! CameraViewController
             rp.studentTotalAmt = self.studentTotalAmt
             rp.studentBudget = self.studentBudget
         }

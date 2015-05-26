@@ -106,14 +106,20 @@ class MainStudentTableViewController: UITableViewController {
         performSegueWithIdentifier("StudentActivity", sender: indexPath)
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+        if (segue.identifier == "StudentActivity") {
+            var iPath: NSIndexPath = sender as! NSIndexPath
+            var s = self.dataArray[iPath.row]
+            let a = segue.destinationViewController as! StudentActivityTableViewController
+            a.stud = s
+        }
     }
-    */
+    
 
 }
