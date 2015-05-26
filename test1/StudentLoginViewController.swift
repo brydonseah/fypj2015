@@ -24,8 +24,9 @@ class StudentLoginViewController: UIViewController {
     }
     
     @IBAction func studentLogin(sender: UIButton){
-        //if(self.passcodeTextField.text == "")
+        if(self.passcodeTextField.text == "1234") {
         self.performSegueWithIdentifier("studentLogin", sender: self)
+        }
     }
     
     

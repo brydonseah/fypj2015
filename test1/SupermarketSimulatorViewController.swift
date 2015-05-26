@@ -51,6 +51,7 @@ class SupermarketSimulatorViewController: UIViewController {
             let rp = segue.destinationViewController as! CameraViewController
             rp.studentTotalAmt = self.studentTotalAmt
             rp.studentBudget = self.studentBudget
+            rp.stud = self.stud
         }
     }
     

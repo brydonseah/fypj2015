@@ -8,11 +8,14 @@
 
 import UIKit
 
-class DetailsEventViewController: UIViewController, UITextFieldDelegate {
+class DetailsEventViewController: UIViewController, UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet var dateTimeTextField: UITextField!
     @IBOutlet var eventNameTextField: UITextField!
     
+    @IBOutlet var codeLabel: UILabel!
+    
+    @IBOutlet var tableView: UITableView!
     
     var event: Event!
     var databasePath = NSString()
@@ -21,6 +24,9 @@ class DetailsEventViewController: UIViewController, UITextFieldDelegate {
     var inputDateView:UIView!
     var code: String!
     var index: Int!
+    var studArray: [Student] = []
+    
+    var ref = Firebase(url: "https://quest2015.firebaseio.com/studentActivity")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,15 +45,75 @@ class DetailsEventViewController: UIViewController, UITextFieldDelegate {
 
        eventNameTextField.text = event.title
        dateTimeTextField.text = event.date
+        codeLabel.text = event.code
+        
        println(event.code)
 //       println(event.title)
 //       println(event.date)
+        ref.queryOrderedByChild("code").queryEqualToValue(event.code).observeEventType(.ChildAdded, withBlock: { snapshot in
+            
+            let name = snapshot.value["student"] as! String
+            
+            var s = Student()
+            s.name = name
+
+            self.studArray.append(s)
+            self.tableView.reloadData()
+            println(name)
+            self.tableView.reloadData()
+        })
+
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        // #warning Potentially incomplete method implementation.
+        // Return the number of sections.
+        return 1
+    }
+    
+     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete method implementation.
+        //Return the number of rows in the section.
+        return self.studArray.count
+    }
+
+    
+     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("StudentECell", forIndexPath: indexPath) as! UITableViewCell
+        
+        let s = self.studArray[indexPath.row] as Student
+        
+        cell.textLabel?.text = s.name
+        
+        
+        // Configure the cell...
+        //        var cDate = NSDate()
+        //        var formatDate = NSDateFormatter()
+        //        formatDate.dateFormat = "dd-MM-yyyy hh:mm:aa"
+        //        var eventDateDate = formatDate.dateFromString(e1.date)
+        //
+        //        if eventDateDate?.compare(cDate) == NSComparisonResult.OrderedDescending {
+        //
+        //            cell.titleLabel.textColor = UIColor.blackColor()
+        //            //            println("Earlier")
+        //        }
+        //        else if eventDateDate?.compare(cDate) == NSComparisonResult.OrderedAscending {
+        //
+        //            cell.titleLabel.textColor = UIColor.redColor()
+        //            //            println("OKAY")
+        //        }
+        return cell
+    }
+
     
 //    @IBAction func updateEventDetails(){
 //        dispatch_sync(dispatch_get_global_queue(

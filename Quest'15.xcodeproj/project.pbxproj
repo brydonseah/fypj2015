@@ -29,6 +29,7 @@
 		867E46171ACCEC290096E8AC /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 867E46121ACCEC290096E8AC /* FMDatabasePool.m */; };
 		867E46191ACCECAF0096E8AC /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 867E46181ACCECAF0096E8AC /* libsqlite3.0.dylib */; };
 		867E461B1ACCECB60096E8AC /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 867E461A1ACCECB60096E8AC /* libsqlite3.dylib */; };
+		86AD52B11B14955900D9F2C0 /* default.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 86AD52B01B14955900D9F2C0 /* default.jpg */; };
 		86C9D8631AC0060700956C8B /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C9D8621AC0060700956C8B /* Event.swift */; };
 		86C9D8671AC009F600956C8B /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C9D8661AC009F600956C8B /* EventTableViewCell.swift */; };
 		86CE3E2F1AD79E0400EED2BA /* DetailsEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CE3E2E1AD79E0400EED2BA /* DetailsEventViewController.swift */; };
@@ -57,7 +58,6 @@
 		8D3CFD241B07B63E00B44C05 /* TestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3CFD231B07B63E00B44C05 /* TestTableViewCell.swift */; };
 		8D9FEDA41B138D0400EBD92E /* StudentPreparationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9FEDA31B138D0400EBD92E /* StudentPreparationViewController.swift */; };
 		8D9FEDA61B1398D200EBD92E /* SupermarketSimulatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9FEDA51B1398D200EBD92E /* SupermarketSimulatorViewController.swift */; };
-		8D9FEDA81B139C4500EBD92E /* ReceiptPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9FEDA71B139C4500EBD92E /* ReceiptPhotoViewController.swift */; };
 		8D9FEDAA1B13A08C00EBD92E /* MiniQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9FEDA91B13A08C00EBD92E /* MiniQuizViewController.swift */; };
 		8D9FEDAE1B13A83200EBD92E /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9FEDAD1B13A83200EBD92E /* FeedbackViewController.swift */; };
 		8D9FEDB21B13AC3500EBD92E /* StudentEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9FEDB11B13AC3500EBD92E /* StudentEventTableViewController.swift */; };
@@ -68,7 +68,6 @@
 		8DF08E4D1B12143E00B61B47 /* ForgotPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF08E4C1B12143E00B61B47 /* ForgotPassViewController.swift */; };
 		8DF08E501B12144400B61B47 /* RecordedAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF08E4E1B12144400B61B47 /* RecordedAudio.swift */; };
 		8DF08E511B12144400B61B47 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF08E4F1B12144400B61B47 /* RecordViewController.swift */; };
-		8DF08E531B12144E00B61B47 /* APSN.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DF08E521B12144E00B61B47 /* APSN.png */; };
 		8DF08E551B1215F400B61B47 /* TeacherLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF08E541B1215F400B61B47 /* TeacherLoginViewController.swift */; };
 		8DF08E571B12160900B61B47 /* TeacherSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF08E561B12160900B61B47 /* TeacherSignUpViewController.swift */; };
 		8DF08E5A1B1217F400B61B47 /* TeacherIndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF08E591B1217F400B61B47 /* TeacherIndexViewController.swift */; };
@@ -97,13 +96,13 @@
 		865D24281AF9E9C90097AE35 /* teacher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teacher.png; sourceTree = "<group>"; };
 		865D242D1AF9E9DF0097AE35 /* Tini.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tini.png; sourceTree = "<group>"; };
 		865D242F1AF9EA6D0097AE35 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		867087891ABFE32E00EAAF7B /* test1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		867087891ABFE32E00EAAF7B /* Quest'15.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quest'15.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8670878D1ABFE32E00EAAF7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8670878E1ABFE32E00EAAF7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		867087931ABFE32E00EAAF7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		867087951ABFE32E00EAAF7B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		867087981ABFE32E00EAAF7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		8670879E1ABFE32F00EAAF7B /* test1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = test1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8670879E1ABFE32F00EAAF7B /* Quest'15Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Quest'15Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		867087A31ABFE32F00EAAF7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		867087A41ABFE32F00EAAF7B /* test1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test1Tests.swift; sourceTree = "<group>"; };
 		867087AE1ABFED3B00EAAF7B /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +120,7 @@
 		867E46121ACCEC290096E8AC /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
 		867E46181ACCECAF0096E8AC /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		867E461A1ACCECB60096E8AC /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		86AD52B01B14955900D9F2C0 /* default.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default.jpg; sourceTree = "<group>"; };
 		86C9D8621AC0060700956C8B /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		86C9D8661AC009F600956C8B /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		86CE3E2E1AD79E0400EED2BA /* DetailsEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsEventViewController.swift; sourceTree = "<group>"; };
@@ -149,7 +149,6 @@
 		8D3CFD231B07B63E00B44C05 /* TestTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableViewCell.swift; sourceTree = "<group>"; };
 		8D9FEDA31B138D0400EBD92E /* StudentPreparationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentPreparationViewController.swift; sourceTree = "<group>"; };
 		8D9FEDA51B1398D200EBD92E /* SupermarketSimulatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupermarketSimulatorViewController.swift; sourceTree = "<group>"; };
-		8D9FEDA71B139C4500EBD92E /* ReceiptPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiptPhotoViewController.swift; sourceTree = "<group>"; };
 		8D9FEDA91B13A08C00EBD92E /* MiniQuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiniQuizViewController.swift; sourceTree = "<group>"; };
 		8D9FEDAD1B13A83200EBD92E /* FeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		8D9FEDB11B13AC3500EBD92E /* StudentEventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentEventTableViewController.swift; sourceTree = "<group>"; };
@@ -160,7 +159,6 @@
 		8DF08E4C1B12143E00B61B47 /* ForgotPassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPassViewController.swift; sourceTree = "<group>"; };
 		8DF08E4E1B12144400B61B47 /* RecordedAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordedAudio.swift; sourceTree = "<group>"; };
 		8DF08E4F1B12144400B61B47 /* RecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
-		8DF08E521B12144E00B61B47 /* APSN.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = APSN.png; sourceTree = "<group>"; };
 		8DF08E541B1215F400B61B47 /* TeacherLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherLoginViewController.swift; sourceTree = "<group>"; };
 		8DF08E561B12160900B61B47 /* TeacherSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherSignUpViewController.swift; sourceTree = "<group>"; };
 		8DF08E591B1217F400B61B47 /* TeacherIndexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherIndexViewController.swift; sourceTree = "<group>"; };
@@ -244,8 +242,8 @@
 		8670878A1ABFE32E00EAAF7B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				867087891ABFE32E00EAAF7B /* test1.app */,
-				8670879E1ABFE32F00EAAF7B /* test1Tests.xctest */,
+				867087891ABFE32E00EAAF7B /* Quest'15.app */,
+				8670879E1ABFE32F00EAAF7B /* Quest'15Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -260,8 +258,8 @@
 				8670878E1ABFE32E00EAAF7B /* AppDelegate.swift */,
 				867087921ABFE32E00EAAF7B /* Main.storyboard */,
 				865D242D1AF9E9DF0097AE35 /* Tini.png */,
+				86AD52B01B14955900D9F2C0 /* default.jpg */,
 				865D24281AF9E9C90097AE35 /* teacher.png */,
-				8DF08E521B12144E00B61B47 /* APSN.png */,
 				865D24271AF9E9C90097AE35 /* login2.jpg */,
 				867087951ABFE32E00EAAF7B /* Images.xcassets */,
 				867087971ABFE32E00EAAF7B /* LaunchScreen.xib */,
@@ -327,7 +325,6 @@
 				8D9FEDAD1B13A83200EBD92E /* FeedbackViewController.swift */,
 				86DDE7A51B12F37800555492 /* MainStudentTableViewController.swift */,
 				8D9FEDA91B13A08C00EBD92E /* MiniQuizViewController.swift */,
-				8D9FEDA71B139C4500EBD92E /* ReceiptPhotoViewController.swift */,
 				8DF08E4E1B12144400B61B47 /* RecordedAudio.swift */,
 				8DF08E4F1B12144400B61B47 /* RecordViewController.swift */,
 				86DDE7A91B131CCC00555492 /* StudentActivityTableViewController.swift */,
@@ -371,9 +368,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		867087881ABFE32E00EAAF7B /* test1 */ = {
+		867087881ABFE32E00EAAF7B /* Quest'15 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 867087A81ABFE32F00EAAF7B /* Build configuration list for PBXNativeTarget "test1" */;
+			buildConfigurationList = 867087A81ABFE32F00EAAF7B /* Build configuration list for PBXNativeTarget "Quest'15" */;
 			buildPhases = (
 				867087851ABFE32E00EAAF7B /* Sources */,
 				867087861ABFE32E00EAAF7B /* Frameworks */,
@@ -383,14 +380,14 @@
 			);
 			dependencies = (
 			);
-			name = test1;
+			name = "Quest'15";
 			productName = test1;
-			productReference = 867087891ABFE32E00EAAF7B /* test1.app */;
+			productReference = 867087891ABFE32E00EAAF7B /* Quest'15.app */;
 			productType = "com.apple.product-type.application";
 		};
-		8670879D1ABFE32F00EAAF7B /* test1Tests */ = {
+		8670879D1ABFE32F00EAAF7B /* Quest'15Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 867087AB1ABFE32F00EAAF7B /* Build configuration list for PBXNativeTarget "test1Tests" */;
+			buildConfigurationList = 867087AB1ABFE32F00EAAF7B /* Build configuration list for PBXNativeTarget "Quest'15Tests" */;
 			buildPhases = (
 				8670879A1ABFE32F00EAAF7B /* Sources */,
 				8670879B1ABFE32F00EAAF7B /* Frameworks */,
@@ -401,9 +398,9 @@
 			dependencies = (
 				867087A01ABFE32F00EAAF7B /* PBXTargetDependency */,
 			);
-			name = test1Tests;
+			name = "Quest'15Tests";
 			productName = test1Tests;
-			productReference = 8670879E1ABFE32F00EAAF7B /* test1Tests.xctest */;
+			productReference = 8670879E1ABFE32F00EAAF7B /* Quest'15Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -424,7 +421,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 867087841ABFE32E00EAAF7B /* Build configuration list for PBXProject "test1" */;
+			buildConfigurationList = 867087841ABFE32E00EAAF7B /* Build configuration list for PBXProject "Quest'15" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -437,8 +434,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				867087881ABFE32E00EAAF7B /* test1 */,
-				8670879D1ABFE32F00EAAF7B /* test1Tests */,
+				867087881ABFE32E00EAAF7B /* Quest'15 */,
+				8670879D1ABFE32F00EAAF7B /* Quest'15Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -448,7 +445,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DF08E531B12144E00B61B47 /* APSN.png in Resources */,
 				865D242B1AF9E9C90097AE35 /* teacher.png in Resources */,
 				8DE3B8771B08FCAB007E4227 /* login.jpg in Resources */,
 				8656B3031B1417F50070C662 /* unchecked_checkbox.png in Resources */,
@@ -459,6 +455,7 @@
 				867087991ABFE32E00EAAF7B /* LaunchScreen.xib in Resources */,
 				867087961ABFE32E00EAAF7B /* Images.xcassets in Resources */,
 				86EDF6571B01CB07006A2A39 /* Question Mark-32.png in Resources */,
+				86AD52B11B14955900D9F2C0 /* default.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,7 +477,6 @@
 				8D3CFD241B07B63E00B44C05 /* TestTableViewCell.swift in Sources */,
 				86C9D8671AC009F600956C8B /* EventTableViewCell.swift in Sources */,
 				867E46171ACCEC290096E8AC /* FMDatabasePool.m in Sources */,
-				8D9FEDA81B139C4500EBD92E /* ReceiptPhotoViewController.swift in Sources */,
 				8DF08E571B12160900B61B47 /* TeacherSignUpViewController.swift in Sources */,
 				8656B2FF1B1414120070C662 /* NoRadioButton.swift in Sources */,
 				8DF08E5F1B1235F700B61B47 /* SettingsTableViewController.swift in Sources */,
@@ -540,7 +536,7 @@
 /* Begin PBXTargetDependency section */
 		867087A01ABFE32F00EAAF7B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 867087881ABFE32E00EAAF7B /* test1 */;
+			target = 867087881ABFE32E00EAAF7B /* Quest'15 */;
 			targetProxy = 8670879F1ABFE32F00EAAF7B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -659,7 +655,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				New_Setting = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Quest'15";
 				SWIFT_OBJC_BRIDGING_HEADER = "test1/test1-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 2;
@@ -679,7 +675,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				New_Setting = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Quest'15";
 				SWIFT_OBJC_BRIDGING_HEADER = "test1/test1-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -699,7 +695,7 @@
 				);
 				INFOPLIST_FILE = test1Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Quest'15Tests";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/test1.app/test1";
 			};
 			name = Debug;
@@ -714,7 +710,7 @@
 				);
 				INFOPLIST_FILE = test1Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Quest'15Tests";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/test1.app/test1";
 			};
 			name = Release;
@@ -722,7 +718,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		867087841ABFE32E00EAAF7B /* Build configuration list for PBXProject "test1" */ = {
+		867087841ABFE32E00EAAF7B /* Build configuration list for PBXProject "Quest'15" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				867087A61ABFE32F00EAAF7B /* Debug */,
@@ -731,7 +727,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		867087A81ABFE32F00EAAF7B /* Build configuration list for PBXNativeTarget "test1" */ = {
+		867087A81ABFE32F00EAAF7B /* Build configuration list for PBXNativeTarget "Quest'15" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				867087A91ABFE32F00EAAF7B /* Debug */,
@@ -740,7 +736,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		867087AB1ABFE32F00EAAF7B /* Build configuration list for PBXNativeTarget "test1Tests" */ = {
+		867087AB1ABFE32F00EAAF7B /* Build configuration list for PBXNativeTarget "Quest'15Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				867087AC1ABFE32F00EAAF7B /* Debug */,

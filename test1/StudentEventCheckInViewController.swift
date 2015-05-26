@@ -19,7 +19,6 @@ class StudentEventCheckInViewController: UIViewController {
     var e: Event!
     var stud: Student!
     var count: Int = 1
-    var studName: [String] = []
     var code: String!
     
     override func viewDidLoad() {
@@ -39,24 +38,14 @@ class StudentEventCheckInViewController: UIViewController {
     @IBAction func submitButton(sender: UIButton) {
         
         if (self.codeTextField.text == code){
-        self.studName.append(stud.name)
-        var studString = ""
-        for (var i = 0; i < self.studName.count; i++) {
-        
-            if (i == 0) {
-                
-                studString = self.studName[i]
-                
-            } else if (i != 0){
-                
-                studString = studString + ", " + self.studName[i]
-            }
-        }
-        
-        var ref = Firebase(url: "https://quest2015.firebaseio.com/activities")
-        var hopperRef = ref.childByAppendingPath("\(e.uniqueKey)")
-        var updateValue = ["student": "\(studString)"]
-        hopperRef.updateChildValues(updateValue)
+            
+            //Firebase - Create
+            var ref = Firebase(url: "https://quest2015.firebaseio.com/")
+            let postRef = ref.childByAppendingPath("studentActivity")
+            let post1 = ["name": "\(e.title)", "datetime": "\(e.date)", "code": "\(e.code)", "student": "\(stud.name)"]
+            let post1Ref = postRef.childByAutoId()
+            //        println(post1Ref)
+            post1Ref.setValue(post1)
         
         
         var submitAlert = UIAlertController(title: "Successfully checked in.", message: "", preferredStyle: UIAlertControllerStyle.Alert)

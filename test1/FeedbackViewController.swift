@@ -20,6 +20,8 @@ class FeedbackViewController: UIViewController, AVAudioRecorderDelegate {
     @IBOutlet var refTextField: UITextField!
     @IBOutlet var recordButton: UIButton!
     
+    @IBOutlet var submitButton: UIButton!
+    
     var audioRecorder: AVAudioRecorder!
     var recordedAudio: RecordedAudio!
     var audioPlayer: AVAudioPlayer!
@@ -32,11 +34,17 @@ class FeedbackViewController: UIViewController, AVAudioRecorderDelegate {
     
     var stud: Student!
     
+    var string1: String!
+    var string2: String!
+    
     var checkImgYes = UIImage(named: "yes_selected")
     var uncheckImgYes = UIImage(named: "yes_not_selected")
     
     var checkImgNo = UIImage(named: "no_selected")
     var uncheckImgNo = UIImage(named: "no_not_selected")
+    
+    var fileLocation: NSString!
+    var base64String: String!
     
     
     override func viewDidLoad() {
@@ -53,6 +61,8 @@ class FeedbackViewController: UIViewController, AVAudioRecorderDelegate {
         self.yesButton2.selected = false
         self.yesButton2.setImage(uncheckImgYes, forState: UIControlState.Normal)
         self.noButton2.selected = false
+        
+        submitButton.addTarget(self, action: "submitFeedback:", forControlEvents: UIControlEvents.TouchUpInside)
     }
 
     override func didReceiveMemoryWarning() {
@@ -70,6 +80,7 @@ class FeedbackViewController: UIViewController, AVAudioRecorderDelegate {
         self.yesButton.setImage(checkImgYes, forState: UIControlState.Normal)
         self.noButton.selected = false
         self.noButton.setImage(uncheckImgNo, forState:UIControlState.Normal)
+        string1 = "Yes"
     }
     
     @IBAction func noCheckbox(sender: UIButton) {
@@ -78,6 +89,7 @@ class FeedbackViewController: UIViewController, AVAudioRecorderDelegate {
         self.yesButton.setImage(uncheckImgYes, forState: UIControlState.Normal)
         self.noButton.selected = true
         self.noButton.setImage(checkImgNo, forState:UIControlState.Normal)
+        string1 = "No"
     }
     
     @IBAction func yesCheckbox2(sender: UIButton) {
@@ -85,6 +97,7 @@ class FeedbackViewController: UIViewController, AVAudioRecorderDelegate {
         self.yesButton2.setImage(checkImgYes, forState: UIControlState.Normal)
         self.noButton2.selected = false
         self.noButton2.setImage(uncheckImgNo, forState:UIControlState.Normal)
+        string2 = "Yes"
     }
     
     @IBAction func noCheckbox2(sender: UIButton) {
@@ -92,6 +105,7 @@ class FeedbackViewController: UIViewController, AVAudioRecorderDelegate {
         self.yesButton2.setImage(uncheckImgYes, forState: UIControlState.Normal)
         self.noButton2.selected = true
         self.noButton2.setImage(checkImgNo, forState:UIControlState.Normal)
+        string2 = "No"
     }
     
     @IBAction func recordAudio(sender: UIButton) {
@@ -127,6 +141,43 @@ class FeedbackViewController: UIViewController, AVAudioRecorderDelegate {
         audioRecorder.stop()
         var audioSession = AVAudioSession.sharedInstance()
         audioSession.setActive(false, error: nil)
+        
+        var error: NSError?
+        
+        var fileLocation = NSString(string:NSBundle.mainBundle().pathForResource("\(currentDateTime)", ofType: "wav")!)
+        let fileData = NSData(contentsOfFile: fileLocation as String, options: NSDataReadingOptions.DataReadingMappedIfSafe, error: &error)
+        base64String = fileData?.base64EncodedStringWithOptions(.allZeros)
+        println(base64String)
+
+    }
+    
+    @IBAction func submitFeedback(sender: UIButton){
+        
+        if( string1 == "" || string2 == "" || refTextField.text == "") {
+            
+            let alert = UIAlertView()
+            alert.title = "Error submitting!"
+            alert.message = "Please check again."
+            alert.addButtonWithTitle("Ok")
+            alert.show()
+        
+        } else {
+        
+        //Firebase - Create
+        var ref = Firebase(url: "https://quest2015.firebaseio.com/")
+        let postRef = ref.childByAppendingPath("feedbacks")
+        let post1 = ["name": "\(stud.name)", "q1": "\(string1)", "q2": "\(string2)", "q3": "\(refTextField.text)", "q3Audio": "\(base64String)"]
+        let post1Ref = postRef.childByAutoId()
+        //        println(post1Ref)
+        post1Ref.setValue(post1)
+        
+        var submitAlert = UIAlertController(title: "Successfully submitted!", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+        submitAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action: UIAlertAction!) in
+            self.performSegueWithIdentifier("unwindStudActivity", sender: self)
+        }))
+        self.presentViewController(submitAlert, animated: true, completion: nil)
+        }
+
     }
     
     /*

@@ -86,7 +86,6 @@ class EventsViewController: UITableViewController {
         self.tableView.rowHeight = 121
       
         println(self.userEmail)
-        
  
     }
     

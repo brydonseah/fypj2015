@@ -29,9 +29,9 @@ class StudentPreparationViewController: UIViewController {
     
     @IBOutlet var submitButton: UIButton!
     
-    var twoDollarAmt: Double!
-    var fiveDollarAmt: Double!
-    var tenDollarAmt: Double!
+    var twoDollarAmt: Int = 0
+    var fiveDollarAmt: Int = 0
+    var tenDollarAmt: Int = 0
     
     var stud: Student!
     
@@ -57,27 +57,38 @@ class StudentPreparationViewController: UIViewController {
     }
     
     @IBAction func twoDollar(sender: UIStepper) {
-        twoDollarAmt = twoDollarStepper.value * 2
+        twoDollarAmt = Int(twoDollarStepper.value * 2)
         twoDollarLabel.text = "$\(twoDollarAmt)"
+        totalAmtTextField.text = "\(twoDollarAmt + fiveDollarAmt + tenDollarAmt)"
         
     }
     
     @IBAction func fiveDollar(sender: UIStepper) {
-        fiveDollarAmt = fiveDollarStepper.value * 5
+        fiveDollarAmt = Int(fiveDollarStepper.value * 5)
         fiveDollarLabel.text = "$\(fiveDollarAmt)"
-        
+        totalAmtTextField.text = "\(twoDollarAmt + fiveDollarAmt + tenDollarAmt)"
     }
     
     @IBAction func tenDollar(sender: UIStepper) {
-        tenDollarAmt = tenDollarStepper.value * 10
+        tenDollarAmt = Int(tenDollarStepper.value * 10)
         tenDollarLabel.text = "$\(tenDollarAmt)"
+        totalAmtTextField.text = "\(twoDollarAmt + fiveDollarAmt + tenDollarAmt)"
     }
     
     @IBAction func submit(sender: UIButton){
+        //Firebase - Create
+        var ref = Firebase(url: "https://quest2015.firebaseio.com/")
+        let postRef = ref.childByAppendingPath("StudentPreparations")
+        let post1 = ["name": "\(stud.name)", "totalamt": "\(totalAmtTextField.text)", "budget": "\(budgetAmtTextField.text)"]
+        let post1Ref = postRef.childByAutoId()
+        //        println(post1Ref)
+        post1Ref.setValue(post1)
         
-        
-        
-        self.performSegueWithIdentifier("unwindStudentActivity", sender: self)
+        var submitAlert = UIAlertController(title: "Successfully submitted!", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+        submitAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action: UIAlertAction!) in
+            self.performSegueWithIdentifier("unwindStudentActivity", sender: self)
+        }))
+        self.presentViewController(submitAlert, animated: true, completion: nil)
     }
 
     

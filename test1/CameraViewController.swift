@@ -18,12 +18,14 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
     var studentBudget: String!
     
     var b64string: NSString!
+    var stud: Student!
     
     var ref = Firebase(url: "https://quest2015.firebaseio.com/")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        imagen.layer.cornerRadius = 8.0
+        imagen.clipsToBounds = true
         // Do any additional setup after loading the view.
     }
 
@@ -68,13 +70,13 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
     }
     
     @IBAction func savePhoto(sender: UIButton){
-//    
-//        var saveImg: UIImage = imagen.image!
-//        
-//        let imageData = UIImageJPEGRepresentation(saveImg, 0.0)
-//        
-//        b64string = imageData.base64EncodedStringWithOptions(.allZeros)
-//        
+    
+        var saveImg: UIImage = imagen.image!
+        
+        let imageData = UIImageJPEGRepresentation(saveImg, 0.0)
+        
+        b64string = imageData.base64EncodedStringWithOptions(.allZeros)
+//
 //        var usersRef = ref.childByAppendingPath("images")
 //        
 //        var post = ["image": self.b64string]
@@ -110,7 +112,7 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
         let mq = segue.destinationViewController as! MiniQuizViewController
         mq.studentTotalAmt = self.studentTotalAmt
         mq.studentBudget = self.studentBudget
-        mq.image = imagen.image
+        mq.b64string = self.b64string
     }
     
 
