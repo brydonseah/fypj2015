@@ -3,7 +3,7 @@
 //  test1
 //
 //  Created by fypjadmin on 10/4/15.
-//  Copyright (c) 2015 nyp. All rights reserved.
+//  Copyright (c) 2015 nyp. All rights reserved./Users/training/Desktop/test1 2 2 4 2/test1/DetailsEventViewController.swift
 //
 
 import UIKit
@@ -12,9 +12,8 @@ class DetailsEventViewController: UIViewController, UITextFieldDelegate, UITable
 
     @IBOutlet var dateTimeTextField: UITextField!
     @IBOutlet var eventNameTextField: UITextField!
-    
+    @IBOutlet var imageView: UIImageView!
     @IBOutlet var codeLabel: UILabel!
-    
     @IBOutlet var tableView: UITableView!
     
     var event: Event!
@@ -25,12 +24,18 @@ class DetailsEventViewController: UIViewController, UITextFieldDelegate, UITable
     var code: String!
     var index: Int!
     var studArray: [Student] = []
+    var cellColor : UIColor = UIColor(red: (238/255.0), green: (232/255.0), blue: (170/255.0), alpha: 0.8)
     
     var ref = Firebase(url: "https://quest2015.firebaseio.com/studentActivity")
     
     override func viewDidLoad() {
         super.viewDidLoad()
                 // Do any additional setup after loading the view.
+        
+        self.imageView.alpha = 0.9 // = UIColor.blackColor().colorWithAlphaComponent(0.3)
+        self.imageView.image = UIImage(named:"img3")
+        dateTimeTextField.backgroundColor = cellColor
+        eventNameTextField.backgroundColor = cellColor
         
         let filemgr = NSFileManager.defaultManager()
         let dirPaths =
@@ -65,6 +70,8 @@ class DetailsEventViewController: UIViewController, UITextFieldDelegate, UITable
 
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        self.imageView.alpha = 0.9 // = UIColor.blackColor().colorWithAlphaComponent(0.3)
+        self.imageView.image = UIImage(named:"img3")
         
     }
 

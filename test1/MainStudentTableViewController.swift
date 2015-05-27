@@ -13,10 +13,14 @@ class MainStudentTableViewController: UITableViewController {
     var indexOfObject: Int!
     var dataArray: [Student] = []
     
+    
     var ref = Firebase(url: "https://quest2015.firebaseio.com/students")
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tableView.backgroundView = UIImageView(image: UIImage(named: "img2"))
+        self.tableView.backgroundView!.alpha = 0.9
         
         
         ref.queryOrderedByKey().observeEventType(.ChildAdded, withBlock: { snapshot in
@@ -81,6 +85,7 @@ class MainStudentTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("StudentTableCell", forIndexPath: indexPath) as! StudentTableViewCell
         
+        cell.backgroundColor = UIColor(white: 1.0, alpha: 0.5)
         let s = self.dataArray[indexPath.row] as Student
         cell.studentLabel.text = s.name
         // Configure the cell...

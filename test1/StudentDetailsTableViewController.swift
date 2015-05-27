@@ -38,8 +38,8 @@ class StudentDetailsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        self.studentImage.alpha = 0.5 // = UIColor.blackColor().colorWithAlphaComponent(0.3)
-        self.studentImage.image = UIImage(named:"background")
+        self.studentImage.alpha = 0.9 // = UIColor.blackColor().colorWithAlphaComponent(0.3)
+        self.studentImage.image = UIImage(named:"img3")
 
         
         

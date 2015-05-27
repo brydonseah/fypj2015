@@ -33,6 +33,7 @@ class EventsViewController: UITableViewController {
     
     var userEmail: String!
     var userPass: String!
+    var cellColor : UIColor = UIColor(red: (238/255.0), green: (232/255.0), blue: (170/255.0), alpha: 0.8)
     
     
     override func viewDidLoad() {
@@ -60,6 +61,8 @@ class EventsViewController: UITableViewController {
             self.dataArray.append(e)
             self.tableView.reloadData()
             println(name)
+              self.tableView.backgroundView = UIImageView(image: UIImage(named: "img3"))
+            self.tableView.backgroundView!.alpha = 0.9
             
         })
 
@@ -112,6 +115,7 @@ class EventsViewController: UITableViewController {
    
         let cell = tableView.dequeueReusableCellWithIdentifier("EventCell", forIndexPath: indexPath) as! EventTableViewCell
         
+        cell.backgroundColor = cellColor
        let e = self.dataArray[indexPath.row] as Event
         cell.titleLabel.text = e.title
         cell.dateLabel.text = e.date

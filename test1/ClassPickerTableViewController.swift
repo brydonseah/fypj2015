@@ -22,7 +22,7 @@ class ClassPickerTableViewController: UITableViewController {
         
         self.tableView.rowHeight = 100
         self.tableView.backgroundView = UIImageView(image: UIImage(named: "img3"))
-        self.tableView.backgroundView!.alpha = 0.0 // = UIColor.blackColor().colorWithAlphaComponent(0.3)
+        self.tableView.backgroundView!.alpha = 0.9 // = UIColor.blackColor().colorWithAlphaComponent(0.3)
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

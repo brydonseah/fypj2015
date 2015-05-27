@@ -14,6 +14,7 @@ class FeedbackViewController: UIViewController, AVAudioRecorderDelegate {
     @IBOutlet var yesButton: UIButton!
     @IBOutlet var noButton: UIButton!
     
+    @IBOutlet var imageView: UIImageView!
     @IBOutlet var yesButton2: UIButton!
     @IBOutlet var noButton2: UIButton!
     
@@ -63,6 +64,9 @@ class FeedbackViewController: UIViewController, AVAudioRecorderDelegate {
         self.noButton2.selected = false
         
         submitButton.addTarget(self, action: "submitFeedback:", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        self.imageView.alpha = 0.9 // = UIColor.blackColor().colorWithAlphaComponent(0.3)
+        self.imageView.image = UIImage(named:"img2")
     }
 
     override func didReceiveMemoryWarning() {

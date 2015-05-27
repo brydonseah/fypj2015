@@ -14,6 +14,7 @@ class MiniQuizViewController: UIViewController {
     @IBOutlet var totalAmtTextField: UITextField!
     @IBOutlet var budgetAmtTextField: UITextField!
     @IBOutlet var spentAmtTextField: UITextField!
+    @IBOutlet var imageView: UIImageView!
     
     var studentTotalAmt: String!
     var studentBudget: String!
@@ -26,6 +27,8 @@ class MiniQuizViewController: UIViewController {
         totalAmtTextField.text = studentTotalAmt
         budgetAmtTextField.text = studentBudget
         // Do any additional setup after loading the view.
+        self.imageView.alpha = 0.9 // = UIColor.blackColor().colorWithAlphaComponent(0.3)
+        self.imageView.image = UIImage(named:"img2")
     }
 
     override func didReceiveMemoryWarning() {

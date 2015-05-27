@@ -15,6 +15,7 @@ class StudentPreparationViewController: UIViewController {
     @IBOutlet var fiveDollarStepper: UIStepper!
     @IBOutlet var tenDollarStepper: UIStepper!
     
+    @IBOutlet var imageView: UIImageView!
     @IBOutlet var tenDollarLabel: UILabel!
     @IBOutlet var fiveDollarLabel: UILabel!
     @IBOutlet var twoDollarLabel: UILabel!
@@ -42,6 +43,11 @@ class StudentPreparationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        instructionTextView.backgroundColor = UIColor(white: 1.0, alpha: 0.5)
+        self.imageView.alpha = 0.9 // = UIColor.blackColor().colorWithAlphaComponent(0.3)
+        self.imageView.image = UIImage(named:"img2")
+
     }
 
     override func didReceiveMemoryWarning() {
