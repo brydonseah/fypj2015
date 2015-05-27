@@ -37,6 +37,7 @@ class ForgotPassViewController: UIViewController {
                 self.presentViewController(errorAlert, animated: true, completion: nil)
 
             } else {
+                
                 var successAlert = UIAlertController(title: "Please check your email for the temporary password.", message: "", preferredStyle: UIAlertControllerStyle.Alert)
                 successAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action: UIAlertAction!) in
                     self.performSegueWithIdentifier("unwindMain", sender: self)

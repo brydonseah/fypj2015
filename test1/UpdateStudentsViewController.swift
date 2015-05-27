@@ -202,14 +202,15 @@ class UpdateStudentsViewController: UIViewController, UIPickerViewDataSource, UI
             var vc = segue.destinationViewController as! StudentsTableViewController
             vc.studentUpdate = student
             vc.indexOfObject = index
-            studentName.text = ""
-            studentGender.text = ""
-            studentClass.text = ""
             
             var ref = Firebase(url: "https://quest2015.firebaseio.com/students")
             var hopperRef = ref.childByAppendingPath("\(student.studentID)")
             var updateValue = ["name": "\(self.studentName.text)", "gender": "\(self.studentGender.text)", "class": "\(self.studentClass.text)"]
             hopperRef.updateChildValues(updateValue)
+            
+            studentName.text = ""
+            studentGender.text = ""
+            studentClass.text = ""
         }
     }
 //    

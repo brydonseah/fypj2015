@@ -113,6 +113,7 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
         mq.studentTotalAmt = self.studentTotalAmt
         mq.studentBudget = self.studentBudget
         mq.b64string = self.b64string
+        mq.stud = self.stud
     }
     
 

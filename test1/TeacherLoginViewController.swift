@@ -76,7 +76,7 @@ class TeacherLoginViewController: UIViewController {
                     .childByAppendingPath(authData.uid).setValue(newUser)
                 
                 // We are now logged in
-                var loginSuccess = UIAlertController(title: "Login succesfully.", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+                var loginSuccess = UIAlertController(title: "Login successfully.", message: "", preferredStyle: UIAlertControllerStyle.Alert)
                 loginSuccess.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action: UIAlertAction!) in
                     self.performSegueWithIdentifier("LoginSuccess", sender: self)
                 }))

@@ -44,7 +44,7 @@ class TeacherSignUpViewController: UIViewController {
     
     @IBAction func createUser(sender: UIButton){
         
-        if (emailTextField.text.isEmpty || confirmEmailTextField.text.isEmpty || passTextField.text.isEmpty || confirmPassTextField.text.isEmpty) {
+        if (emailTextField.text.isEmpty || passTextField.text.isEmpty || confirmPassTextField.text.isEmpty) {
             
             let alert = UIAlertView()
             alert.title = "Required fills not filled in."
@@ -54,10 +54,10 @@ class TeacherSignUpViewController: UIViewController {
             
         }
             
-        else if (emailTextField.text != confirmEmailTextField.text || passTextField.text != confirmPassTextField.text) {
+        else if (passTextField.text != confirmPassTextField.text) {
             let alert = UIAlertView()
-            alert.title = "Different email/password entered."
-            alert.message = "Please check the emails/passwords you entered in the fills are the same. "
+            alert.title = "Different password entered."
+            alert.message = "Please check the fills you entered are the same. "
             alert.addButtonWithTitle("Ok")
             alert.show()
             
@@ -66,10 +66,16 @@ class TeacherSignUpViewController: UIViewController {
         else {
             self.randomPass = self.randomStringOfLength(length)
             
-            ref.createUser("\(self.confirmEmailTextField.text)", password: "\(self.confirmPassTextField.text)",
+            ref.createUser("\(self.emailTextField.text)", password: "\(self.confirmPassTextField.text)",
                 withValueCompletionBlock: { error, result in
                     if error != nil {
-                        // There was an error creating the account
+//                         There was an error creating the account
+                        let alert = UIAlertView()
+                        alert.title = "User already exists."
+                        alert.message = ""
+                        alert.addButtonWithTitle("Ok")
+                        alert.show()
+
                     } else {
                         let uid = result["uid"] as! String
                         println("Successfully created user account with uid: \(uid)")

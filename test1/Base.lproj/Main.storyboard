@@ -78,7 +78,7 @@
                             <tableViewSection headerTitle="Event Name" id="yoV-iq-3ae">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" id="a8L-Zl-eaa">
-                                        <rect key="frame" x="0.0" y="50" width="768" height="44"/>
+                                        <rect key="frame" x="0.0" y="114" width="768" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a8L-Zl-eaa" id="ikC-k7-hSM">
                                             <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
@@ -98,7 +98,7 @@
                             <tableViewSection headerTitle="Please Select Date &amp; Time" id="ex0-n4-Skc">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="Cwi-GK-M77">
-                                        <rect key="frame" x="0.0" y="137" width="768" height="44"/>
+                                        <rect key="frame" x="0.0" y="201" width="768" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Cwi-GK-M77" id="3LR-nz-GKh">
                                             <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
@@ -641,6 +641,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Student" id="RIp-mO-huo">
                         <barButtonItem key="backBarButtonItem" title="Back" id="Gdo-Kz-2T5"/>
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="STo-Hn-uba"/>
                     </navigationItem>
                     <connections>
                         <segue destination="hgI-3K-rDd" kind="push" identifier="StudentActivity" id="od7-10-yus"/>
@@ -894,7 +895,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="StudentEventCell" rowHeight="120" id="9fq-pv-zpK" customClass="StudentEventTableViewCell" customModule="Quest_15" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="22" width="768" height="120"/>
+                                <rect key="frame" x="0.0" y="86" width="768" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9fq-pv-zpK" id="h3c-zD-537">
                                     <rect key="frame" x="0.0" y="0.0" width="735" height="119"/>
@@ -1029,7 +1030,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="35b-wL-aZu">
                                 <rect key="frame" x="637" y="866" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="Next">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1582,6 +1583,68 @@
             </objects>
             <point key="canvasLocation" x="4545" y="6694"/>
         </scene>
+        <!--Test Record View Controller-->
+        <scene sceneID="1hx-km-oSn">
+            <objects>
+                <viewController id="JNz-pb-rZ4" customClass="TestRecordViewController" customModule="Quest_15" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ket-iF-f96">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="l0X-qq-s3H">
+                                <rect key="frame" x="326" y="153" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="play">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playAudio:" destination="JNz-pb-rZ4" eventType="touchUpInside" id="U3K-Dq-I1h"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1cK-Ie-vCY">
+                                <rect key="frame" x="252" y="463" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="record">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="recordAudio:" destination="JNz-pb-rZ4" eventType="touchUpInside" id="psb-Qe-MVJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Oex-cA-MAG">
+                                <rect key="frame" x="440" y="561" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveAudio:" destination="JNz-pb-rZ4" eventType="touchUpInside" id="lv0-I6-kFl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Syd-kB-k9E">
+                                <rect key="frame" x="355" y="367" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="stop">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopAudio:" destination="JNz-pb-rZ4" eventType="touchUpInside" id="FGD-cn-eWK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="playButton" destination="l0X-qq-s3H" id="FeK-de-jqd"/>
+                        <outlet property="recordButton" destination="1cK-Ie-vCY" id="YHg-XV-Sbj"/>
+                        <outlet property="saveButton" destination="Oex-cA-MAG" id="FjA-kY-gaW"/>
+                        <outlet property="stopButton" destination="Syd-kB-k9E" id="fq9-J5-8fv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Mc-1y-ZvK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6156" y="6724"/>
+        </scene>
         <!--Camera View Controller-->
         <scene sceneID="ju5-hA-Jnn">
             <objects>
@@ -1704,13 +1767,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="DOM-9J-VSo">
-                                <rect key="frame" x="584" y="611" width="61" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Micro-50">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RGI-GM-29z">
                                 <rect key="frame" x="339" y="749" width="88" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1722,6 +1778,36 @@
                                     <action selector="submitFeedback:" destination="yx8-m3-kPJ" eventType="touchUpInside" id="yPl-dD-bkn"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qow-Gf-jNb">
+                                <rect key="frame" x="620" y="597" width="58" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="REcord">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="recordAudio:" destination="yx8-m3-kPJ" eventType="touchUpInside" id="QPK-ys-PrM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="FLS-Ks-Qtr">
+                                <rect key="frame" x="620" y="635" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Play">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playAudio:" destination="yx8-m3-kPJ" eventType="touchUpInside" id="eKO-S9-xZC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jC8-5V-QN8">
+                                <rect key="frame" x="620" y="673" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Stop">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopRecordingAudio:" destination="yx8-m3-kPJ" eventType="touchUpInside" id="Zsf-UN-c1h"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1729,8 +1815,10 @@
                     <connections>
                         <outlet property="noButton" destination="deD-Ja-jKZ" id="rNs-sS-yhW"/>
                         <outlet property="noButton2" destination="nav-tA-4JL" id="xxj-WH-SKy"/>
-                        <outlet property="recordButton" destination="DOM-9J-VSo" id="VOr-HH-pGF"/>
+                        <outlet property="playButton" destination="FLS-Ks-Qtr" id="H5S-Lb-xwy"/>
+                        <outlet property="recordButton" destination="qow-Gf-jNb" id="yWX-nj-cHb"/>
                         <outlet property="refTextField" destination="QR2-HZ-UJ2" id="XyM-u1-gLo"/>
+                        <outlet property="stopButton" destination="jC8-5V-QN8" id="tJH-4M-rnh"/>
                         <outlet property="submitButton" destination="RGI-GM-29z" id="v9Y-xx-3oJ"/>
                         <outlet property="yesButton" destination="l6v-CL-Ah1" id="SMx-4l-p3h"/>
                         <outlet property="yesButton2" destination="dIz-zC-QVS" id="iMC-WF-oKg"/>
@@ -2127,7 +2215,7 @@
                             <tableViewSection headerTitle="Student Name" id="HOh-2O-0Zm">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="v1J-T5-0g1">
-                                        <rect key="frame" x="0.0" y="50" width="768" height="44"/>
+                                        <rect key="frame" x="0.0" y="114" width="768" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="v1J-T5-0g1" id="SpN-30-LMW">
                                             <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
@@ -2147,7 +2235,7 @@
                             <tableViewSection headerTitle="Selected Gender" id="QeS-UL-FxS">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="genderCell" textLabel="7Dw-oJ-OS8" detailTextLabel="TFm-1H-MCj" style="IBUITableViewCellStyleValue1" id="Fmu-KO-dUB">
-                                        <rect key="frame" x="0.0" y="137" width="768" height="44"/>
+                                        <rect key="frame" x="0.0" y="201" width="768" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fmu-KO-dUB" id="Nkv-MH-yiN">
                                             <rect key="frame" x="0.0" y="0.0" width="735" height="43"/>
@@ -2176,7 +2264,7 @@
                             <tableViewSection headerTitle="Select Class" id="uaP-Xr-VWN">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="classCell" textLabel="XJe-Pl-UgX" detailTextLabel="kb0-8e-Rkw" style="IBUITableViewCellStyleValue1" id="8Xg-12-yeS">
-                                        <rect key="frame" x="0.0" y="224" width="768" height="44"/>
+                                        <rect key="frame" x="0.0" y="288" width="768" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8Xg-12-yeS" id="QgK-wl-be8">
                                             <rect key="frame" x="0.0" y="0.0" width="735" height="43"/>
@@ -2244,7 +2332,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="categoryCell" textLabel="A2B-WM-zLd" style="IBUITableViewCellStyleDefault" id="20O-cE-a1R">
-                                <rect key="frame" x="0.0" y="22" width="768" height="44"/>
+                                <rect key="frame" x="0.0" y="86" width="768" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="20O-cE-a1R" id="pia-dy-9dp">
                                     <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
@@ -2286,7 +2374,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="genderCell" textLabel="jwh-XK-L4G" style="IBUITableViewCellStyleDefault" id="lnu-qG-K6t">
-                                <rect key="frame" x="0.0" y="22" width="768" height="44"/>
+                                <rect key="frame" x="0.0" y="86" width="768" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lnu-qG-K6t" id="TzF-cX-9eU">
                                     <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
@@ -2330,7 +2418,6 @@
         <image name="Audio Wave Filled-64" width="64" height="64"/>
         <image name="Crayons-around-paper501" width="1300" height="863"/>
         <image name="Green_School_Board_PNG_Picture" width="5390" height="2856"/>
-        <image name="Micro-50" width="50" height="50"/>
         <image name="Settings Filled-32" width="32" height="32"/>
         <image name="Teacher-icon" width="512" height="512"/>
         <image name="back button" width="196" height="118"/>

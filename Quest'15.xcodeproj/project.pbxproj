@@ -22,6 +22,7 @@
 		867087991ABFE32E00EAAF7B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 867087971ABFE32E00EAAF7B /* LaunchScreen.xib */; };
 		867087A51ABFE32F00EAAF7B /* test1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867087A41ABFE32F00EAAF7B /* test1Tests.swift */; };
 		867087AF1ABFED3B00EAAF7B /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867087AE1ABFED3B00EAAF7B /* EventsViewController.swift */; };
+		8671EF411B1559E4003E6F08 /* TestRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8671EF401B1559E4003E6F08 /* TestRecordViewController.swift */; };
 		867E46131ACCEC290096E8AC /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 867E460A1ACCEC290096E8AC /* FMDatabase.m */; };
 		867E46141ACCEC290096E8AC /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 867E460C1ACCEC290096E8AC /* FMResultSet.m */; };
 		867E46151ACCEC290096E8AC /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 867E460E1ACCEC290096E8AC /* FMDatabaseQueue.m */; };
@@ -106,6 +107,7 @@
 		867087A31ABFE32F00EAAF7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		867087A41ABFE32F00EAAF7B /* test1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test1Tests.swift; sourceTree = "<group>"; };
 		867087AE1ABFED3B00EAAF7B /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
+		8671EF401B1559E4003E6F08 /* TestRecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRecordViewController.swift; sourceTree = "<group>"; };
 		867E46071ACCEC290096E8AC /* test1-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "test1-Bridging-Header.h"; sourceTree = "<group>"; };
 		867E46081ACCEC290096E8AC /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
 		867E46091ACCEC290096E8AC /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 				8670878C1ABFE32E00EAAF7B /* Supporting Files */,
 				8D3CFD211B079F5D00B44C05 /* TestTableViewController.swift */,
 				8D3CFD231B07B63E00B44C05 /* TestTableViewCell.swift */,
+				8671EF401B1559E4003E6F08 /* TestRecordViewController.swift */,
 			);
 			path = test1;
 			sourceTree = "<group>";
@@ -417,7 +420,6 @@
 					};
 					8670879D1ABFE32F00EAAF7B = {
 						CreatedOnToolsVersion = 6.2;
-						TestTargetID = 867087881ABFE32E00EAAF7B;
 					};
 				};
 			};
@@ -496,6 +498,7 @@
 				8D9FEDA61B1398D200EBD92E /* SupermarketSimulatorViewController.swift in Sources */,
 				86F555B71ADF52FE00DE6019 /* DisableTextFieldProperties.swift in Sources */,
 				8DF08E5A1B1217F400B61B47 /* TeacherIndexViewController.swift in Sources */,
+				8671EF411B1559E4003E6F08 /* TestRecordViewController.swift in Sources */,
 				8DF08E501B12144400B61B47 /* RecordedAudio.swift in Sources */,
 				8D9FEDAA1B13A08C00EBD92E /* MiniQuizViewController.swift in Sources */,
 				8656B2FD1B1412060070C662 /* YesRadioButton.swift in Sources */,
@@ -684,7 +687,6 @@
 		867087AC1ABFE32F00EAAF7B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -696,14 +698,12 @@
 				INFOPLIST_FILE = test1Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "Quest'15Tests";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Quest'15.app/Quest'15";
 			};
 			name = Debug;
 		};
 		867087AD1ABFE32F00EAAF7B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -711,7 +711,6 @@
 				INFOPLIST_FILE = test1Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "Quest'15Tests";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Quest'15.app/Quest'15";
 			};
 			name = Release;
 		};
