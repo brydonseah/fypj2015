@@ -14,7 +14,7 @@ class ClassPickerTableViewController: UITableViewController {
     
     var selectedCategory: String? = nil
     var selectedCategoryIndex: Int? = 0
-    var cellColor : UIColor = UIColor(red: (238/255.0), green: (232/255.0), blue: (170/255.0), alpha: 0.8)
+    var cellColor : UIColor = UIColor(red: (238/255.0), green: (232/255.0), blue: (170/255.0), alpha: 0.5)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +22,7 @@ class ClassPickerTableViewController: UITableViewController {
         
         self.tableView.rowHeight = 100
         self.tableView.backgroundView = UIImageView(image: UIImage(named: "img3"))
-        self.tableView.backgroundView!.alpha = 0.0 // = UIColor.blackColor().colorWithAlphaComponent(0.3)
+        self.tableView.backgroundView!.alpha = 0.9 // = UIColor.blackColor().colorWithAlphaComponent(0.3)
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

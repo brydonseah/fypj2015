@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14C109" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="rRs-Xk-AMc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C109" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="rRs-Xk-AMc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <scenes>
         <!--Activities-->
@@ -34,10 +34,6 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="math symbol1" id="HeX-Hd-ZZK" userLabel="eventIcon">
-                                            <rect key="frame" x="260" y="0.0" width="446" height="112"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
@@ -64,7 +60,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sgw-FH-EEl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5938" y="2024"/>
+            <point key="canvasLocation" x="5990" y="2344"/>
         </scene>
         <!--Add Event-->
         <scene sceneID="NWD-EQ-K9q">
@@ -74,6 +70,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <imageView key="tableFooterView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="rGX-wB-eYE">
+                            <rect key="frame" x="0.0" y="255" width="768" height="771"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
                         <sections>
                             <tableViewSection headerTitle="Event Name" id="yoV-iq-3ae">
                                 <cells>
@@ -142,6 +142,7 @@
                         <outlet property="datefield" destination="Ngt-Tw-H2E" id="5qN-Wr-yWw"/>
                         <outlet property="doneButton" destination="2yQ-2n-gzp" id="a03-bW-vEF"/>
                         <outlet property="eventTextField" destination="EWv-RG-KAj" id="GQl-Oh-lHs"/>
+                        <outlet property="imageView" destination="rGX-wB-eYE" id="dlk-ie-Fz5"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vHD-fu-2ed" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -403,6 +404,10 @@
                         <rect key="frame" x="0.0" y="64" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="3kU-6x-49G">
+                                <rect key="frame" x="0.0" y="65" width="768" height="910"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5CW-Iy-UaS">
                                 <rect key="frame" x="128" y="159" width="130" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -484,6 +489,7 @@
                         <outlet property="codeLabel" destination="bLD-W8-5iQ" id="SxX-NT-UIg"/>
                         <outlet property="dateTimeTextField" destination="6h5-UY-WR3" id="aMt-ld-YpP"/>
                         <outlet property="eventNameTextField" destination="IVJ-9O-GCR" id="rEb-TP-Peo"/>
+                        <outlet property="imageView" destination="3kU-6x-49G" id="wUM-T3-Cf0"/>
                         <outlet property="tableView" destination="XoC-q5-W65" id="pgE-fE-wkz"/>
                     </connections>
                 </viewController>
@@ -628,6 +634,7 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="genderImg" destination="5Ss-tV-3ZE" id="kkw-9y-0vc"/>
                                     <outlet property="studentLabel" destination="wZI-RG-NQ2" id="l6w-d0-Yr3"/>
@@ -754,6 +761,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Zec-Nl-tO0">
+                                <rect key="frame" x="0.0" y="62" width="768" height="962"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2dollar" id="jyX-jo-d5y">
                                 <rect key="frame" x="8" y="318" width="235" height="122"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -811,7 +822,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Please select the amount of money you have in your wallet and decide the budget of your supermarket trip." id="l0C-6B-hKE">
                                 <rect key="frame" x="197" y="138" width="311" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -869,6 +880,7 @@
                         <outlet property="budgetAmtTextField" destination="ml6-fJ-HOx" id="yFJ-hH-HF0"/>
                         <outlet property="fiveDollarLabel" destination="m65-HY-iF9" id="z2j-94-nyB"/>
                         <outlet property="fiveDollarStepper" destination="zMK-92-p59" id="ddz-0Q-GBd"/>
+                        <outlet property="imageView" destination="Zec-Nl-tO0" id="ZpD-uP-nT8"/>
                         <outlet property="instructionTextView" destination="l0C-6B-hKE" id="kUh-Z4-OfR"/>
                         <outlet property="playButton" destination="Epn-le-AaF" id="RKa-Ji-2JR"/>
                         <outlet property="submitButton" destination="oKc-s7-9Z0" id="MH3-FJ-5Ml"/>
@@ -945,6 +957,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="ox4-zM-LqT">
+                                <rect key="frame" x="0.0" y="62" width="768" height="962"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="R3A-4I-qnP">
                                 <rect key="frame" x="238" y="221" width="288" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1002,6 +1018,7 @@
                         <outlet property="codeTextField" destination="jyY-5E-Xf7" id="WeB-zc-kGa"/>
                         <outlet property="dateTextField" destination="RAj-e5-OC4" id="s97-D1-Vrz"/>
                         <outlet property="eventNameTextField" destination="R3A-4I-qnP" id="zni-6u-pGp"/>
+                        <outlet property="imageView" destination="ox4-zM-LqT" id="ZRs-US-bYd"/>
                         <outlet property="submitButton" destination="kFN-yI-xkP" id="LyL-0U-4Nq"/>
                         <segue destination="71b-3i-gVq" kind="unwind" identifier="unwindCheckIn" unwindAction="unwindStudentActivity:" id="41b-CO-STM"/>
                     </connections>
@@ -1019,6 +1036,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="1je-y6-Yme">
+                                <rect key="frame" x="0.0" y="61" width="768" height="963"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="biscuit" id="zrx-Sd-Pfc">
                                 <rect key="frame" x="222" y="518" width="156" height="156"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1046,6 +1067,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Nyj-Fw-8q6"/>
                     <connections>
+                        <outlet property="imageView" destination="1je-y6-Yme" id="EMp-5g-yCg"/>
                         <outlet property="nextButton" destination="35b-wL-aZu" id="wC0-Jp-dnZ"/>
                         <segue destination="ME9-U4-o5s" kind="push" identifier="receiptPhoto" id="eIw-uS-rn4"/>
                     </connections>
@@ -1057,7 +1079,7 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="7779" y="250"/>
+            <point key="canvasLocation" x="7791" y="764"/>
         </scene>
         <!--Mini Quiz View Controller-->
         <scene sceneID="Mco-9T-iJJ">
@@ -1067,6 +1089,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="QAr-Qm-kZw">
+                                <rect key="frame" x="0.0" y="63" width="773" height="961"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your starting amount in your wallet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="d9z-Us-Tgf">
                                 <rect key="frame" x="54" y="288" width="389" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1144,6 +1170,7 @@
                     <connections>
                         <outlet property="bonusTextField" destination="V94-9H-dwL" id="KoZ-qO-o4B"/>
                         <outlet property="budgetAmtTextField" destination="Vck-ld-u3m" id="dRM-R3-051"/>
+                        <outlet property="imageView" destination="QAr-Qm-kZw" id="25g-Hg-CaE"/>
                         <outlet property="spentAmtTextField" destination="vSB-uX-zpI" id="Scl-Mx-bfw"/>
                         <outlet property="totalAmtTextField" destination="wX6-Ow-7Ol" id="Ruu-AI-E8x"/>
                         <segue destination="eK0-CX-TzM" kind="unwind" identifier="unwindStudentActivityFromQuiz" unwindAction="unwindStudentActivity:" id="rFv-6X-XeK"/>
@@ -1700,6 +1727,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="jTI-DG-7By">
+                                <rect key="frame" x="0.0" y="62" width="775" height="962"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. Was the activity useful to you?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YAn-Rj-2n4">
                                 <rect key="frame" x="192" y="183" width="384" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1813,6 +1844,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Reflection" id="RRc-26-zIS"/>
                     <connections>
+                        <outlet property="imageView" destination="jTI-DG-7By" id="yAg-LG-aon"/>
                         <outlet property="noButton" destination="deD-Ja-jKZ" id="rNs-sS-yhW"/>
                         <outlet property="noButton2" destination="nav-tA-4JL" id="xxj-WH-SKy"/>
                         <outlet property="playButton" destination="FLS-Ks-Qtr" id="H5S-Lb-xwy"/>
@@ -2098,18 +2130,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student Class:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3hS-fi-xXf">
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student Class:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3hS-fi-xXf">
                                 <rect key="frame" x="97" y="317" width="124" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.88235300780000003" green="0.99607849120000003" blue="0.20000001789999999" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student Gender:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AUf-vt-Rcd">
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student Gender:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AUf-vt-Rcd">
                                 <rect key="frame" x="97" y="238" width="129" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.97647064920000004" green="0.99215692280000001" blue="0.20392158630000001" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -2132,10 +2162,9 @@
                                     <outlet property="delegate" destination="lnb-Na-wAG" id="Bfk-oq-xs5"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student Name:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kte-ib-5q2">
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kte-ib-5q2">
                                 <rect key="frame" x="97" y="158" width="124" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.88235300780000003" green="0.99607849120000003" blue="0.20000001789999999" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
                             </label>
@@ -2426,7 +2455,6 @@
         <image name="default.jpg" width="769" height="762"/>
         <image name="email" width="300" height="215"/>
         <image name="hlmilk" width="118" height="291"/>
-        <image name="math symbol1" width="2580" height="1434"/>
         <image name="no_not_selected" width="64" height="64"/>
         <image name="signup-button" width="220" height="76"/>
         <image name="student-reading-book-at-school" width="233" height="400"/>

@@ -35,6 +35,9 @@ class StudentEventTableViewController: UITableViewController {
             self.dataArray.append(e)
             self.tableView.reloadData()
             println(name)
+            self.tableView.backgroundView = UIImageView(image: UIImage(named: "img2"))
+            self.tableView.backgroundView!.alpha = 0.9
+
             
         })
         

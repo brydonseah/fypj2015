@@ -17,6 +17,7 @@ class FeedbackViewController: UIViewController, AVAudioRecorderDelegate, AVAudio
     @IBOutlet var yesButton2: UIButton!
     @IBOutlet var noButton2: UIButton!
     
+    @IBOutlet var imageView: UIImageView!
     @IBOutlet var refTextField: UITextField!
     
     

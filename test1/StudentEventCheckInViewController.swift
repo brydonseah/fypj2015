@@ -14,6 +14,7 @@ class StudentEventCheckInViewController: UIViewController {
     @IBOutlet var dateTextField: UITextField!
     @IBOutlet var codeTextField: UITextField!
     
+    @IBOutlet var imageView: UIImageView!
     @IBOutlet var submitButton: UIButton!
     
     var e: Event!
@@ -28,6 +29,8 @@ class StudentEventCheckInViewController: UIViewController {
         dateTextField.text = e.date
         code = e.code
         // Do any additional setup after loading the view.
+        self.imageView.alpha = 0.9 // = UIColor.blackColor().colorWithAlphaComponent(0.3)
+        self.imageView.image = UIImage(named:"img2")
     }
 
     override func didReceiveMemoryWarning() {

@@ -20,7 +20,8 @@ class EventDetailsViewController: UITableViewController {
     @IBOutlet var doneButton: UIBarButtonItem!
     var e = Event()
     var codeUniq: String!
-
+    @IBOutlet var imageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,6 +30,10 @@ class EventDetailsViewController: UITableViewController {
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        self.imageView.alpha = 0.9 // = UIColor.blackColor().colorWithAlphaComponent(0.3)
+        self.imageView.image = UIImage(named:"img3")
+
         
     }
     

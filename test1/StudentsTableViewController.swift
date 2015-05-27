@@ -19,8 +19,8 @@ class StudentsTableViewController: UITableViewController{
     var name = String()
     var studentUpdate: Student!
     var databasePath = NSString()
-    var maleColor : UIColor = UIColor(red: (173/255.0), green: (255/255.0), blue: (47/255.0), alpha: 0.5)
-    var femaleColor : UIColor = UIColor(red: (238/255.0), green: (232/255.0), blue: (170/255.0), alpha: 0.5)
+    var cellColor : UIColor = UIColor(red: (238/255.0), green: (232/255.0), blue: (170/255.0), alpha: 0.5)
+    
     
     var ref = Firebase(url: "https://quest2015.firebaseio.com/students")
     var dataArray: [Student] = []
@@ -113,7 +113,7 @@ class StudentsTableViewController: UITableViewController{
         
         // ask for reusable cell from the tableview, the tableview will create a new one if it doesnt have any
         let cell = self.tableView.dequeueReusableCellWithIdentifier("StudentCell", forIndexPath: indexPath) as! StudentCellViewCell
-        
+        cell.backgroundColor = cellColor
         
        // cell.backgroundColor!.alpha = 0.5
         let s = self.dataArray[indexPath.row] as Student
@@ -123,15 +123,13 @@ class StudentsTableViewController: UITableViewController{
         if s.gender == "M" {
         
             cell.studentImage.image = UIImage(named: "Male")
-            cell.backgroundColor = maleColor
-
+            
             
         }
         else if s.gender == "F" {
             
             cell.studentImage.image = UIImage(named: "Female")
-            cell.backgroundColor = femaleColor
-
+            
         }
         
 //        cell.studentLabel.text = s.name
