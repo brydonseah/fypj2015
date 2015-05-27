@@ -14,7 +14,7 @@ class ClassPickerTableViewController: UITableViewController {
     
     var selectedCategory: String? = nil
     var selectedCategoryIndex: Int? = 0
-    var cellColor : UIColor = UIColor(red: (238/255.0), green: (232/255.0), blue: (170/255.0), alpha: 0.8)
+    var cellColor : UIColor = UIColor(red: (238/255.0), green: (232/255.0), blue: (170/255.0), alpha: 0.5)
 
     override func viewDidLoad() {
         super.viewDidLoad()

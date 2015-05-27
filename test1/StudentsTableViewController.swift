@@ -19,7 +19,7 @@ class StudentsTableViewController: UITableViewController{
     var name = String()
     var studentUpdate: Student!
     var databasePath = NSString()
-    var cellColor : UIColor = UIColor(red: (238/255.0), green: (232/255.0), blue: (170/255.0), alpha: 0.8)
+    var cellColor : UIColor = UIColor(red: (238/255.0), green: (232/255.0), blue: (170/255.0), alpha: 0.5)
     
     
     var ref = Firebase(url: "https://quest2015.firebaseio.com/students")
