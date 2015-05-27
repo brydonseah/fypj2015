@@ -9,23 +9,28 @@
 import UIKit
 import AVFoundation
 
-class FeedbackViewController: UIViewController, AVAudioRecorderDelegate {
+class FeedbackViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate {
 
     @IBOutlet var yesButton: UIButton!
     @IBOutlet var noButton: UIButton!
     
-    @IBOutlet var imageView: UIImageView!
     @IBOutlet var yesButton2: UIButton!
     @IBOutlet var noButton2: UIButton!
     
+    @IBOutlet var imageView: UIImageView!
     @IBOutlet var refTextField: UITextField!
-    @IBOutlet var recordButton: UIButton!
+    
     
     @IBOutlet var submitButton: UIButton!
     
+   
+    @IBOutlet var stopButton: UIButton!
+    @IBOutlet var playButton: UIButton!
+    @IBOutlet var recordButton: UIButton!
     var audioRecorder: AVAudioRecorder!
     var recordedAudio: RecordedAudio!
     var audioPlayer: AVAudioPlayer!
+    
     
     var filePath: NSURL!
     
@@ -44,9 +49,10 @@ class FeedbackViewController: UIViewController, AVAudioRecorderDelegate {
     var checkImgNo = UIImage(named: "no_selected")
     var uncheckImgNo = UIImage(named: "no_not_selected")
     
-    var fileLocation: NSString!
-    var base64String: String!
+    var micImg = UIImage(named: "Micro-50")
     
+    var base64String: String!
+    var soundFilePath: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,10 +69,41 @@ class FeedbackViewController: UIViewController, AVAudioRecorderDelegate {
         self.yesButton2.setImage(uncheckImgYes, forState: UIControlState.Normal)
         self.noButton2.selected = false
         
-        submitButton.addTarget(self, action: "submitFeedback:", forControlEvents: UIControlEvents.TouchUpInside)
+        let dirPaths =
+        NSSearchPathForDirectoriesInDomains(.DocumentDirectory,
+            .UserDomainMask, true)
+        let docsDir = dirPaths[0] as! String
+        soundFilePath =
+            docsDir.stringByAppendingPathComponent("test.caf")
+        let soundFileURL = NSURL(fileURLWithPath: soundFilePath)
+        let recordSettings =
+        [AVEncoderAudioQualityKey: AVAudioQuality.Min.rawValue,
+            AVEncoderBitRateKey: 16,
+            AVNumberOfChannelsKey: 2,
+            AVSampleRateKey: 44100.0]
         
+        var error: NSError?
+        
+        let audioSession = AVAudioSession.sharedInstance()
+        audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord,
+            error: &error)
+        
+        if let err = error {
+            println("audioSession error: \(err.localizedDescription)")
+        }
+        
+        audioRecorder = AVAudioRecorder(URL: soundFileURL,
+            settings: recordSettings as [NSObject : AnyObject], error: &error)
+        
+        if let err = error {
+            println("audioSession error: \(err.localizedDescription)")
+        } else {
+            audioRecorder?.prepareToRecord()
+        }
         self.imageView.alpha = 0.9 // = UIColor.blackColor().colorWithAlphaComponent(0.3)
         self.imageView.image = UIImage(named:"img2")
+
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -114,50 +151,71 @@ class FeedbackViewController: UIViewController, AVAudioRecorderDelegate {
     
     @IBAction func recordAudio(sender: UIButton) {
         
-        //Find Document Directory
-        let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
-        
-        //Get current time and format it
-        currentDateTime = NSDate()
-        let formatter = NSDateFormatter()
-        formatter.dateFormat = "ddMMyyyy-HHmmss"
-        
-        //Set the recording name to our date string and create a file path
-        let recordingName = formatter.stringFromDate(currentDateTime)+".wav"
-        let pathArray = [dirPath, recordingName]
-        filePath = NSURL.fileURLWithPathComponents(pathArray)
-        println(filePath)
-        
-        //Start an audio session
-        var session = AVAudioSession.sharedInstance()
-        session.setCategory(AVAudioSessionCategoryPlayAndRecord, error: nil)
-        
-        //Initialize the audio recorder
-        audioRecorder = AVAudioRecorder(URL: filePath, settings: nil, error: nil)
-        audioRecorder.meteringEnabled = true
-        audioRecorder.delegate = self
-        audioRecorder.prepareToRecord()
-        audioRecorder.record()
+//        self.recordButton.enabled = false
+//        self.recordButton.setTitle("Recording..", forState: UIControlState.Normal)
+//        self.stopRecordButton.hidden = false
+//        
+//        //Find Document Directory
+//        let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
+//        
+//        //Get current time and format it
+//        currentDateTime = NSDate()
+//        let formatter = NSDateFormatter()
+//        formatter.dateFormat = "ddMMyyyy-HHmmss"
+//        
+//        //Set the recording name to our date string and create a file path
+//        let recordingName = formatter.stringFromDate(currentDateTime)+".wav"
+//        let pathArray = [dirPath, recordingName]
+//        filePath = NSURL.fileURLWithPathComponents(pathArray)
+//        println(filePath)
+//        
+//        //Start an audio session
+//        var session = AVAudioSession.sharedInstance()
+//        session.setCategory(AVAudioSessionCategoryPlayAndRecord, error: nil)
+//        
+//        //Initialize the audio recorder
+//        audioRecorder = AVAudioRecorder(URL: filePath, settings: nil, error: nil)
+//        audioRecorder.meteringEnabled = true
+//        audioRecorder.delegate = self
+//        audioRecorder.prepareToRecord()
+//        audioRecorder.record()
+        if audioRecorder?.recording == false {
+            playButton.enabled = false
+            stopButton.enabled = true
+            audioRecorder?.record()
+        }
 
+        
     }
     
     @IBAction func stopRecordingAudio(sender: UIButton) {
-        audioRecorder.stop()
-        var audioSession = AVAudioSession.sharedInstance()
-        audioSession.setActive(false, error: nil)
         
-        var error: NSError?
+//        stopRecordButton.hidden = true
+//        recordButton.enabled = true
+//        recordButton!.setTitle("Start Recording", forState: UIControlState.Normal)
+//        audioRecorder.stop()
+//        var audioSession = AVAudioSession.sharedInstance()
+//        audioSession.setActive(false, error: nil)
         
-        var fileLocation = NSString(string:NSBundle.mainBundle().pathForResource("\(currentDateTime)", ofType: "wav")!)
-        let fileData = NSData(contentsOfFile: fileLocation as String, options: NSDataReadingOptions.DataReadingMappedIfSafe, error: &error)
-        base64String = fileData?.base64EncodedStringWithOptions(.allZeros)
-        println(base64String)
+        stopButton.enabled = false
+        playButton.enabled = true
+        recordButton.enabled = true
+        
+        if audioRecorder?.recording == true {
+            audioRecorder?.stop()
+        } else {
+            audioPlayer?.stop()
+        }
+
 
     }
     
     @IBAction func submitFeedback(sender: UIButton){
         
-        if( string1 == "" || string2 == "" || refTextField.text == "") {
+        
+        
+        
+        if( string1 == "" || string2 == "" ) {
             
             let alert = UIAlertView()
             alert.title = "Error submitting!"
@@ -167,6 +225,12 @@ class FeedbackViewController: UIViewController, AVAudioRecorderDelegate {
         
         } else {
         
+            var error: NSError?
+            
+            let fileData = NSData(contentsOfFile: soundFilePath, options: NSDataReadingOptions.DataReadingMappedIfSafe, error: &error)
+            
+            base64String = fileData?.base64EncodedStringWithOptions(.allZeros)
+            
         //Firebase - Create
         var ref = Firebase(url: "https://quest2015.firebaseio.com/")
         let postRef = ref.childByAppendingPath("feedbacks")
@@ -183,6 +247,44 @@ class FeedbackViewController: UIViewController, AVAudioRecorderDelegate {
         }
 
     }
+    
+    @IBAction func playAudio(sender: AnyObject) {
+        if audioRecorder?.recording == false {
+            stopButton.enabled = true
+            recordButton.enabled = false
+            
+            var error: NSError?
+            
+            audioPlayer = AVAudioPlayer(contentsOfURL: audioRecorder?.url,
+                error: &error)
+            
+            audioPlayer?.delegate = self
+            
+            if let err = error {
+                println("audioPlayer error: \(err.localizedDescription)")
+            } else {
+                audioPlayer?.play()
+            }
+        }
+    }
+    
+    func audioPlayerDidFinishPlaying(player: AVAudioPlayer!, successfully flag: Bool) {
+        recordButton.enabled = true
+        stopButton.enabled = false
+    }
+    
+    func audioPlayerDecodeErrorDidOccur(player: AVAudioPlayer!, error: NSError!) {
+        println("Audio Play Decode Error")
+    }
+    
+    func audioRecorderDidFinishRecording(recorder: AVAudioRecorder!, successfully flag: Bool) {
+    }
+    
+    func audioRecorderEncodeErrorDidOccur(recorder: AVAudioRecorder!, error: NSError!) {
+        println("Audio Record Encode Error")
+    }
+
+
     
     /*
     // MARK: - Navigation

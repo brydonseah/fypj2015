@@ -1758,7 +1758,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Reflection" id="RRc-26-zIS"/>
                     <connections>
-                        <outlet property="imageView" destination="jTI-DG-7By" id="1mu-fx-k2o"/>
+                        <outlet property="imageView" destination="jTI-DG-7By" id="yAg-LG-aon"/>
                         <outlet property="noButton" destination="deD-Ja-jKZ" id="rNs-sS-yhW"/>
                         <outlet property="noButton2" destination="nav-tA-4JL" id="xxj-WH-SKy"/>
                         <outlet property="recordButton" destination="DOM-9J-VSo" id="VOr-HH-pGF"/>

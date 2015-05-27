@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		862262671AF754EF00C46B0D /* ImageCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862262621AF754EF00C46B0D /* ImageCameraViewController.swift */; };
+		864A3C701B156E0C00EFADF1 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864A3C6F1B156E0C00EFADF1 /* FeedbackViewController.swift */; };
 		8656B2FD1B1412060070C662 /* YesRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8656B2FC1B1412060070C662 /* YesRadioButton.swift */; };
 		8656B2FF1B1414120070C662 /* NoRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8656B2FE1B1414120070C662 /* NoRadioButton.swift */; };
 		8656B3021B1417F50070C662 /* checked.png in Resources */ = {isa = PBXBuildFile; fileRef = 8656B3001B1417F50070C662 /* checked.png */; };
@@ -59,7 +60,6 @@
 		8D9FEDA41B138D0400EBD92E /* StudentPreparationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9FEDA31B138D0400EBD92E /* StudentPreparationViewController.swift */; };
 		8D9FEDA61B1398D200EBD92E /* SupermarketSimulatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9FEDA51B1398D200EBD92E /* SupermarketSimulatorViewController.swift */; };
 		8D9FEDAA1B13A08C00EBD92E /* MiniQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9FEDA91B13A08C00EBD92E /* MiniQuizViewController.swift */; };
-		8D9FEDAE1B13A83200EBD92E /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9FEDAD1B13A83200EBD92E /* FeedbackViewController.swift */; };
 		8D9FEDB21B13AC3500EBD92E /* StudentEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9FEDB11B13AC3500EBD92E /* StudentEventTableViewController.swift */; };
 		8D9FEDB41B13ADA800EBD92E /* StudentEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9FEDB31B13ADA800EBD92E /* StudentEventTableViewCell.swift */; };
 		8D9FEDB91B13B02700EBD92E /* StudentEventCheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9FEDB81B13B02700EBD92E /* StudentEventCheckInViewController.swift */; };
@@ -88,6 +88,7 @@
 
 /* Begin PBXFileReference section */
 		862262621AF754EF00C46B0D /* ImageCameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCameraViewController.swift; sourceTree = "<group>"; };
+		864A3C6F1B156E0C00EFADF1 /* FeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		8656B2FC1B1412060070C662 /* YesRadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YesRadioButton.swift; sourceTree = "<group>"; };
 		8656B2FE1B1414120070C662 /* NoRadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoRadioButton.swift; sourceTree = "<group>"; };
 		8656B3001B1417F50070C662 /* checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checked.png; sourceTree = "<group>"; };
@@ -150,7 +151,6 @@
 		8D9FEDA31B138D0400EBD92E /* StudentPreparationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentPreparationViewController.swift; sourceTree = "<group>"; };
 		8D9FEDA51B1398D200EBD92E /* SupermarketSimulatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupermarketSimulatorViewController.swift; sourceTree = "<group>"; };
 		8D9FEDA91B13A08C00EBD92E /* MiniQuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiniQuizViewController.swift; sourceTree = "<group>"; };
-		8D9FEDAD1B13A83200EBD92E /* FeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		8D9FEDB11B13AC3500EBD92E /* StudentEventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentEventTableViewController.swift; sourceTree = "<group>"; };
 		8D9FEDB31B13ADA800EBD92E /* StudentEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentEventTableViewCell.swift; sourceTree = "<group>"; };
 		8D9FEDB81B13B02700EBD92E /* StudentEventCheckInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentEventCheckInViewController.swift; sourceTree = "<group>"; };
@@ -322,7 +322,6 @@
 			isa = PBXGroup;
 			children = (
 				8DF08E4A1B12143800B61B47 /* CameraViewController.swift */,
-				8D9FEDAD1B13A83200EBD92E /* FeedbackViewController.swift */,
 				86DDE7A51B12F37800555492 /* MainStudentTableViewController.swift */,
 				8D9FEDA91B13A08C00EBD92E /* MiniQuizViewController.swift */,
 				8DF08E4E1B12144400B61B47 /* RecordedAudio.swift */,
@@ -330,6 +329,7 @@
 				86DDE7A91B131CCC00555492 /* StudentActivityTableViewController.swift */,
 				8D9FEDB81B13B02700EBD92E /* StudentEventCheckInViewController.swift */,
 				8D9FEDB31B13ADA800EBD92E /* StudentEventTableViewCell.swift */,
+				864A3C6F1B156E0C00EFADF1 /* FeedbackViewController.swift */,
 				8D9FEDB11B13AC3500EBD92E /* StudentEventTableViewController.swift */,
 				86DDE7A31B12EDFE00555492 /* StudentLoginViewController.swift */,
 				8D9FEDA31B138D0400EBD92E /* StudentPreparationViewController.swift */,
@@ -501,6 +501,7 @@
 				8656B2FD1B1412060070C662 /* YesRadioButton.swift in Sources */,
 				86DDE7A41B12EDFE00555492 /* StudentLoginViewController.swift in Sources */,
 				8DF08E631B1242E800B61B47 /* ChangeEmailTableViewController.swift in Sources */,
+				864A3C701B156E0C00EFADF1 /* FeedbackViewController.swift in Sources */,
 				8DF08E511B12144400B61B47 /* RecordViewController.swift in Sources */,
 				86E552A21AC544AE0011CB94 /* EventDetailsViewController.swift in Sources */,
 				8DF08E4D1B12143E00B61B47 /* ForgotPassViewController.swift in Sources */,
@@ -513,7 +514,6 @@
 				867E46141ACCEC290096E8AC /* FMResultSet.m in Sources */,
 				86DDE7B91B13203D00555492 /* UpdateStudentsViewController.swift in Sources */,
 				86DDE7B31B13203D00555492 /* ClassPickerTableViewController.swift in Sources */,
-				8D9FEDAE1B13A83200EBD92E /* FeedbackViewController.swift in Sources */,
 				8D3CFD221B079F5D00B44C05 /* TestTableViewController.swift in Sources */,
 				8D9FEDB41B13ADA800EBD92E /* StudentEventTableViewCell.swift in Sources */,
 				867087AF1ABFED3B00EAAF7B /* EventsViewController.swift in Sources */,
