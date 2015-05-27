@@ -78,7 +78,7 @@
                             <tableViewSection headerTitle="Event Name" id="yoV-iq-3ae">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" id="a8L-Zl-eaa">
-                                        <rect key="frame" x="0.0" y="114" width="768" height="44"/>
+                                        <rect key="frame" x="0.0" y="50" width="768" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a8L-Zl-eaa" id="ikC-k7-hSM">
                                             <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
@@ -98,7 +98,7 @@
                             <tableViewSection headerTitle="Please Select Date &amp; Time" id="ex0-n4-Skc">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="Cwi-GK-M77">
-                                        <rect key="frame" x="0.0" y="201" width="768" height="44"/>
+                                        <rect key="frame" x="0.0" y="137" width="768" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Cwi-GK-M77" id="3LR-nz-GKh">
                                             <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
@@ -1297,7 +1297,7 @@
                                 <rect key="frame" x="254" y="513" width="260" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ELC-ap-XLo">
                                 <rect key="frame" x="278" y="630" width="211" height="30"/>
@@ -1417,7 +1417,7 @@
                                 <rect key="frame" x="284" y="693" width="260" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fHQ-em-8gM">
                                 <rect key="frame" x="187" y="621" width="85" height="21"/>
@@ -1437,7 +1437,7 @@
                                 <rect key="frame" x="284" y="617" width="260" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Teacher-icon" id="L4g-6V-edP">
                                 <rect key="frame" x="197" y="172" width="435" height="232"/>
@@ -1870,7 +1870,7 @@
                                                     <rect key="frame" x="0.0" y="7" width="768" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -2151,7 +2151,7 @@
                             <tableViewSection headerTitle="Student Name" id="HOh-2O-0Zm">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="v1J-T5-0g1">
-                                        <rect key="frame" x="0.0" y="114" width="768" height="44"/>
+                                        <rect key="frame" x="0.0" y="50" width="768" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="v1J-T5-0g1" id="SpN-30-LMW">
                                             <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
@@ -2171,7 +2171,7 @@
                             <tableViewSection headerTitle="Selected Gender" id="QeS-UL-FxS">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="genderCell" textLabel="7Dw-oJ-OS8" detailTextLabel="TFm-1H-MCj" style="IBUITableViewCellStyleValue1" id="Fmu-KO-dUB">
-                                        <rect key="frame" x="0.0" y="201" width="768" height="44"/>
+                                        <rect key="frame" x="0.0" y="137" width="768" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fmu-KO-dUB" id="Nkv-MH-yiN">
                                             <rect key="frame" x="0.0" y="0.0" width="735" height="43"/>
@@ -2200,7 +2200,7 @@
                             <tableViewSection headerTitle="Select Class" id="uaP-Xr-VWN">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="classCell" textLabel="XJe-Pl-UgX" detailTextLabel="kb0-8e-Rkw" style="IBUITableViewCellStyleValue1" id="8Xg-12-yeS">
-                                        <rect key="frame" x="0.0" y="288" width="768" height="44"/>
+                                        <rect key="frame" x="0.0" y="224" width="768" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8Xg-12-yeS" id="QgK-wl-be8">
                                             <rect key="frame" x="0.0" y="0.0" width="735" height="43"/>
