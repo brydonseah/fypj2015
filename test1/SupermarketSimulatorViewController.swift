@@ -15,11 +15,15 @@ class SupermarketSimulatorViewController: UIViewController {
     var studentTotalAmt: String!
     var studentBudget: String!
     var stud: Student!
+    @IBOutlet var imageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.imageView.alpha = 0.9 // = UIColor.blackColor().colorWithAlphaComponent(0.3)
+        self.imageView.image = UIImage(named:"img2")
+
     }
 
     override func didReceiveMemoryWarning() {
