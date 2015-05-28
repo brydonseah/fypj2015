@@ -23,8 +23,7 @@ class TeacherLoginViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        self.emailTextField.text = "brydon@gmail.com"
-        self.passTextField.text = "12345"
+        
     }
     
     override func didReceiveMemoryWarning() {

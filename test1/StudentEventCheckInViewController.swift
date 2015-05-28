@@ -21,6 +21,8 @@ class StudentEventCheckInViewController: UIViewController {
     var stud: Student!
     var count: Int = 1
     var code: String!
+    var ref = Firebase(url: "https://quest2015.firebaseio.com/studentActivity")
+    var sa = StudentActivity()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +33,20 @@ class StudentEventCheckInViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.imageView.alpha = 0.9 // = UIColor.blackColor().colorWithAlphaComponent(0.3)
         self.imageView.image = UIImage(named:"img2")
+        
+        ref.queryOrderedByKey().observeEventType(.ChildAdded, withBlock: { snapshot in
+            
+            let name = snapshot.value["student"] as! String
+            let code = snapshot.value["code"] as! String
+
+            self.sa.name = name
+            self.sa.code = code
+            println(name)
+            
+            
+            
+        })
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,7 +57,14 @@ class StudentEventCheckInViewController: UIViewController {
     @IBAction func submitButton(sender: UIButton) {
         
         if (self.codeTextField.text == code){
-            
+            if(stud.name == self.sa.name) {
+                let alert = UIAlertView()
+                alert.title = "Error checking in!"
+                alert.message = "You have already checked in."
+                alert.addButtonWithTitle("Ok")
+                alert.show()
+
+            } else {
             //Firebase - Create
             var ref = Firebase(url: "https://quest2015.firebaseio.com/")
             let postRef = ref.childByAppendingPath("studentActivity")
@@ -57,10 +80,11 @@ class StudentEventCheckInViewController: UIViewController {
         }))
         self.presentViewController(submitAlert, animated: true, completion: nil)
             
+            }
         } else {
             let alert = UIAlertView()
             alert.title = "Error checking in!"
-            alert.message = "Wrong code entered. Please check again."
+            alert.message = "Wrong code"
             alert.addButtonWithTitle("Ok")
             alert.show()
         }

@@ -82,6 +82,22 @@ class StudentPreparationViewController: UIViewController {
     }
     
     @IBAction func submit(sender: UIButton){
+        
+        let budget: Int = self.budgetAmtTextField.text.toInt()!
+        let totalAmt: Int = self.totalAmtTextField.text.toInt()!
+        
+        println(budget)
+        println(totalAmt)
+        
+        if (budget > totalAmt) {
+            let alert = UIAlertView()
+            alert.title = "Budget more than wallet amount!"
+            alert.message = "Please check again."
+            alert.addButtonWithTitle("Ok")
+            alert.show()
+
+        } else {
+        
         //Firebase - Create
         var ref = Firebase(url: "https://quest2015.firebaseio.com/")
         let postRef = ref.childByAppendingPath("StudentPreparations")
@@ -95,6 +111,7 @@ class StudentPreparationViewController: UIViewController {
             self.performSegueWithIdentifier("unwindStudentActivity", sender: self)
         }))
         self.presentViewController(submitAlert, animated: true, completion: nil)
+        }
     }
 
     
@@ -109,8 +126,6 @@ class StudentPreparationViewController: UIViewController {
             sa.studentTotalAmt = totalAmtTextField.text
             sa.studentBudget = budgetAmtTextField.text
             
-            self.totalAmtTextField.text = ""
-            self.budgetAmtTextField.text = ""
         }
     }
     

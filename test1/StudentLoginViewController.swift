@@ -26,6 +26,13 @@ class StudentLoginViewController: UIViewController {
     @IBAction func studentLogin(sender: UIButton){
         if(self.passcodeTextField.text == "1234") {
         self.performSegueWithIdentifier("studentLogin", sender: self)
+        } else {
+            let alert = UIAlertView()
+            alert.title = "Wrong passcode!"
+            alert.message = ""
+            alert.addButtonWithTitle("Ok")
+            alert.show()
+
         }
     }
     

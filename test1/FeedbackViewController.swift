@@ -100,7 +100,8 @@ class FeedbackViewController: UIViewController, AVAudioRecorderDelegate, AVAudio
         } else {
             audioRecorder?.prepareToRecord()
         }
-
+        self.imageView.alpha = 0.9
+        self.imageView.image = UIImage(named:"img2")
     }
 
     override func didReceiveMemoryWarning() {
@@ -208,9 +209,6 @@ class FeedbackViewController: UIViewController, AVAudioRecorderDelegate, AVAudio
     }
     
     @IBAction func submitFeedback(sender: UIButton){
-        
-        
-        
         
         if( string1 == "" || string2 == "" ) {
             

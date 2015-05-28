@@ -20,7 +20,7 @@ class GenderPickerTableViewController: UITableViewController {
         super.viewDidLoad()
         
         self.tableView.rowHeight = 100
-        self.tableView.backgroundView = UIImageView(image: UIImage(named: "background"))
+        self.tableView.backgroundView = UIImageView(image: UIImage(named: "img3"))
         self.tableView.backgroundView!.alpha = 0.5 // = UIColor.blackColor().colorWithAlphaComponent(0.3)
 
         // Uncomment the following line to preserve selection between presentations

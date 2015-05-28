@@ -90,6 +90,8 @@ class StudentEventTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("StudentEventCell", forIndexPath: indexPath) as! StudentEventTableViewCell
         
+        cell.backgroundColor = UIColor(white: 1.0, alpha: 0.5)
+
          let e = self.dataArray[indexPath.row] as Event
         
         cell.titleLabel.text = e.title

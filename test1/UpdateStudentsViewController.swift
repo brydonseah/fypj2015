@@ -49,9 +49,9 @@ class UpdateStudentsViewController: UIViewController, UIPickerViewDataSource, UI
         studentGender.text = student.gender
         studentClass.text = student.category
     
-        self.imageView.alpha = 0.5 // = UIColor.blackColor().colorWithAlphaComponent(0.3)
+        self.imageView.alpha = 0.9 // = UIColor.blackColor().colorWithAlphaComponent(0.3)
     
-        self.imageView.image = UIImage(named:"background")
+        self.imageView.image = UIImage(named:"img3")
 
         genderPickerView = UIPickerView()
         classPickerView = UIPickerView()
